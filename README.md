@@ -29,6 +29,10 @@ Here are some screenshots of the network graph:
 
 ![Screenshot 2](/readme/lol-champs-network-1-.png)
 
+## Hosting
+
+The graph visualization has been hosted on Digital Ocean.
+
 ## Motivation
 
 This project was created for fun to explore the relationships between different champions and classes in League of Legends.
