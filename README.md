@@ -35,4 +35,5 @@ This project was created for fun to explore the relationships between different 
 
 ## Important Notice
 
-The html is really messed up, mainly because it was generated through PyVis/NetworkX (Python). Hopefully, I will clean it up and provide the Jupyter notebook, as soon as I have more time.
+- The html is really messed up, mainly because it was generated through PyVis/NetworkX (Python). Hopefully, I will clean it up and provide the Jupyter notebook, as soon as I have more time.
+- I still haven't found any way to increase page responsiveness when zooming out. Disabling physics messes up the layout.
