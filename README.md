@@ -1,4 +1,4 @@
-# League of Legends Champions and Classes Network Visualization
+# 🎮 League of Legends Champions and Classes Network Visualization
 
 [League of Legends Champions Network](https://lol-champions-network-2baea.ondigitalocean.app/)
 
