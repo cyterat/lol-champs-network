@@ -37,6 +37,12 @@ The graph visualization has been hosted on Digital Ocean.
 
 This project was created for fun to explore the relationships between different champions and classes in League of Legends.
 
+## Sources
+
+- **Colors, logos, fonts:** [Riot Games](https://brand.riotgames.com/en-us/league-of-legends/fundamentals)
+
+- **Data:** [League of Legends Wiki](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki)
+
 ## Important Notice
 
 - The html is really messed up, mainly because it was generated through PyVis/NetworkX (Python). Hopefully, I will clean it up and provide the Jupyter notebook, as soon as I have more time.
