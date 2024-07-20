@@ -39,9 +39,9 @@ This project was created for fun to explore the relationships between different 
 
 ## Sources
 
-- **Colors, logos, fonts:** [Riot Games](https://brand.riotgames.com/en-us/league-of-legends/fundamentals)
+- **Colors, logo, video, font:** [Riot Games](https://brand.riotgames.com/en-us/league-of-legends/fundamentals)
 
-- **Data:** [League of Legends Wiki](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki)
+- **Data, champion icons:** [League of Legends Wiki](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki)
 
 ## Important Notice
 
