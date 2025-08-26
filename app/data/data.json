@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "id": 1,
+      "shape": "circularImage",
+      "image": "assets/champions/Caitlyn.webp",
+      "brokenImage": "assets/champions/broken.webp",
+      "label": "Caitlyn",
+      "description": "SOME INFO HERE.\n• list entry\n• list entry",
+      "value": 40
+    },
+    {
+      "id": 2,
+      "shape": "image",
+      "image": "assets/champions/Bard.webp",
+      "brokenImage": "assets/champions/broken.webp", 
+      "label": "Bard",
+      "description": "SOME INFO HERE.\n• list entry\n• list entry"
+    }
+  ],
+  "edges": [
+    {
+      "from": 1,
+      "to": 2,
+      "arrowToTarget": true,
+      "arrowToSource": false,
+      "type": "synergy",
+      "weight": 2,
+      "color": "#db230f",
+      "label": "0.8"
+    }
+  ]
+}

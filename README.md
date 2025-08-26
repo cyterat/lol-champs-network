@@ -23,15 +23,15 @@ Here are some screenshots of the network graph:
 
 ### Screenshot 1
 
-![Screenshot 1](/readme/lol-champs-network-0-.png)
+![Screenshot 1](/readme/lol-champs-network-0.png)
 
 ### Screenshot 2
 
-![Screenshot 2](/readme/lol-champs-network-1-.png)
+![Screenshot 2](/readme/lol-champs-network-1.png)
 
 ## Hosting
 
-The graph visualization has been hosted on Digital Ocean.
+The graph visualization is hosted on Digital Ocean.
 
 ## Motivation
 
@@ -45,5 +45,11 @@ This project was created for fun to explore the relationships between different 
 
 ## Important Notice
 
-- The html is really messed up, mainly because it was generated through PyVis/NetworkX (Python). Hopefully, I will clean it up and provide the Jupyter notebook, as soon as I have more time.
-- I still haven't found any way to increase page responsiveness when zooming out. Disabling physics messes up the layout.
+- ~~The html is really messed up, mainly because it was generated through PyVis/NetworkX (Python). Hopefully, I will clean it up and provide the Jupyter notebook, as soon as I have more time.~~
+- ~~I still haven't found any way to increase page responsiveness when zooming out. Disabling physics messes up the layout.~~
+
+## PROJECT IS UNDER REWORK as of 2025
+
+- Python generated visualization will be replaced with html/js/css trio.
+- Several views (network combinations) will be implemented.
+- Additional League of Legends entities will be added.
