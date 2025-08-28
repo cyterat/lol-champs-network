@@ -81,12 +81,12 @@ class NetworkVisualization {
                 image: node.image,
                 brokenImage: node.brokenImage || 'img/default.png',
                 color: {
-                    border: '#C79B3B',
-                    background: '#180d43',
-                    hover: '#d4c178',
+                    border: node.brColor|| '#C79B3B',
+                    background: node.bgColor || '#180d43',
+                    hover: node.brColorHg || '#d4c178',
                     highlight: {
-                        border: '#d4c178',
-                        background: '#1e1155'
+                        border: node.brColorHg || '#d4c178',
+                        background: node.bgColorHg || '#1e1155'
                     }
                 }
             };
@@ -99,7 +99,7 @@ class NetworkVisualization {
                     background: this.getNodeColor(node.type),
                     highlight: {
                         border: '#d4c178',
-                        background: '#D2E5FF'
+                        background: '#1e1155'
                     }
                 }
             };
