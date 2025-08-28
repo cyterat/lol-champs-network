@@ -60,6 +60,7 @@ class NetworkVisualization {
             label: node.label,
             title: this.formatTooltip(node.label, node.description),
             size: node.size || 20,
+            originalSize: node.size || 20, // backup size, to acoid permanent shrink on zoom out
             mass: node.mass || 1,
             borderWidth: 2,
             shadow: false,
@@ -394,7 +395,7 @@ class NetworkVisualization {
             if (node.shape === 'circularImage' || (node.image && reduce)) {
                 return {
                     id: node.id,
-                    size: reduce ? Math.max(8, (node.size || 20) * 0.7) : (node.size || 20),
+                    size: reduce ? Math.max(8, (node.size || 20) * 0.7) : node.originalSize,
                     borderWidth: reduce ? 1 : 2
                 };
             }
