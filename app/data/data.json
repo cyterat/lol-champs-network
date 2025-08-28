@@ -5,7 +5,7 @@
             "label": "League of Legends",
             "type": "brand",
             "image": "assets/other/lol.png",
-            "size": 40,
+            "size": 50,
             "mass": 50
         },
         {
@@ -1039,7 +1039,7 @@
             "label": "Fighter",
             "type": "class",
             "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/fighter.svg",
-            "size": 31,
+            "size": 41,
             "mass": 11
         },
         {
@@ -1047,7 +1047,7 @@
             "label": "Mage",
             "type": "class",
             "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/mage.svg",
-            "size": 28,
+            "size": 38,
             "mass": 8
         },
         {
@@ -1055,15 +1055,16 @@
             "label": "Assassin",
             "type": "class",
             "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/assassin.svg",
-            "size": 21,
+            "size": 31,
             "mass": 1
         },
         {
             "id": 175,
             "label": "Marksman",
             "type": "class",
+            "shape": "image",
             "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/marksman.svg",
-            "size": 25,
+            "size": 35,
             "mass": 5
         },
         {
@@ -1071,7 +1072,7 @@
             "label": "Tank",
             "type": "class",
             "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/tank.svg",
-            "size": 22,
+            "size": 32,
             "mass": 2
         },
         {
@@ -1079,7 +1080,7 @@
             "label": "Support",
             "type": "class",
             "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/support.svg",
-            "size": 21,
+            "size": 31,
             "mass": 1
         }
     ],
