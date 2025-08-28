@@ -15,13 +15,14 @@ async function loadNetworkData() {
         // Process nodes
         nodes = new vis.DataSet(data.nodes.map(node => ({
             id: node.id,
-            shape: node.shape,
-            image: node.image,
+            shape: node.shape || 'circularImage',
+            image: node.image || 'assets/other/lol.png',
             brokenImage: node.brokenImage || 'img/default.png',
             opacity: node.opacity,
             label: node.label,
             title: formatTooltip(node.label, node.description),
-            size: node.value || 30,
+            size: node.size || 20,
+            mass: node.mass || 0,
             borderWidth: 3,
             shadow: true,
             color: {
@@ -94,23 +95,24 @@ function createNetwork() {
     };
     
     const options = {
-        physics: {
-            enabled: true,
-            stabilization: {
-                enabled: true,
-                iterations: 1000,
-                updateInterval: 25
-            },
-            barnesHut: {
-                gravitationalConstant: -4000,
-                // centralGravity: 0.3,
-                // springLength: 150,
-                // springConstant: 0.04,
-                // damping: 0.09,
-                // springConstant: 0, // Set to 0 to control overlap with avoidOverlap
-                // avoidOverlap: 0.5
-            }
-        },
+        // physics: {
+        //     enabled: false,
+        //     stabilization: {
+        //         enabled: true,
+        //         iterations: 1000,
+        //         updateInterval: 25
+        //     },
+        //     barnesHut: {
+        //         gravitationalConstant: -4000,
+        //         centralGravity: 0.3,
+        //         springLength: 100,
+        //         // springConstant: 0.04,
+        //         // damping: 0.09,
+        //         // springConstant: 0, // Set to 0 to control overlap with avoidOverlap
+        //         avoidOverlap: 0.1
+        //     }
+        // },
+        physics: true,
         interaction: {
             hover: true,
             hoverConnectedEdges: true,
