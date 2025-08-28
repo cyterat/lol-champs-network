@@ -58,11 +58,13 @@ class NetworkVisualization {
         const baseConfig = {
             id: node.id,
             label: node.label,
-            title: this.formatTooltip(node.label, node.description),
+            title: this.formatTooltip(node.description),
             size: node.size || 20,
             originalSize: node.size || 20, // backup size, to acoid permanent shrink on zoom out
-            mass: node.mass || 1,
-            borderWidth: 2,
+            mass: node.mass || 3,
+            borderWidth: node.BrWidth || 2,
+            borderWidthSelected: node.BrWidthSel || 3,
+            borderWidthOriginal: node.BrWidth || 2,
             shadow: false,
             font: {
                 color: '#FFFFFF',
@@ -204,11 +206,11 @@ class NetworkVisualization {
                 solver: 'barnesHut',
                 barnesHut: {
                     gravitationalConstant: -4000,
-                    centralGravity: 0.4,
-                    springLength: 70,
-                    springConstant: 0.05,
+                    centralGravity: 1,
+                    springLength: 50,
+                    springConstant: 0.2,
                     damping: 0.3,
-                    avoidOverlap: 0.2
+                    avoidOverlap: 5.0
                 },
                 maxVelocity: 20, // Reduced for stability
                 minVelocity: 1,
@@ -220,7 +222,7 @@ class NetworkVisualization {
             interaction: {
                 hover: true,
                 hoverConnectedEdges: false, // Disabled for performance
-                selectConnectedEdges: true, // Disabled for performance
+                selectConnectedEdges: true, // Disable for performance
                 tooltipDelay: 300,
                 hideEdgesOnDrag: true, // Keep edges visible during drag
                 hideNodesOnDrag: false, // Keep nodes visible during drag
@@ -234,8 +236,6 @@ class NetworkVisualization {
 
             // Node styling with performance optimizations
             nodes: {
-                borderWidth: 2,
-                borderWidthSelected: 3,
                 scaling: {
                     min: 8,
                     max: 40,
@@ -390,13 +390,13 @@ class NetworkVisualization {
         if (!this.performanceConfig.enableImages) return;
         
         // Instead of hiding images, we could reduce their size
-        // For now, let's keep images visible but smaller when zoomed out
+        // keep images visible but smaller when zoomed out
         const updates = this.nodes.get().map(node => {
             if (node.shape === 'circularImage' || (node.image && reduce)) {
                 return {
                     id: node.id,
                     size: reduce ? Math.max(8, (node.size || 20) * 0.7) : node.originalSize,
-                    borderWidth: reduce ? 1 : 2
+                    borderWidth: reduce ? 1 : node.borderWidthOriginal
                 };
             }
             return null;
