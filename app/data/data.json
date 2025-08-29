@@ -2,6 +2,20 @@
     "nodes": [
         {
             "id": 0,
+            "label": "cyterat",
+            "description": "\u25c6 Class: Creator\n\u25c6 Collaboration Level: Bard Main\n\u25c6 Highest Rank: Wood\n\u25c6 Difficulty: Ukraine\n\u25c6 JS experience: ChatGPT",
+            "type": "dev",
+            "image": "https://avatars.githubusercontent.com/u/29544625?v=4",
+            "brokenImage": "assets/other/favicon.ico",
+            "size": 15,
+            "mass": 5,
+            "brColor": "rgba(0, 0, 0, 0)",
+            "bgColor": "rgba(0, 0, 0, 0)",
+            "brColorHg": "rgba(0, 0, 0, 0)",
+            "bgColorHg": "rgba(0, 0, 0, 0)"
+        },
+        {
+            "id": 1,
             "description": "League of Legends",
             "type": "brand",
             "image": "assets/other/lol.png",
@@ -13,10 +27,11 @@
             "bgColorHg": "rgba(0, 0, 0, 0)"
         },
         {
-            "id": 1,
+            "id": 2,
             "description": "Fighter",
             "type": "class",
-            "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/fighter.svg",
+            "image": "assets/classes/fighter.png",
+            "brokenImage": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/fighter.svg",
             "size": 41,
             "mass": 20,
             "brColor": "#16222c",
@@ -27,10 +42,11 @@
             "BrWidthSel": 15
         },
         {
-            "id": 2,
+            "id": 3,
             "description": "Mage",
             "type": "class",
-            "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/mage.svg",
+            "image": "assets/classes/mage.png",
+            "brokenImage": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/mage.svg",
             "size": 38,
             "mass": 19,
             "brColor": "#16222c",
@@ -41,10 +57,11 @@
             "BrWidthSel": 15
         },
         {
-            "id": 3,
+            "id": 4,
             "description": "Assassin",
             "type": "class",
-            "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/assassin.svg",
+            "image": "assets/classes/assassin.png",
+            "brokenImage": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/assassin.svg",
             "size": 31,
             "mass": 15,
             "brColor": "#16222c",
@@ -55,10 +72,11 @@
             "BrWidthSel": 15
         },
         {
-            "id": 4,
+            "id": 5,
             "description": "Marksman",
             "type": "class",
-            "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/marksman.svg",
+            "image": "assets/classes/marksman.png",
+            "brokenImage": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/marksman.svg",
             "size": 35,
             "mass": 17,
             "brColor": "#16222c",
@@ -69,10 +87,11 @@
             "BrWidthSel": 15
         },
         {
-            "id": 5,
+            "id": 6,
             "description": "Tank",
             "type": "class",
-            "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/tank.svg",
+            "image": "assets/classes/tank.png",
+            "brokenImage": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/tank.svg",
             "size": 32,
             "mass": 16,
             "brColor": "#16222c",
@@ -83,10 +102,11 @@
             "BrWidthSel": 15
         },
         {
-            "id": 6,
+            "id": 7,
             "description": "Support",
             "type": "class",
-            "image": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/support.svg",
+            "image": "assets/classes/support.png",
+            "brokenImage": "https://cdn.mobalytics.gg/assets/lol/images/champions-classes/support.svg",
             "size": 31,
             "mass": 15,
             "brColor": "#16222c",
@@ -97,1247 +117,1231 @@
             "BrWidthSel": 15
         },
         {
-            "id": 11,
+            "id": 12,
             "label": "Aatrox",
             "type": "champion",
             "image": "assets/champions/aatrox.webp",
             "slugWidget": "aatrox"
         },
         {
-            "id": 12,
+            "id": 13,
             "label": "Ahri",
             "type": "champion",
             "image": "assets/champions/ahri.webp",
             "slugWidget": "ahri"
         },
         {
-            "id": 13,
+            "id": 14,
             "label": "Akali",
             "type": "champion",
             "image": "assets/champions/akali.webp",
             "slugWidget": "akali"
         },
         {
-            "id": 14,
+            "id": 15,
             "label": "Akshan",
             "type": "champion",
             "image": "assets/champions/akshan.webp",
             "slugWidget": "akshan"
         },
         {
-            "id": 15,
+            "id": 16,
             "label": "Alistar",
             "type": "champion",
             "image": "assets/champions/alistar.webp",
             "slugWidget": "alistar"
         },
         {
-            "id": 16,
+            "id": 17,
             "label": "Ambessa",
             "type": "champion",
             "image": "assets/champions/ambessa.webp",
             "slugWidget": "ambessa"
         },
         {
-            "id": 17,
+            "id": 18,
             "label": "Amumu",
             "type": "champion",
             "image": "assets/champions/amumu.webp",
             "slugWidget": "amumu"
         },
         {
-            "id": 18,
+            "id": 19,
             "label": "Anivia",
             "type": "champion",
             "image": "assets/champions/anivia.webp",
             "slugWidget": "anivia"
         },
         {
-            "id": 19,
+            "id": 20,
             "label": "Annie",
             "type": "champion",
             "image": "assets/champions/annie.webp",
             "slugWidget": "annie"
         },
         {
-            "id": 20,
+            "id": 21,
             "label": "Aphelios",
             "type": "champion",
             "image": "assets/champions/aphelios.webp",
             "slugWidget": "aphelios"
         },
         {
-            "id": 21,
+            "id": 22,
             "label": "Ashe",
             "type": "champion",
             "image": "assets/champions/ashe.webp",
             "slugWidget": "ashe"
         },
         {
-            "id": 22,
+            "id": 23,
             "label": "Aurelion Sol",
             "type": "champion",
             "image": "assets/champions/aurelionsol.webp",
             "slugWidget": "aurelionsol"
         },
         {
-            "id": 23,
+            "id": 24,
             "label": "Aurora",
             "type": "champion",
             "image": "assets/champions/aurora.webp",
             "slugWidget": "aurora"
         },
         {
-            "id": 24,
+            "id": 25,
             "label": "Azir",
             "type": "champion",
             "image": "assets/champions/azir.webp",
             "slugWidget": "azir"
         },
         {
-            "id": 25,
+            "id": 26,
             "label": "Bard",
             "type": "champion",
             "image": "assets/champions/bard.webp",
             "slugWidget": "bard"
         },
         {
-            "id": 26,
+            "id": 27,
             "label": "Bel'Veth",
             "type": "champion",
             "image": "assets/champions/belveth.webp",
             "slugWidget": "belveth"
         },
         {
-            "id": 27,
+            "id": 28,
             "label": "Blitzcrank",
             "type": "champion",
             "image": "assets/champions/blitzcrank.webp",
             "slugWidget": "blitzcrank"
         },
         {
-            "id": 28,
+            "id": 29,
             "label": "Brand",
             "type": "champion",
             "image": "assets/champions/brand.webp",
             "slugWidget": "brand"
         },
         {
-            "id": 29,
+            "id": 30,
             "label": "Braum",
             "type": "champion",
             "image": "assets/champions/braum.webp",
             "slugWidget": "braum"
         },
         {
-            "id": 30,
+            "id": 31,
             "label": "Briar",
             "type": "champion",
             "image": "assets/champions/briar.webp",
             "slugWidget": "briar"
         },
         {
-            "id": 31,
+            "id": 32,
             "label": "Caitlyn",
             "type": "champion",
             "image": "assets/champions/caitlyn.webp",
             "slugWidget": "caitlyn"
         },
         {
-            "id": 32,
+            "id": 33,
             "label": "Camille",
             "type": "champion",
             "image": "assets/champions/camille.webp",
             "slugWidget": "camille"
         },
         {
-            "id": 33,
+            "id": 34,
             "label": "Cassiopeia",
             "type": "champion",
             "image": "assets/champions/cassiopeia.webp",
             "slugWidget": "cassiopeia"
         },
         {
-            "id": 34,
+            "id": 35,
             "label": "Cho'Gath",
             "type": "champion",
             "image": "assets/champions/chogath.webp",
             "slugWidget": "chogath"
         },
         {
-            "id": 35,
+            "id": 36,
             "label": "Corki",
             "type": "champion",
             "image": "assets/champions/corki.webp",
             "slugWidget": "corki"
         },
         {
-            "id": 36,
+            "id": 37,
             "label": "Darius",
             "type": "champion",
             "image": "assets/champions/darius.webp",
             "slugWidget": "darius"
         },
         {
-            "id": 37,
+            "id": 38,
             "label": "Diana",
             "type": "champion",
             "image": "assets/champions/diana.webp",
             "slugWidget": "diana"
         },
         {
-            "id": 38,
+            "id": 39,
             "label": "Draven",
             "type": "champion",
             "image": "assets/champions/draven.webp",
             "slugWidget": "draven"
         },
         {
-            "id": 39,
+            "id": 40,
             "label": "Dr. Mundo",
             "type": "champion",
             "image": "assets/champions/drmundo.webp",
             "slugWidget": "drmundo"
         },
         {
-            "id": 40,
+            "id": 41,
             "label": "Ekko",
             "type": "champion",
             "image": "assets/champions/ekko.webp",
             "slugWidget": "ekko"
         },
         {
-            "id": 41,
+            "id": 42,
             "label": "Elise",
             "type": "champion",
             "image": "assets/champions/elise.webp",
             "slugWidget": "elise"
         },
         {
-            "id": 42,
+            "id": 43,
             "label": "Evelynn",
             "type": "champion",
             "image": "assets/champions/evelynn.webp",
             "slugWidget": "evelynn"
         },
         {
-            "id": 43,
+            "id": 44,
             "label": "Ezreal",
             "type": "champion",
             "image": "assets/champions/ezreal.webp",
             "slugWidget": "ezreal"
         },
         {
-            "id": 44,
+            "id": 45,
             "label": "Fiddlesticks",
             "type": "champion",
             "image": "assets/champions/fiddlesticks.webp",
             "slugWidget": "fiddlesticks"
         },
         {
-            "id": 45,
+            "id": 46,
             "label": "Fiora",
             "type": "champion",
             "image": "assets/champions/fiora.webp",
             "slugWidget": "fiora"
         },
         {
-            "id": 46,
+            "id": 47,
             "label": "Fizz",
             "type": "champion",
             "image": "assets/champions/fizz.webp",
             "slugWidget": "fizz"
         },
         {
-            "id": 47,
+            "id": 48,
             "label": "Galio",
             "type": "champion",
             "image": "assets/champions/galio.webp",
             "slugWidget": "galio"
         },
         {
-            "id": 48,
+            "id": 49,
             "label": "Gangplank",
             "type": "champion",
             "image": "assets/champions/gangplank.webp",
             "slugWidget": "gangplank"
         },
         {
-            "id": 49,
+            "id": 50,
             "label": "Garen",
             "type": "champion",
             "image": "assets/champions/garen.webp",
             "slugWidget": "garen"
         },
         {
-            "id": 50,
+            "id": 51,
             "label": "Gnar",
             "type": "champion",
             "image": "assets/champions/gnar.webp",
             "slugWidget": "gnar"
         },
         {
-            "id": 51,
+            "id": 52,
             "label": "Gragas",
             "type": "champion",
             "image": "assets/champions/gragas.webp",
             "slugWidget": "gragas"
         },
         {
-            "id": 52,
+            "id": 53,
             "label": "Graves",
             "type": "champion",
             "image": "assets/champions/graves.webp",
             "slugWidget": "graves"
         },
         {
-            "id": 53,
+            "id": 54,
             "label": "Gwen",
             "type": "champion",
             "image": "assets/champions/gwen.webp",
             "slugWidget": "gwen"
         },
         {
-            "id": 54,
+            "id": 55,
             "label": "Hecarim",
             "type": "champion",
             "image": "assets/champions/hecarim.webp",
             "slugWidget": "hecarim"
         },
         {
-            "id": 55,
+            "id": 56,
             "label": "Heimerdinger",
             "type": "champion",
             "image": "assets/champions/heimerdinger.webp",
             "slugWidget": "heimerdinger"
         },
         {
-            "id": 56,
+            "id": 57,
             "label": "Hwei",
             "type": "champion",
             "image": "assets/champions/hwei.webp",
             "slugWidget": "hwei"
         },
         {
-            "id": 57,
+            "id": 58,
             "label": "Illaoi",
             "type": "champion",
             "image": "assets/champions/illaoi.webp",
             "slugWidget": "illaoi"
         },
         {
-            "id": 58,
+            "id": 59,
             "label": "Irelia",
             "type": "champion",
             "image": "assets/champions/irelia.webp",
             "slugWidget": "irelia"
         },
         {
-            "id": 59,
+            "id": 60,
             "label": "Ivern",
             "type": "champion",
             "image": "assets/champions/ivern.webp",
             "slugWidget": "ivern"
         },
         {
-            "id": 60,
+            "id": 61,
             "label": "Janna",
             "type": "champion",
             "image": "assets/champions/janna.webp",
             "slugWidget": "janna"
         },
         {
-            "id": 61,
+            "id": 62,
             "label": "Jarvan IV",
             "type": "champion",
             "image": "assets/champions/jarvaniv.webp",
             "slugWidget": "jarvaniv"
         },
         {
-            "id": 62,
+            "id": 63,
             "label": "Jax",
             "type": "champion",
             "image": "assets/champions/jax.webp",
             "slugWidget": "jax"
         },
         {
-            "id": 63,
+            "id": 64,
             "label": "Jayce",
             "type": "champion",
             "image": "assets/champions/jayce.webp",
             "slugWidget": "jayce"
         },
         {
-            "id": 64,
+            "id": 65,
             "label": "Jhin",
             "type": "champion",
             "image": "assets/champions/jhin.webp",
             "slugWidget": "jhin"
         },
         {
-            "id": 65,
+            "id": 66,
             "label": "Jinx",
             "type": "champion",
             "image": "assets/champions/jinx.webp",
             "slugWidget": "jinx"
         },
         {
-            "id": 66,
+            "id": 67,
             "label": "Kai'Sa",
             "type": "champion",
             "image": "assets/champions/kaisa.webp",
             "slugWidget": "kaisa"
         },
         {
-            "id": 67,
+            "id": 68,
             "label": "Kalista",
             "type": "champion",
             "image": "assets/champions/kalista.webp",
             "slugWidget": "kalista"
         },
         {
-            "id": 68,
+            "id": 69,
             "label": "Karma",
             "type": "champion",
             "image": "assets/champions/karma.webp",
             "slugWidget": "karma"
         },
         {
-            "id": 69,
+            "id": 70,
             "label": "Karthus",
             "type": "champion",
             "image": "assets/champions/karthus.webp",
             "slugWidget": "karthus"
         },
         {
-            "id": 70,
+            "id": 71,
             "label": "Kassadin",
             "type": "champion",
             "image": "assets/champions/kassadin.webp",
             "slugWidget": "kassadin"
         },
         {
-            "id": 71,
+            "id": 72,
             "label": "Katarina",
             "type": "champion",
             "image": "assets/champions/katarina.webp",
             "slugWidget": "katarina"
         },
         {
-            "id": 72,
+            "id": 73,
             "label": "Kayle",
             "type": "champion",
             "image": "assets/champions/kayle.webp",
             "slugWidget": "kayle"
         },
         {
-            "id": 73,
+            "id": 74,
             "label": "Kayn",
             "type": "champion",
             "image": "assets/champions/kayn.webp",
             "slugWidget": "kayn"
         },
         {
-            "id": 74,
+            "id": 75,
             "label": "Kennen",
             "type": "champion",
             "image": "assets/champions/kennen.webp",
             "slugWidget": "kennen"
         },
         {
-            "id": 75,
+            "id": 76,
             "label": "Kha'Zix",
             "type": "champion",
             "image": "assets/champions/khazix.webp",
             "slugWidget": "khazix"
         },
         {
-            "id": 76,
+            "id": 77,
             "label": "Kindred",
             "type": "champion",
             "image": "assets/champions/kindred.webp",
             "slugWidget": "kindred"
         },
         {
-            "id": 77,
+            "id": 78,
             "label": "Kled",
             "type": "champion",
             "image": "assets/champions/kled.webp",
             "slugWidget": "kled"
         },
         {
-            "id": 78,
+            "id": 79,
             "label": "Kog'Maw",
             "type": "champion",
             "image": "assets/champions/kogmaw.webp",
             "slugWidget": "kogmaw"
         },
         {
-            "id": 79,
+            "id": 80,
             "label": "K'Sante",
             "type": "champion",
             "image": "assets/champions/ksante.webp",
             "slugWidget": "ksante"
         },
         {
-            "id": 80,
+            "id": 81,
             "label": "LeBlanc",
             "type": "champion",
             "image": "assets/champions/leblanc.webp",
             "slugWidget": "leblanc"
         },
         {
-            "id": 81,
+            "id": 82,
             "label": "Lee Sin",
             "type": "champion",
             "image": "assets/champions/leesin.webp",
             "slugWidget": "leesin"
         },
         {
-            "id": 82,
+            "id": 83,
             "label": "Leona",
             "type": "champion",
             "image": "assets/champions/leona.webp",
             "slugWidget": "leona"
         },
         {
-            "id": 83,
+            "id": 84,
             "label": "Lillia",
             "type": "champion",
             "image": "assets/champions/lillia.webp",
             "slugWidget": "lillia"
         },
         {
-            "id": 84,
+            "id": 85,
             "label": "Lissandra",
             "type": "champion",
             "image": "assets/champions/lissandra.webp",
             "slugWidget": "lissandra"
         },
         {
-            "id": 85,
+            "id": 86,
             "label": "Lucian",
             "type": "champion",
             "image": "assets/champions/lucian.webp",
             "slugWidget": "lucian"
         },
         {
-            "id": 86,
+            "id": 87,
             "label": "Lulu",
             "type": "champion",
             "image": "assets/champions/lulu.webp",
             "slugWidget": "lulu"
         },
         {
-            "id": 87,
+            "id": 88,
             "label": "Lux",
             "type": "champion",
             "image": "assets/champions/lux.webp",
             "slugWidget": "lux"
         },
         {
-            "id": 88,
+            "id": 89,
             "label": "Malphite",
             "type": "champion",
             "image": "assets/champions/malphite.webp",
             "slugWidget": "malphite"
         },
         {
-            "id": 89,
+            "id": 90,
             "label": "Malzahar",
             "type": "champion",
             "image": "assets/champions/malzahar.webp",
             "slugWidget": "malzahar"
         },
         {
-            "id": 90,
+            "id": 91,
             "label": "Maokai",
             "type": "champion",
             "image": "assets/champions/maokai.webp",
             "slugWidget": "maokai"
         },
         {
-            "id": 91,
+            "id": 92,
             "label": "Master Yi",
             "type": "champion",
             "image": "assets/champions/masteryi.webp",
             "slugWidget": "masteryi"
         },
         {
-            "id": 92,
+            "id": 93,
             "label": "Mel",
             "type": "champion",
             "image": "assets/champions/mel.webp",
             "slugWidget": "mel"
         },
         {
-            "id": 93,
+            "id": 94,
             "label": "Milio",
             "type": "champion",
             "image": "assets/champions/milio.webp",
             "slugWidget": "milio"
         },
         {
-            "id": 94,
+            "id": 95,
             "label": "Miss Fortune",
             "type": "champion",
             "image": "assets/champions/missfortune.webp",
             "slugWidget": "missfortune"
         },
         {
-            "id": 95,
+            "id": 96,
             "label": "Mordekaiser",
             "type": "champion",
             "image": "assets/champions/mordekaiser.webp",
             "slugWidget": "mordekaiser"
         },
         {
-            "id": 96,
+            "id": 97,
             "label": "Morgana",
             "type": "champion",
             "image": "assets/champions/morgana.webp",
             "slugWidget": "morgana"
         },
         {
-            "id": 97,
+            "id": 98,
             "label": "Naafiri",
             "type": "champion",
             "image": "assets/champions/naafiri.webp",
             "slugWidget": "naafiri"
         },
         {
-            "id": 98,
+            "id": 99,
             "label": "Nami",
             "type": "champion",
             "image": "assets/champions/nami.webp",
             "slugWidget": "nami"
         },
         {
-            "id": 99,
+            "id": 100,
             "label": "Nasus",
             "type": "champion",
             "image": "assets/champions/nasus.webp",
             "slugWidget": "nasus"
         },
         {
-            "id": 100,
+            "id": 101,
             "label": "Nautilus",
             "type": "champion",
             "image": "assets/champions/nautilus.webp",
             "slugWidget": "nautilus"
         },
         {
-            "id": 101,
+            "id": 102,
             "label": "Neeko",
             "type": "champion",
             "image": "assets/champions/neeko.webp",
             "slugWidget": "neeko"
         },
         {
-            "id": 102,
+            "id": 103,
             "label": "Nidalee",
             "type": "champion",
             "image": "assets/champions/nidalee.webp",
             "slugWidget": "nidalee"
         },
         {
-            "id": 103,
+            "id": 104,
             "label": "Nilah",
             "type": "champion",
             "image": "assets/champions/nilah.webp",
             "slugWidget": "nilah"
         },
         {
-            "id": 104,
+            "id": 105,
             "label": "Nocturne",
             "type": "champion",
             "image": "assets/champions/nocturne.webp",
             "slugWidget": "nocturne"
         },
         {
-            "id": 105,
+            "id": 106,
             "label": "Nunu & Willump",
             "type": "champion",
             "image": "assets/champions/nunu.webp",
             "slugWidget": "nunu"
         },
         {
-            "id": 106,
+            "id": 107,
             "label": "Olaf",
             "type": "champion",
             "image": "assets/champions/olaf.webp",
             "slugWidget": "olaf"
         },
         {
-            "id": 107,
+            "id": 108,
             "label": "Orianna",
             "type": "champion",
             "image": "assets/champions/orianna.webp",
             "slugWidget": "orianna"
         },
         {
-            "id": 108,
+            "id": 109,
             "label": "Ornn",
             "type": "champion",
             "image": "assets/champions/ornn.webp",
             "slugWidget": "ornn"
         },
         {
-            "id": 109,
+            "id": 110,
             "label": "Pantheon",
             "type": "champion",
             "image": "assets/champions/pantheon.webp",
             "slugWidget": "pantheon"
         },
         {
-            "id": 110,
+            "id": 111,
             "label": "Poppy",
             "type": "champion",
             "image": "assets/champions/poppy.webp",
             "slugWidget": "poppy"
         },
         {
-            "id": 111,
+            "id": 112,
             "label": "Pyke",
             "type": "champion",
             "image": "assets/champions/pyke.webp",
             "slugWidget": "pyke"
         },
         {
-            "id": 112,
+            "id": 113,
             "label": "Qiyana",
             "type": "champion",
             "image": "assets/champions/qiyana.webp",
             "slugWidget": "qiyana"
         },
         {
-            "id": 113,
+            "id": 114,
             "label": "Quinn",
             "type": "champion",
             "image": "assets/champions/quinn.webp",
             "slugWidget": "quinn"
         },
         {
-            "id": 114,
+            "id": 115,
             "label": "Rakan",
             "type": "champion",
             "image": "assets/champions/rakan.webp",
             "slugWidget": "rakan"
         },
         {
-            "id": 115,
+            "id": 116,
             "label": "Rammus",
             "type": "champion",
             "image": "assets/champions/rammus.webp",
             "slugWidget": "rammus"
         },
         {
-            "id": 116,
+            "id": 117,
             "label": "Rek'Sai",
             "type": "champion",
             "image": "assets/champions/reksai.webp",
             "slugWidget": "reksai"
         },
         {
-            "id": 117,
+            "id": 118,
             "label": "Rell",
             "type": "champion",
             "image": "assets/champions/rell.webp",
             "slugWidget": "rell"
         },
         {
-            "id": 118,
+            "id": 119,
             "label": "Renata Glasc",
             "type": "champion",
             "image": "assets/champions/renata.webp",
             "slugWidget": "renata"
         },
         {
-            "id": 119,
+            "id": 120,
             "label": "Renekton",
             "type": "champion",
             "image": "assets/champions/renekton.webp",
             "slugWidget": "renekton"
         },
         {
-            "id": 120,
+            "id": 121,
             "label": "Rengar",
             "type": "champion",
             "image": "assets/champions/rengar.webp",
             "slugWidget": "rengar"
         },
         {
-            "id": 121,
+            "id": 122,
             "label": "Riven",
             "type": "champion",
             "image": "assets/champions/riven.webp",
             "slugWidget": "riven"
         },
         {
-            "id": 122,
+            "id": 123,
             "label": "Rumble",
             "type": "champion",
             "image": "assets/champions/rumble.webp",
             "slugWidget": "rumble"
         },
         {
-            "id": 123,
+            "id": 124,
             "label": "Ryze",
             "type": "champion",
             "image": "assets/champions/ryze.webp",
             "slugWidget": "ryze"
         },
         {
-            "id": 124,
+            "id": 125,
             "label": "Samira",
             "type": "champion",
             "image": "assets/champions/samira.webp",
             "slugWidget": "samira"
         },
         {
-            "id": 125,
+            "id": 126,
             "label": "Sejuani",
             "type": "champion",
             "image": "assets/champions/sejuani.webp",
             "slugWidget": "sejuani"
         },
         {
-            "id": 126,
+            "id": 127,
             "label": "Senna",
             "type": "champion",
             "image": "assets/champions/senna.webp",
             "slugWidget": "senna"
         },
         {
-            "id": 127,
+            "id": 128,
             "label": "Seraphine",
             "type": "champion",
             "image": "assets/champions/seraphine.webp",
             "slugWidget": "seraphine"
         },
         {
-            "id": 128,
+            "id": 129,
             "label": "Sett",
             "type": "champion",
             "image": "assets/champions/sett.webp",
             "slugWidget": "sett"
         },
         {
-            "id": 129,
+            "id": 130,
             "label": "Shaco",
             "type": "champion",
             "image": "assets/champions/shaco.webp",
             "slugWidget": "shaco"
         },
         {
-            "id": 130,
+            "id": 131,
             "label": "Shen",
             "type": "champion",
             "image": "assets/champions/shen.webp",
             "slugWidget": "shen"
         },
         {
-            "id": 131,
+            "id": 132,
             "label": "Shyvana",
             "type": "champion",
             "image": "assets/champions/shyvana.webp",
             "slugWidget": "shyvana"
         },
         {
-            "id": 132,
+            "id": 133,
             "label": "Singed",
             "type": "champion",
             "image": "assets/champions/singed.webp",
             "slugWidget": "singed"
         },
         {
-            "id": 133,
+            "id": 134,
             "label": "Sion",
             "type": "champion",
             "image": "assets/champions/sion.webp",
             "slugWidget": "sion"
         },
         {
-            "id": 134,
+            "id": 135,
             "label": "Sivir",
             "type": "champion",
             "image": "assets/champions/sivir.webp",
             "slugWidget": "sivir"
         },
         {
-            "id": 135,
+            "id": 136,
             "label": "Skarner",
             "type": "champion",
             "image": "assets/champions/skarner.webp",
             "slugWidget": "skarner"
         },
         {
-            "id": 136,
+            "id": 137,
             "label": "Smolder",
             "type": "champion",
             "image": "assets/champions/smolder.webp",
             "slugWidget": "smolder"
         },
         {
-            "id": 137,
+            "id": 138,
             "label": "Sona",
             "type": "champion",
             "image": "assets/champions/sona.webp",
             "slugWidget": "sona"
         },
         {
-            "id": 138,
+            "id": 139,
             "label": "Soraka",
             "type": "champion",
             "image": "assets/champions/soraka.webp",
             "slugWidget": "soraka"
         },
         {
-            "id": 139,
+            "id": 140,
             "label": "Swain",
             "type": "champion",
             "image": "assets/champions/swain.webp",
             "slugWidget": "swain"
         },
         {
-            "id": 140,
+            "id": 141,
             "label": "Sylas",
             "type": "champion",
             "image": "assets/champions/sylas.webp",
             "slugWidget": "sylas"
         },
         {
-            "id": 141,
+            "id": 142,
             "label": "Syndra",
             "type": "champion",
             "image": "assets/champions/syndra.webp",
             "slugWidget": "syndra"
         },
         {
-            "id": 142,
+            "id": 143,
             "label": "Tahm Kench",
             "type": "champion",
             "image": "assets/champions/tahmkench.webp",
             "slugWidget": "tahmkench"
         },
         {
-            "id": 143,
+            "id": 144,
             "label": "Taliyah",
             "type": "champion",
             "image": "assets/champions/taliyah.webp",
             "slugWidget": "taliyah"
         },
         {
-            "id": 144,
+            "id": 145,
             "label": "Talon",
             "type": "champion",
             "image": "assets/champions/talon.webp",
             "slugWidget": "talon"
         },
         {
-            "id": 145,
+            "id": 146,
             "label": "Taric",
             "type": "champion",
             "image": "assets/champions/taric.webp",
             "slugWidget": "taric"
         },
         {
-            "id": 146,
+            "id": 147,
             "label": "Teemo",
             "type": "champion",
             "image": "assets/champions/teemo.webp",
             "slugWidget": "teemo"
         },
         {
-            "id": 147,
+            "id": 148,
             "label": "Thresh",
             "type": "champion",
             "image": "assets/champions/thresh.webp",
             "slugWidget": "thresh"
         },
         {
-            "id": 148,
+            "id": 149,
             "label": "Tristana",
             "type": "champion",
             "image": "assets/champions/tristana.webp",
             "slugWidget": "tristana"
         },
         {
-            "id": 149,
+            "id": 150,
             "label": "Trundle",
             "type": "champion",
             "image": "assets/champions/trundle.webp",
             "slugWidget": "trundle"
         },
         {
-            "id": 150,
+            "id": 151,
             "label": "Tryndamere",
             "type": "champion",
             "image": "assets/champions/tryndamere.webp",
             "slugWidget": "tryndamere"
         },
         {
-            "id": 151,
+            "id": 152,
             "label": "Twisted Fate",
             "type": "champion",
             "image": "assets/champions/twistedfate.webp",
             "slugWidget": "twistedfate"
         },
         {
-            "id": 152,
+            "id": 153,
             "label": "Twitch",
             "type": "champion",
             "image": "assets/champions/twitch.webp",
             "slugWidget": "twitch"
         },
         {
-            "id": 153,
+            "id": 154,
             "label": "Udyr",
             "type": "champion",
             "image": "assets/champions/udyr.webp",
             "slugWidget": "udyr"
         },
         {
-            "id": 154,
+            "id": 155,
             "label": "Urgot",
             "type": "champion",
             "image": "assets/champions/urgot.webp",
             "slugWidget": "urgot"
         },
         {
-            "id": 155,
+            "id": 156,
             "label": "Varus",
             "type": "champion",
             "image": "assets/champions/varus.webp",
             "slugWidget": "varus"
         },
         {
-            "id": 156,
+            "id": 157,
             "label": "Vayne",
             "type": "champion",
             "image": "assets/champions/vayne.webp",
             "slugWidget": "vayne"
         },
         {
-            "id": 157,
+            "id": 158,
             "label": "Veigar",
             "type": "champion",
             "image": "assets/champions/veigar.webp",
             "slugWidget": "veigar"
         },
         {
-            "id": 158,
+            "id": 159,
             "label": "Vel'Koz",
             "type": "champion",
             "image": "assets/champions/velkoz.webp",
             "slugWidget": "velkoz"
         },
         {
-            "id": 159,
+            "id": 160,
             "label": "Vex",
             "type": "champion",
             "image": "assets/champions/vex.webp",
             "slugWidget": "vex"
         },
         {
-            "id": 160,
+            "id": 161,
             "label": "Vi",
             "type": "champion",
             "image": "assets/champions/vi.webp",
             "slugWidget": "vi"
         },
         {
-            "id": 161,
+            "id": 162,
             "label": "Viego",
             "type": "champion",
             "image": "assets/champions/viego.webp",
             "slugWidget": "viego"
         },
         {
-            "id": 162,
+            "id": 163,
             "label": "Viktor",
             "type": "champion",
             "image": "assets/champions/viktor.webp",
             "slugWidget": "viktor"
         },
         {
-            "id": 163,
+            "id": 164,
             "label": "Vladimir",
             "type": "champion",
             "image": "assets/champions/vladimir.webp",
             "slugWidget": "vladimir"
         },
         {
-            "id": 164,
+            "id": 165,
             "label": "Volibear",
             "type": "champion",
             "image": "assets/champions/volibear.webp",
             "slugWidget": "volibear"
         },
         {
-            "id": 165,
+            "id": 166,
             "label": "Warwick",
             "type": "champion",
             "image": "assets/champions/warwick.webp",
             "slugWidget": "warwick"
         },
         {
-            "id": 166,
+            "id": 167,
             "label": "Wukong",
             "type": "champion",
             "image": "assets/champions/monkeyking.webp",
             "slugWidget": "monkeyking"
         },
         {
-            "id": 167,
+            "id": 168,
             "label": "Xayah",
             "type": "champion",
             "image": "assets/champions/xayah.webp",
             "slugWidget": "xayah"
         },
         {
-            "id": 168,
+            "id": 169,
             "label": "Xerath",
             "type": "champion",
             "image": "assets/champions/xerath.webp",
             "slugWidget": "xerath"
         },
         {
-            "id": 169,
+            "id": 170,
             "label": "Xin Zhao",
             "type": "champion",
             "image": "assets/champions/xinzhao.webp",
             "slugWidget": "xinzhao"
         },
         {
-            "id": 170,
+            "id": 171,
             "label": "Yasuo",
             "type": "champion",
             "image": "assets/champions/yasuo.webp",
             "slugWidget": "yasuo"
         },
         {
-            "id": 171,
+            "id": 172,
             "label": "Yone",
             "type": "champion",
             "image": "assets/champions/yone.webp",
             "slugWidget": "yone"
         },
         {
-            "id": 172,
+            "id": 173,
             "label": "Yorick",
             "type": "champion",
             "image": "assets/champions/yorick.webp",
             "slugWidget": "yorick"
         },
         {
-            "id": 173,
+            "id": 174,
             "label": "Yunara",
             "type": "champion",
             "image": "assets/champions/yunara.webp",
             "slugWidget": "yunara"
         },
         {
-            "id": 174,
+            "id": 175,
             "label": "Yuumi",
             "type": "champion",
             "image": "assets/champions/yuumi.webp",
             "slugWidget": "yuumi"
         },
         {
-            "id": 175,
+            "id": 176,
             "label": "Zac",
             "type": "champion",
             "image": "assets/champions/zac.webp",
             "slugWidget": "zac"
         },
         {
-            "id": 176,
+            "id": 177,
             "label": "Zed",
             "type": "champion",
             "image": "assets/champions/zed.webp",
             "slugWidget": "zed"
         },
         {
-            "id": 177,
+            "id": 178,
             "label": "Zeri",
             "type": "champion",
             "image": "assets/champions/zeri.webp",
             "slugWidget": "zeri"
         },
         {
-            "id": 178,
+            "id": 179,
             "label": "Ziggs",
             "type": "champion",
             "image": "assets/champions/ziggs.webp",
             "slugWidget": "ziggs"
         },
         {
-            "id": 179,
+            "id": 180,
             "label": "Zilean",
             "type": "champion",
             "image": "assets/champions/zilean.webp",
             "slugWidget": "zilean"
         },
         {
-            "id": 180,
+            "id": 181,
             "label": "Zoe",
             "type": "champion",
             "image": "assets/champions/zoe.webp",
             "slugWidget": "zoe"
         },
         {
-            "id": 181,
+            "id": 182,
             "label": "Zyra",
             "type": "champion",
             "image": "assets/champions/zyra.webp",
             "slugWidget": "zyra"
-        },
-        {
-            "id": 9999,
-            "label": "",
-            "description": "created by cyterat",
-            "image": "https://avatars.githubusercontent.com/u/29544625?v=4",
-            "size": 15,
-            "mass": 5,
-            "brColor": "#343434",
-            "bgColor": "#343434",
-            "brColorHg": "#343434",
-            "bgColorHg": "#343434"
         }
     ],
     "edges": [
         {
             "from": 0,
-            "to": 9999
-        },
-        {
-            "from": 0,
             "to": 1
         },
         {
-            "from": 0,
+            "from": 1,
             "to": 2
         },
         {
-            "from": 0,
+            "from": 1,
             "to": 3
         },
         {
-            "from": 0,
+            "from": 1,
             "to": 4
         },
         {
-            "from": 0,
+            "from": 1,
             "to": 5
         },
         {
-            "from": 0,
+            "from": 1,
             "to": 6
         },
         {
             "from": 1,
-            "to": 11
+            "to": 7
         },
         {
             "from": 2,
@@ -1356,71 +1360,71 @@
             "to": 15
         },
         {
-            "from": 1,
+            "from": 6,
             "to": 16
         },
         {
-            "from": 5,
+            "from": 2,
             "to": 17
         },
         {
-            "from": 2,
+            "from": 6,
             "to": 18
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 19
         },
         {
-            "from": 4,
+            "from": 3,
             "to": 20
         },
         {
-            "from": 4,
+            "from": 5,
             "to": 21
         },
         {
-            "from": 2,
+            "from": 5,
             "to": 22
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 23
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 24
         },
         {
-            "from": 6,
+            "from": 3,
             "to": 25
         },
         {
-            "from": 1,
+            "from": 7,
             "to": 26
         },
         {
-            "from": 5,
+            "from": 2,
             "to": 27
         },
         {
-            "from": 2,
+            "from": 6,
             "to": 28
         },
         {
-            "from": 5,
+            "from": 3,
             "to": 29
         },
         {
-            "from": 1,
+            "from": 6,
             "to": 30
         },
         {
-            "from": 4,
+            "from": 2,
             "to": 31
         },
         {
-            "from": 1,
+            "from": 5,
             "to": 32
         },
         {
@@ -1428,23 +1432,23 @@
             "to": 33
         },
         {
-            "from": 5,
+            "from": 3,
             "to": 34
         },
         {
-            "from": 4,
+            "from": 6,
             "to": 35
         },
         {
-            "from": 1,
+            "from": 5,
             "to": 36
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 37
         },
         {
-            "from": 4,
+            "from": 2,
             "to": 38
         },
         {
@@ -1452,15 +1456,15 @@
             "to": 39
         },
         {
-            "from": 3,
+            "from": 6,
             "to": 40
         },
         {
-            "from": 3,
+            "from": 4,
             "to": 41
         },
         {
-            "from": 3,
+            "from": 4,
             "to": 42
         },
         {
@@ -1468,47 +1472,47 @@
             "to": 43
         },
         {
-            "from": 2,
+            "from": 5,
             "to": 44
         },
         {
-            "from": 1,
+            "from": 3,
             "to": 45
         },
         {
-            "from": 3,
+            "from": 2,
             "to": 46
         },
         {
-            "from": 5,
+            "from": 4,
             "to": 47
         },
         {
-            "from": 1,
+            "from": 6,
             "to": 48
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 49
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 50
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 51
         },
         {
-            "from": 4,
+            "from": 2,
             "to": 52
         },
         {
-            "from": 1,
+            "from": 5,
             "to": 53
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 54
         },
         {
@@ -1516,59 +1520,59 @@
             "to": 55
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 56
         },
         {
-            "from": 1,
+            "from": 3,
             "to": 57
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 58
         },
         {
-            "from": 6,
+            "from": 2,
             "to": 59
         },
         {
-            "from": 6,
+            "from": 7,
             "to": 60
         },
         {
-            "from": 1,
+            "from": 7,
             "to": 61
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 62
         },
         {
-            "from": 4,
+            "from": 2,
             "to": 63
         },
         {
-            "from": 4,
+            "from": 5,
             "to": 64
         },
         {
-            "from": 4,
+            "from": 5,
             "to": 65
         },
         {
-            "from": 4,
+            "from": 5,
             "to": 66
         },
         {
-            "from": 4,
+            "from": 5,
             "to": 67
         },
         {
-            "from": 2,
+            "from": 5,
             "to": 68
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 69
         },
         {
@@ -1576,15 +1580,15 @@
             "to": 70
         },
         {
-            "from": 3,
+            "from": 4,
             "to": 71
         },
         {
-            "from": 2,
+            "from": 4,
             "to": 72
         },
         {
-            "from": 1,
+            "from": 3,
             "to": 73
         },
         {
@@ -1600,11 +1604,11 @@
             "to": 76
         },
         {
-            "from": 1,
+            "from": 5,
             "to": 77
         },
         {
-            "from": 4,
+            "from": 2,
             "to": 78
         },
         {
@@ -1612,19 +1616,19 @@
             "to": 79
         },
         {
-            "from": 3,
+            "from": 6,
             "to": 80
         },
         {
-            "from": 1,
+            "from": 4,
             "to": 81
         },
         {
-            "from": 5,
+            "from": 2,
             "to": 82
         },
         {
-            "from": 1,
+            "from": 6,
             "to": 83
         },
         {
@@ -1632,47 +1636,47 @@
             "to": 84
         },
         {
-            "from": 4,
+            "from": 3,
             "to": 85
         },
         {
-            "from": 6,
+            "from": 5,
             "to": 86
         },
         {
-            "from": 2,
+            "from": 7,
             "to": 87
         },
         {
-            "from": 5,
+            "from": 3,
             "to": 88
         },
         {
-            "from": 2,
+            "from": 6,
             "to": 89
         },
         {
-            "from": 5,
+            "from": 3,
             "to": 90
         },
         {
-            "from": 3,
+            "from": 6,
             "to": 91
         },
         {
-            "from": 2,
+            "from": 4,
             "to": 92
         },
         {
-            "from": 6,
+            "from": 3,
             "to": 93
         },
         {
-            "from": 4,
+            "from": 7,
             "to": 94
         },
         {
-            "from": 1,
+            "from": 5,
             "to": 95
         },
         {
@@ -1684,19 +1688,19 @@
             "to": 97
         },
         {
-            "from": 6,
+            "from": 4,
             "to": 98
         },
         {
-            "from": 1,
+            "from": 7,
             "to": 99
         },
         {
-            "from": 5,
+            "from": 2,
             "to": 100
         },
         {
-            "from": 2,
+            "from": 6,
             "to": 101
         },
         {
@@ -1704,19 +1708,19 @@
             "to": 102
         },
         {
-            "from": 1,
+            "from": 4,
             "to": 103
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 104
         },
         {
-            "from": 5,
+            "from": 2,
             "to": 105
         },
         {
-            "from": 1,
+            "from": 6,
             "to": 106
         },
         {
@@ -1724,15 +1728,15 @@
             "to": 107
         },
         {
-            "from": 5,
+            "from": 3,
             "to": 108
         },
         {
-            "from": 1,
+            "from": 6,
             "to": 109
         },
         {
-            "from": 5,
+            "from": 2,
             "to": 110
         },
         {
@@ -1740,7 +1744,7 @@
             "to": 111
         },
         {
-            "from": 3,
+            "from": 7,
             "to": 112
         },
         {
@@ -1748,19 +1752,19 @@
             "to": 113
         },
         {
-            "from": 6,
+            "from": 5,
             "to": 114
         },
         {
-            "from": 5,
+            "from": 7,
             "to": 115
         },
         {
-            "from": 1,
+            "from": 6,
             "to": 116
         },
         {
-            "from": 5,
+            "from": 2,
             "to": 117
         },
         {
@@ -1768,19 +1772,19 @@
             "to": 118
         },
         {
-            "from": 1,
+            "from": 7,
             "to": 119
         },
         {
-            "from": 3,
+            "from": 2,
             "to": 120
         },
         {
-            "from": 1,
+            "from": 4,
             "to": 121
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 122
         },
         {
@@ -1788,7 +1792,7 @@
             "to": 123
         },
         {
-            "from": 4,
+            "from": 3,
             "to": 124
         },
         {
@@ -1800,35 +1804,35 @@
             "to": 126
         },
         {
-            "from": 6,
+            "from": 7,
             "to": 127
         },
         {
-            "from": 1,
+            "from": 7,
             "to": 128
         },
         {
-            "from": 3,
+            "from": 2,
             "to": 129
         },
         {
-            "from": 5,
+            "from": 4,
             "to": 130
         },
         {
-            "from": 1,
+            "from": 6,
             "to": 131
         },
         {
-            "from": 5,
+            "from": 2,
             "to": 132
         },
         {
-            "from": 5,
+            "from": 6,
             "to": 133
         },
         {
-            "from": 4,
+            "from": 6,
             "to": 134
         },
         {
@@ -1836,35 +1840,35 @@
             "to": 135
         },
         {
-            "from": 4,
+            "from": 6,
             "to": 136
         },
         {
-            "from": 6,
+            "from": 5,
             "to": 137
         },
         {
-            "from": 6,
+            "from": 7,
             "to": 138
         },
         {
-            "from": 2,
+            "from": 7,
             "to": 139
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 140
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 141
         },
         {
-            "from": 5,
+            "from": 3,
             "to": 142
         },
         {
-            "from": 2,
+            "from": 6,
             "to": 143
         },
         {
@@ -1872,27 +1876,27 @@
             "to": 144
         },
         {
-            "from": 6,
+            "from": 4,
             "to": 145
         },
         {
-            "from": 4,
+            "from": 7,
             "to": 146
         },
         {
-            "from": 6,
+            "from": 5,
             "to": 147
         },
         {
-            "from": 4,
+            "from": 7,
             "to": 148
         },
         {
-            "from": 1,
+            "from": 5,
             "to": 149
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 150
         },
         {
@@ -1900,43 +1904,43 @@
             "to": 151
         },
         {
-            "from": 4,
+            "from": 3,
             "to": 152
         },
         {
-            "from": 1,
+            "from": 5,
             "to": 153
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 154
         },
         {
-            "from": 4,
+            "from": 2,
             "to": 155
         },
         {
-            "from": 4,
+            "from": 5,
             "to": 156
         },
         {
-            "from": 2,
+            "from": 5,
             "to": 157
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 158
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 159
         },
         {
-            "from": 1,
+            "from": 3,
             "to": 160
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 161
         },
         {
@@ -1944,59 +1948,59 @@
             "to": 162
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 163
         },
         {
-            "from": 1,
+            "from": 3,
             "to": 164
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 165
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 166
         },
         {
-            "from": 4,
+            "from": 2,
             "to": 167
         },
         {
-            "from": 2,
+            "from": 5,
             "to": 168
         },
         {
-            "from": 1,
+            "from": 3,
             "to": 169
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 170
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 171
         },
         {
-            "from": 1,
+            "from": 2,
             "to": 172
         },
         {
-            "from": 4,
+            "from": 2,
             "to": 173
         },
         {
-            "from": 6,
+            "from": 5,
             "to": 174
         },
         {
-            "from": 5,
+            "from": 7,
             "to": 175
         },
         {
-            "from": 3,
+            "from": 6,
             "to": 176
         },
         {
@@ -2004,20 +2008,24 @@
             "to": 177
         },
         {
-            "from": 2,
+            "from": 5,
             "to": 178
         },
         {
-            "from": 6,
+            "from": 3,
             "to": 179
         },
         {
-            "from": 2,
+            "from": 7,
             "to": 180
         },
         {
-            "from": 2,
+            "from": 3,
             "to": 181
+        },
+        {
+            "from": 3,
+            "to": 182
         }
     ]
 }
