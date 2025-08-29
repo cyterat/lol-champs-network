@@ -1292,9 +1292,25 @@
             "type": "champion",
             "image": "assets/champions/zyra.webp",
             "slugWidget": "zyra"
+        },
+        {
+            "id": 9999,
+            "label": "",
+            "description": "created by cyterat",
+            "image": "https://avatars.githubusercontent.com/u/29544625?v=4",
+            "size": 15,
+            "mass": 5,
+            "brColor": "#343434",
+            "bgColor": "#343434",
+            "brColorHg": "#343434",
+            "bgColorHg": "#343434"
         }
     ],
     "edges": [
+        {
+            "from": 0,
+            "to": 9999
+        },
         {
             "from": 0,
             "to": 1

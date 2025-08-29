@@ -18,6 +18,19 @@ body {
     border: none;
 }
 
+/* Create the watermark using a pseudo-element */
+#mynetwork::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('assets/other/background.jpg');
+    background-size: cover;
+    background-position: top;
+    opacity: 0.4;
+}
 
 /* Tooltip styling */
 .vis-tooltip {
@@ -49,9 +62,9 @@ body {
 #champion-tooltip-panel {
     display: none;
     position: fixed;
-    right: 20px;
+    left: 20px;
     top: 20px;
-    max-width: none;
+    max-width: -webkit-fill-available;
     overflow: auto;
     background: #1a1a1a;
     /* background: none;  */
@@ -59,6 +72,13 @@ body {
     border-radius: 8px;
     padding: 8px;
     z-index: 9999;
+}
+
+@media screen and (max-width: 670px){
+   #champion-tooltip-panel {
+       right: 0px;
+       left: 0px;
+   }
 }
 
 #role-selector {
@@ -71,6 +91,25 @@ body {
     border-radius: 4px; 
     font-size: 12px; 
     outline: none;
+}
+
+.watermark {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9999;
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.watermark:hover {
+  opacity: 1; 
+}
+
+.watermark img {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
 }
 
 /* Error message styling */
