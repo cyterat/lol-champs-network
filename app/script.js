@@ -49,11 +49,12 @@ class NetworkVisualization {
             borderWidthSelected: node.BrWidthSel || 3,
             shadow: false,
             font: {
-                color: '#FFFFFF',
+                color: '#f0f0f0',
                 size: 14,
-                face: 'Arial, sans-serif',
-                strokeWidth: 3,
-                strokeColor: '#343434'
+                face: 'Beaufort for LOL, sans-serif',
+                weight: 'normal',
+                strokeWidth: 4,
+                strokeColor: '#0c0c0c'
             }
         };
 
@@ -70,7 +71,7 @@ class NetworkVisualization {
                     hover: node.brColorHg || '#d4c178',
                     highlight: {
                         border: node.brColorHg || '#d4c178',
-                        background: node.bgColorHg || '#1e1155'
+                        background: node.bgColorHg || '#180d43'
                     }
                 }
             };
@@ -83,7 +84,7 @@ class NetworkVisualization {
                     background: node.bgColor || '#95A5A6',
                     highlight: {
                         border: '#d4c178',
-                        background: '#1e1155'
+                        background: '#180d43'
                     }
                 }
             };

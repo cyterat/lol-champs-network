@@ -1,4 +1,19 @@
-/* Network Visualization Styles */
+@font-face {
+    font-family: 'Beaufort for LOL';
+    src: url('assets/fonts/BeaufortforLOL-Regular.woff2') format('woff2'),
+         url('assets/fonts/BeaufortforLOL-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Beaufort for LOL';
+    src: url('assets/fonts/BeaufortforLOL-Medium.woff2') format('woff2'),
+         url('assets/fonts/BeaufortforLOL-Medium.ttf') format('truetype');
+    font-weight: 500; /* Use a numeric value for medium weight */
+    font-style: bold;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +21,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Beaufort for LOL', sans-serif;
     height: 100vh;
     overflow: hidden;
 }
@@ -15,6 +30,7 @@ body {
     width: 100vw;
     height: 100vh;
     background: #16222c;
+    font-family: 'Beaufort for LOL', sans-serif;
     border: none;
 }
 
@@ -35,22 +51,18 @@ body {
 /* Tooltip styling */
 .vis-tooltip {
     background: rgba(0, 0, 0, 0.9) !important;
-    color: white !important;
+    color: #f0f0f0 !important;
     border-radius: 8px !important;
     padding: 12px !important;
-    font-family: 'Arial', sans-serif !important;
-    font-size: 13px !important;
+    font-family: 'Beaufort for LOL', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 500 !important;
+    font-size: 16px !important;
     line-height: 1.4 !important;
     max-width: 300px !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
     border: none !important;
     min-width: max-content;
-}
-
-.vis-tooltip .bullet-point {
-    margin: 4px 0;
-    padding-left: 0;
-    color: #e0e0e0;
 }
 
 .vis-tooltip .description-text {
@@ -67,6 +79,8 @@ body {
     max-width: -webkit-fill-available;
     overflow: auto;
     background: #1a1a1a;
+    font-family: 'Beaufort for LOL', sans-serif;
+    -webkit-font-smoothing: antialiased;
     /* background: none;  */
     border: 2px solid #C79B3B;
     border-radius: 8px;
@@ -86,7 +100,7 @@ body {
     width: max-content;
     padding: 6px 8px;
     background: #2a2a2a; 
-    color: #fff; 
+    color: #f0f0f0; 
     border: 1px solid #C79B3B; 
     border-radius: 4px; 
     font-size: 12px; 
