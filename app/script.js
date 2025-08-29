@@ -4,67 +4,49 @@ class NetworkVisualization {
         this.nodes = null;
         this.edges = null;
         this.isStabilizing = false;
-        this.imageCache = new Map();
         this.lastScale = 1;
-        this.performanceThrottleTimeout = null;
-        
-        // Performance settings
+        this.currentChampionSlug = null; // Store the current champion's slug
+
         this.performanceConfig = {
             enableImages: true,
-            maxImageSize: 64, // Max image resolution
-            useImageCache: true,
-            zoomThreshold: 0.4, // Below this scale, apply aggressive optimizations
-            hideLabelsThreshold: 0.6 // Below this scale, hide labels
+            maxImageSize: 64,
+            zoomThreshold: 0.4,
+            hideLabelsThreshold: 0.6
         };
     }
 
-    /**
-     * Initialize the network visualization
-     */
     async init() {
         try {
             await this.loadNetworkData();
             this.createNetwork();
             this.setupEventListeners();
-        } catch (error) {
-            console.error('Failed to initialize network:', error);
-            this.showError('Failed to initialize network visualization');
+        } catch (err) {
+            console.error("Failed to initialize network:", err);
+            this.showError("Failed to initialize network visualization");
         }
     }
 
-    /**
-     * Load and process network data from JSON file
-     */
     async loadNetworkData() {
         const response = await fetch('data/data.json');
         const data = await response.json();
-        
         this.processNodes(data.nodes);
         this.processEdges(data.edges);
     }
 
-    /**
-     * Process node data with performance optimizations
-     */
     processNodes(nodeData) {
-        const processedNodes = nodeData.map(node => this.createNodeConfig(node));
-        this.nodes = new vis.DataSet(processedNodes);
+        this.nodes = new vis.DataSet(nodeData.map(node => this.createNodeConfig(node)));
     }
 
-    /**
-     * Create optimized node configuration
-     */
     createNodeConfig(node) {
         const baseConfig = {
             id: node.id,
             label: node.label,
-            title: this.formatTooltip(node.description),
+            title: node.description || node.label,
             size: node.size || 20,
-            originalSize: node.size || 20, // backup size, to acoid permanent shrink on zoom out
+            originalSize: node.size || 20,
             mass: node.mass || 3,
             borderWidth: node.BrWidth || 2,
             borderWidthSelected: node.BrWidthSel || 3,
-            borderWidthOriginal: node.BrWidth || 2,
             shadow: false,
             font: {
                 color: '#FFFFFF',
@@ -75,15 +57,15 @@ class NetworkVisualization {
             }
         };
 
-        // Optimize image handling for performance
-        if (this.performanceConfig.enableImages && node.image) {
+        if (node.image && this.performanceConfig.enableImages) {
             return {
                 ...baseConfig,
                 shape: 'circularImage',
                 image: node.image,
                 brokenImage: node.brokenImage || 'img/default.png',
+                slugWidget: node.slugWidget,
                 color: {
-                    border: node.brColor|| '#C79B3B',
+                    border: node.brColor || '#C79B3B',
                     background: node.bgColor || '#180d43',
                     hover: node.brColorHg || '#d4c178',
                     highlight: {
@@ -98,7 +80,7 @@ class NetworkVisualization {
                 shape: 'dot',
                 color: {
                     border: '#C79B3B',
-                    background: this.getNodeColor(node.type),
+                    background: node.bgColor || '#95A5A6',
                     highlight: {
                         border: '#d4c178',
                         background: '#1e1155'
@@ -108,24 +90,8 @@ class NetworkVisualization {
         }
     }
 
-    /**
-     * Get node color based on type
-     */
-    getNodeColor(type) {
-        const colorMap = {
-            'brand': '#FF6B6B',
-            'champion': '#4ECDC4', 
-            'class': '#45B7D1',
-            'default': '#95A5A6'
-        };
-        return colorMap[type] || colorMap.default;
-    }
-
-    /**
-     * Process edge data
-     */
     processEdges(edgeData) {
-        const processedEdges = edgeData.map(edge => ({
+        this.edges = new vis.DataSet(edgeData.map(edge => ({
             from: edge.from,
             to: edge.to,
             width: edge.weight || 1,
@@ -135,423 +101,138 @@ class NetworkVisualization {
                 highlight: '#2B7CE9',
                 hover: '#cccccc'
             },
-            dashes: edge.dashes || false,
-            font: {
-                color: '#ffffff',
-                size: 10,
-                strokeWidth: 3,
-                strokeColor: '#333333',
-                face: 'Arial, sans-serif'
-            },
-            arrows: {
-                from: edge.arrowToSource || false,
-                to: edge.arrowToTarget || false
-            },
-            smooth: {
-                enabled: false
-            }
-        }));
-        
-        this.edges = new vis.DataSet(processedEdges);
+            arrows: { from: edge.arrowToSource || false, to: edge.arrowToTarget || false },
+            smooth: { enabled: false }
+        })));
     }
 
-    /**
-     * Format tooltip text
-     */
-    formatTooltip(label, description) {
-        if (!description) return label;
-        
-        const maxLength = 200; // Limit tooltip length for performance
-        const truncated = description.length > maxLength 
-            ? description.substring(0, maxLength) + '...' 
-            : description;
-            
-        return `${label}\n\n${truncated}`;
-    }
-
-    /**
-     * Create the network with optimized settings
-     */
     createNetwork() {
         const container = document.getElementById('mynetwork');
-        if (!container) {
-            throw new Error('Network container not found');
-        }
+        if (!container) throw new Error('Network container not found');
 
-        const networkData = {
+        this.network = new vis.Network(container, {
             nodes: this.nodes,
             edges: this.edges
-        };
+        }, this.getNetworkOptions());
 
-        const options = this.getNetworkOptions();
-        this.network = new vis.Network(container, networkData, options);
-        
         console.log('Network visualization created successfully');
     }
 
-    /**
-     * Get optimized network options
-     */
     getNetworkOptions() {
         return {
-            // Physics configuration for dandelion structure
-            physics: {
-                enabled: true,
-                stabilization: {
-                    enabled: true,
-                    iterations: 600, // Further reduced for better performance
-                    updateInterval: 100,
-                    fit: true
-                },
-                solver: 'barnesHut',
-                barnesHut: {
-                    gravitationalConstant: -4000,
-                    centralGravity: 1,
-                    springLength: 50,
-                    springConstant: 0.2,
-                    damping: 0.3,
-                    avoidOverlap: 5.0
-                },
-                maxVelocity: 20, // Reduced for stability
-                minVelocity: 1,
-                timestep: 0.25, // Smaller timesteps for smoother animation
-                adaptiveTimestep: true
-            },
-
-            // Interaction settings
+            physics: { enabled: true, solver: 'barnesHut' },
             interaction: {
                 hover: true,
-                hoverConnectedEdges: false, // Disabled for performance
-                selectConnectedEdges: true, // Disable for performance
-                tooltipDelay: 300,
-                hideEdgesOnDrag: true, // Keep edges visible during drag
-                hideNodesOnDrag: false, // Keep nodes visible during drag
+                dragNodes: false,
                 zoomView: true,
-                dragView: true,
-                dragNodes: false, // Disabled node dragging
-                zoomSpeed: 1,
-                minZoom: 0.3, // Prevent excessive zoom out
-                maxZoom: 3.0  // Reasonable zoom in limit
-            },
-
-            // Node styling with performance optimizations
-            nodes: {
-                scaling: {
-                    min: 8,
-                    max: 40,
-                    label: {
-                        enabled: true,
-                        min: 8,
-                        max: 20
-                    }
-                },
-                // Disable shadows by default for better performance
-                shadow: {
-                    enabled: false
-                }
-            },
-
-            // Edge styling with performance optimizations
-            edges: {
-                width: 1,
-                scaling: {
-                    min: 0.5,
-                    max: 2
-                },
-                smooth: {
-                    enabled: false, // Disable smooth edges for better performance
-                    type: 'continuous',
-                    roundness: 0.1
-                }
-            },
-
-            // Layout settings
-            layout: {
-                improvedLayout: true,
-                clusterThreshold: 100, // Lower threshold for better clustering
-                hierarchical: false
-            },
-
-            // Performance optimizations
-            configure: {
-                enabled: false
+                dragView: true
             }
         };
     }
 
-    /**
-     * Setup event listeners
-     */
     setupEventListeners() {
-        // Stabilization progress
-        this.network.on('stabilizationProgress', (params) => {
-            this.isStabilizing = true;
-            const progress = Math.round((params.iterations / params.total) * 100);
-            console.log(`Stabilization: ${progress}%`);
-        });
-
-        // Stabilization complete
-        this.network.on('stabilizationIterationsDone', () => {
-            this.isStabilizing = false;
-            console.log('Network stabilized');
-            // Optionally reduce physics after stabilization
-            this.network.setOptions({
-                physics: {
-                    enabled: false // Disable physics after stabilization
-                }
-            });
-        });
-
-        // Node selection
         this.network.on('selectNode', (params) => {
-            if (params.nodes.length > 0) {
-                const nodeId = params.nodes[0];
-                const node = this.nodes.get(nodeId);
-                this.onNodeSelected(node);
-            }
+            if (params.nodes.length === 0) return;
+            const nodeId = params.nodes[0];
+            const node = this.nodes.get(nodeId);
+            const pointer = params.pointer.DOM;
+            this.onNodeSelected(node, pointer);
         });
 
-        // Double click to fit view
-        this.network.on('doubleClick', (params) => {
-            if (params.nodes.length === 0) {
-                this.fitNetwork();
-            }
+        this.network.on('deselectNode', () => {
+            const tooltipPanel = document.getElementById('champion-tooltip-panel');
+            if (tooltipPanel) tooltipPanel.style.display = 'none';
         });
 
-        // Handle zoom for performance with throttling
-        let zoomTimeout;
-        this.network.on('zoom', (params) => {
-            clearTimeout(zoomTimeout);
-            
-            zoomTimeout = setTimeout(() => {
-                this.handleZoomPerformance(params);
-            }, 100); // Throttle zoom events
-        });
-
-        // Add viewport change listener for additional optimizations
-        this.network.on('beforeDrawing', (ctx) => {
-            const scale = this.network.getScale();
-            
-            // Skip some rendering operations when heavily zoomed out
-            if (scale < 0.2) {
-                // Optionally implement custom drawing optimizations here
-            }
-        });
-    }
-
-    /**
-     * Handle performance optimizations based on zoom level
-     */
-    handleZoomPerformance(params) {
-        const scale = this.network.getScale();
-        
-        // Only hide labels when heavily zoomed out, keep nodes/edges visible
-        if (scale < this.performanceConfig.hideLabelsThreshold && this.lastScale >= this.performanceConfig.hideLabelsThreshold) {
-            console.log('Hiding labels for performance');
-            this.network.setOptions({
-                nodes: { 
-                    font: { size: 0 }
-                },
-                edges: { 
-                    font: { size: 0 }
+        const roleSelector = document.getElementById('role-selector');
+        if (roleSelector) {
+            roleSelector.onchange = (event) => {
+                const selectedRole = event.target.value;
+                if (this.currentChampionSlug) {
+                    this.renderChampionWidget(this.currentChampionSlug, selectedRole);
                 }
-            });
-            
-        } else if (scale >= this.performanceConfig.hideLabelsThreshold && this.lastScale < this.performanceConfig.hideLabelsThreshold) {
-            console.log('Showing labels');
-            this.network.setOptions({
-                nodes: { 
-                    font: { size: 12 }
-                },
-                edges: { 
-                    font: { size: 10 }
-                }
-            });
-        }
-        
-        // Only apply minimal optimizations for very zoomed out views
-        if (scale < this.performanceConfig.zoomThreshold && this.lastScale >= this.performanceConfig.zoomThreshold) {
-            console.log('Entering minimal performance mode');
-            // Only reduce image quality, don't hide them completely
-            this.reduceImageQuality(true);
-            
-        } else if (scale >= this.performanceConfig.zoomThreshold && this.lastScale < this.performanceConfig.zoomThreshold) {
-            console.log('Restoring full quality');
-            this.reduceImageQuality(false);
-        }
-        
-        this.lastScale = scale;
-    }
-
-    /**
-     * Reduce image quality instead of hiding them completely
-     */
-    reduceImageQuality(reduce) {
-        if (!this.performanceConfig.enableImages) return;
-        
-        // Instead of hiding images, we could reduce their size
-        // keep images visible but smaller when zoomed out
-        const updates = this.nodes.get().map(node => {
-            if (node.shape === 'circularImage' || (node.image && reduce)) {
-                return {
-                    id: node.id,
-                    size: reduce ? Math.max(8, (node.size || 20) * 0.7) : node.originalSize,
-                    borderWidth: reduce ? 1 : node.borderWidthOriginal
-                };
-            }
-            return null;
-        }).filter(Boolean);
-        
-        if (updates.length > 0) {
-            this.nodes.update(updates);
+            };
         }
     }
 
-    /**
-     * Handle node selection
-     */
-    onNodeSelected(node) {
-        console.log('Selected node:', node);
-        // Add your custom node selection logic here
-    }
+    // ------------------ TOOLTIP ------------------
 
-    /**
-     * Show error message
-     */
-    showError(message) {
-        const container = document.getElementById('mynetwork');
-        container.innerHTML = `
-            <div style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                flex-direction: column;
-                color: #666;
-                font-family: Arial, sans-serif;
-            ">
-                <h3 style="color: #d32f2f; margin-bottom: 16px;">Error</h3>
-                <p>${message}</p>
-                <button onclick="location.reload()" style="
-                    margin-top: 16px;
-                    padding: 8px 16px;
-                    background: #2196f3;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                ">Retry</button>
-            </div>
+    async renderChampionWidget(championSlug, role) {
+        const widgetContainer = document.getElementById('champion-widget-container');
+        if (!widgetContainer) return;
+
+        widgetContainer.innerHTML = `
+            <div data-moba-widget="lol-champion-build-compact"
+                 data-moba-champion="${championSlug}"
+                 data-moba-champion-role="${role}"></div>
         `;
-    }
 
-    /**
-     * Toggle images on/off for performance
-     */
-    toggleImages(enabled = !this.performanceConfig.enableImages) {
-        this.performanceConfig.enableImages = enabled;
-        
-        // Update existing nodes
-        const updates = this.nodes.get().map(node => {
-            const originalNode = this.nodes.get(node.id);
-            return this.createNodeConfig({
-                ...originalNode,
-                image: enabled ? originalNode.image : null
-            });
-        });
-        
-        this.nodes.update(updates);
-    }
+        await this.waitForMobalytics();
 
-    /**
-     * Switch to performance mode
-     */
-    enablePerformanceMode() {
-        this.network.setOptions({
-            physics: { enabled: false },
-            interaction: {
-                hideEdgesOnDrag: true,
-                hideNodesOnDrag: true
-            },
-            edges: {
-                smooth: { enabled: false }
+        const tryInitWidget = (attempt = 0) => {
+            if (window.mobalyticsWidgets?.init) {
+                window.mobalyticsWidgets.init();
+                console.log("Mobalytics widget initialized, attempt", attempt + 1);
+            } else if (attempt < 3) {
+                setTimeout(() => tryInitWidget(attempt + 1), 100);
             }
-        });
-        this.toggleImages(false);
-        console.log('Performance mode enabled');
+        };
+        tryInitWidget();
     }
 
-    /**
-     * Re-enable full features
-     */
-    enableFullMode() {
-        this.network.setOptions(this.getNetworkOptions());
-        this.toggleImages(true);
-        console.log('Full mode enabled');
+    async onNodeSelected(node, pos) {
+        const tooltipPanel = document.getElementById('champion-tooltip-panel');
+        const roleSelector = document.getElementById('role-selector');
+        
+        // Hide panel if it's not a champion node or panel elements are missing
+        if (!tooltipPanel || !roleSelector || !node.slugWidget) {
+            if (tooltipPanel) tooltipPanel.style.display = 'none';
+            return;
+        }
+
+        tooltipPanel.style.display = "block";
+        this.currentChampionSlug = node.slugWidget;
+
+        // Define the available roles from the Mobalytics documentation
+        const roles = ['TOP', 'JUNGLE', 'MID', 'ADC', 'SUPPORT'];
+        const defaultRole = 'JUNGLE';
+
+        // Clear and repopulate the dropdown with options
+        roleSelector.innerHTML = roles.map(role => `<option value="${role}">${role}</option>`).join('');
+
+        // Set the default role selection
+        roleSelector.value = defaultRole;
+
+        // Render the initial widget with the default role
+        this.renderChampionWidget(this.currentChampionSlug, defaultRole);
     }
 
-    // Public API methods
-    fitNetwork() {
-        if (this.network) {
-            this.network.fit({
-                animation: {
-                    duration: 500,
-                    easingFunction: 'easeInOutQuart'
+    // Helper
+    waitForMobalytics() {
+        return new Promise(resolve => {
+            if (window.mobalyticsWidgets?.init) return resolve();
+            const script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/gh/mobalyticshq/mobalytics-widgets/build/mobalytics-widgets.js";
+            document.body.appendChild(script);
+
+            const interval = setInterval(() => {
+                if (window.mobalyticsWidgets?.init) {
+                    clearInterval(interval);
+                    resolve();
                 }
-            });
-        }
+            }, 50);
+        });
     }
 
-    redrawNetwork() {
-        if (this.network) {
-            this.network.redraw();
-        }
-    }
-
-    addNode(nodeData) {
-        const processedNode = this.createNodeConfig(nodeData);
-        this.nodes.add(processedNode);
-    }
-
-    removeNode(nodeId) {
-        this.nodes.remove(nodeId);
-    }
-
-    addEdge(edgeData) {
-        this.edges.add(edgeData);
-    }
-
-    removeEdge(edgeId) {
-        this.edges.remove(edgeId);
-    }
-
-    getNetwork() {
-        return this.network;
-    }
-
-    getNodes() {
-        return this.nodes;
-    }
-
-    getEdges() {
-        return this.edges;
+    showError(msg) {
+        const container = document.getElementById('mynetwork');
+        container.innerHTML = `<div style="color:red">${msg}</div>`;
     }
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', async function() {
+// Initialize
+document.addEventListener('DOMContentLoaded', async () => {
     const networkViz = new NetworkVisualization();
     await networkViz.init();
-    
-    // Expose to global scope for external access
     window.NetworkViz = networkViz;
-    
-    // Add performance controls (optional)
-    window.togglePerformanceMode = () => {
-        if (networkViz.performanceConfig.enableImages) {
-            networkViz.enablePerformanceMode();
-        } else {
-            networkViz.enableFullMode();
-        }
-    };
 });

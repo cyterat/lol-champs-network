@@ -46,6 +46,33 @@ body {
     color: #f0f0f0;
 }
 
+#champion-tooltip-panel {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    max-width: none;
+    overflow: auto;
+    background: #1a1a1a;
+    /* background: none;  */
+    border: 2px solid #C79B3B;
+    border-radius: 8px;
+    padding: 8px;
+    z-index: 9999;
+}
+
+#role-selector {
+    margin-bottom: 10px;
+    width: max-content;
+    padding: 6px 8px;
+    background: #2a2a2a; 
+    color: #fff; 
+    border: 1px solid #C79B3B; 
+    border-radius: 4px; 
+    font-size: 12px; 
+    outline: none;
+}
+
 /* Error message styling */
 .error-message {
     display: flex;
