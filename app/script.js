@@ -4,12 +4,14 @@ class NetworkVisualization {
         this.nodes = null;
         this.edges = null;
         this.edgesDataView = null;
+        this.nodesDataView = null; // Add DataView for nodes too
         this.isStabilizing = false;
         this.lastScale = 1;
         this.currentChampionSlug = null;
         this.imageLoadQueue = []; // Queue for progressive image loading
         this.loadedImages = new Set(); // Track loaded images
         this.isProgressiveLoadingActive = false;
+        this.currentEdgeType = 'relMain'; // Track current edge filter
 
         this.performanceConfig = {
             enableImages: true,
@@ -146,16 +148,128 @@ class NetworkVisualization {
         const container = document.getElementById('mynetwork');
         if (!container) throw new Error('Network container not found');
 
+        // Create DataViews for both nodes and edges
         this.edgesDataView = new vis.DataView(this.edges, {
-            filter: (edge) => edge.type === 'relMain'
+            filter: (edge) => edge.type === this.currentEdgeType
+        });
+
+        this.nodesDataView = new vis.DataView(this.nodes, {
+            filter: (node) => this.shouldNodeBeVisible(node.id, this.currentEdgeType)
         });
 
         this.network = new vis.Network(container, {
-            nodes: this.nodes,
+            nodes: this.nodesDataView,
             edges: this.edgesDataView
         }, this.getNetworkOptions());
 
         console.log('Network visualization created successfully (without images)');
+    }
+
+    // Helper method to determine if a node should be visible for a given edge type
+    shouldNodeBeVisible(nodeId, edgeType) {
+        if (edgeType === 'all') return true;
+        
+        // Get all edges of the specified type from the full dataset
+        const allEdges = this.edges.get();
+        const relevantEdges = allEdges.filter(edge => edge.type === edgeType);
+        
+        // Check if this node is connected to any edge of this type
+        return relevantEdges.some(edge => edge.from === nodeId || edge.to === nodeId);
+    }
+
+    // Enhanced method to switch between different edge/node views
+    setEdgeViewByType(type) {
+        if (!this.edges || !this.nodes) return;
+        
+        console.log(`Switching to view: ${type}`);
+        this.currentEdgeType = type;
+        
+        // Create new DataViews instead of updating existing ones
+        const edgeFilterFunction = type === 'all' ? 
+            () => true : 
+            (edge) => edge.type === type;
+            
+        const nodeFilterFunction = type === 'all' ? 
+            () => true : 
+            (node) => this.shouldNodeBeVisible(node.id, type);
+        
+        // Recreate the DataViews with new filters
+        this.edgesDataView = new vis.DataView(this.edges, {
+            filter: edgeFilterFunction
+        });
+        
+        this.nodesDataView = new vis.DataView(this.nodes, {
+            filter: nodeFilterFunction
+        });
+        
+        // Update the network with the new DataViews
+        this.network.setData({
+            nodes: this.nodesDataView,
+            edges: this.edgesDataView
+        });
+        
+        // Debug: Log what we're showing
+        const visibleEdges = this.edgesDataView.get();
+        const visibleNodes = this.nodesDataView.get();
+        console.log(`View "${type}": ${visibleNodes.length} nodes, ${visibleEdges.length} edges`);
+        console.log('Visible edges:', visibleEdges.map(e => `${e.from}->${e.to} (${e.type})`));
+        
+        // Fit the network to show the filtered content
+        setTimeout(() => {
+            this.network.fit({
+                animation: {
+                    duration: 500,
+                    easingFunction: 'easeInOutQuad'
+                }
+            });
+        }, 100);
+    }
+
+    // Method to get available edge types from data
+    getAvailableEdgeTypes() {
+        const allEdges = this.edges.get();
+        const types = [...new Set(allEdges.map(edge => edge.type))];
+        return types.sort();
+    }
+
+    // Method to populate the dropdown with available edge types
+    populateEdgeFilterDropdown() {
+        const dropdown = document.getElementById('edge-filter');
+        if (!dropdown) return;
+
+        const types = this.getAvailableEdgeTypes();
+        
+        // Clear existing options except the first one
+        dropdown.innerHTML = '';
+        
+        // Add 'all' option
+        const allOption = document.createElement('option');
+        allOption.value = 'all';
+        allOption.textContent = 'All Connections';
+        dropdown.appendChild(allOption);
+        
+        // Add options for each edge type
+        types.forEach(type => {
+            const option = document.createElement('option');
+            option.value = type;
+            option.textContent = this.formatEdgeTypeName(type);
+            if (type === this.currentEdgeType) {
+                option.selected = true;
+            }
+            dropdown.appendChild(option);
+        });
+        
+        console.log(`Populated dropdown with ${types.length} edge types:`, types);
+    }
+
+    // Helper to format edge type names for display
+    formatEdgeTypeName(type) {
+        // Convert camelCase or snake_case to readable format
+        return type
+            .replace(/([A-Z])/g, ' $1')
+            .replace(/_/g, ' ')
+            .replace(/^./, str => str.toUpperCase())
+            .trim();
     }
 
     // Progressive image loading methods
@@ -275,17 +389,49 @@ class NetworkVisualization {
         this.loadNextImageBatch();
     }
 
-    setEdgeViewByType(type) {
-        if (this.edgesDataView) {
-            if (type === 'all') {
-                this.edgesDataView.setOptions({ filter: (edge) => true });
-            } else {
-                this.edgesDataView.setOptions({
-                    filter: (edge) => edge.type === type
-                });
-            }
-            this.network.fit();
+    // Method to refresh the current view (useful after data changes)
+    refreshCurrentView() {
+        this.setEdgeViewByType(this.currentEdgeType);
+    }
+
+    // Debug method to check available edge types
+    debugAvailableTypes() {
+        if (!this.edges) {
+            console.log('No edges data available');
+            return [];
         }
+        const allEdges = this.edges.get();
+        const types = [...new Set(allEdges.map(edge => edge.type || 'undefined'))];
+        console.log('Available edge types in data:', types);
+        console.log('Total edges by type:');
+        types.forEach(type => {
+            const count = allEdges.filter(edge => (edge.type || 'undefined') === type).length;
+            console.log(`  ${type}: ${count} edges`);
+        });
+        return types;
+    }
+
+    // Safety method to reset to default view if something goes wrong
+    resetToDefaultView() {
+        console.log('Resetting to default view...');
+        this.currentEdgeType = 'relMain';
+        
+        // Recreate DataViews with default filters
+        this.edgesDataView = new vis.DataView(this.edges, {
+            filter: (edge) => edge.type === 'relMain'
+        });
+        
+        this.nodesDataView = new vis.DataView(this.nodes, {
+            filter: (node) => this.shouldNodeBeVisible(node.id, 'relMain')
+        });
+        
+        // Update network
+        this.network.setData({
+            nodes: this.nodesDataView,
+            edges: this.edgesDataView
+        });
+        
+        this.network.fit();
     }
 
     getNetworkOptions() {
