@@ -1,0 +1,4 @@
+.mypy-cache
+.ipynb_checkpoints
+ideas/
+python/
