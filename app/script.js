@@ -75,7 +75,7 @@ class NetworkVisualization {
         // Store image info for progressive loading
         if (node.image && this.performanceConfig.enableImages) {
             baseConfig.imageUrl = node.image;
-            baseConfig.brokenImage = node.brokenImage || 'img/default.png';
+            baseConfig.brokenImage = node.brokenImage || './assets/other/lol.png';
             baseConfig.slugWidget = node.slugWidget;
             baseConfig.brColor = node.brColor || '#C79B3B';
             baseConfig.bgColor = node.bgColor || '#180d43';
@@ -88,7 +88,7 @@ class NetworkVisualization {
                 ...baseConfig,
                 shape: 'circularImage',
                 image: node.image,
-                brokenImage: node.brokenImage || 'img/default.png',
+                brokenImage: node.brokenImage || './assets/other/lol.png',
                 color: {
                     border: node.brColor || '#C79B3B',
                     background: node.bgColor || '#180d43',
@@ -399,7 +399,7 @@ class NetworkVisualization {
             id: nodeId,
             shape: 'circularImage',
             image: imageUrl || node.imageUrl,
-            brokenImage: node.brokenImage || 'img/default.png',
+            brokenImage: node.brokenImage || './assets/other/lol.png',
             color: {
                 border: node.brColor || '#C79B3B',
                 background: node.bgColor || '#180d43',
