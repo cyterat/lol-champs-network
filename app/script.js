@@ -181,48 +181,92 @@ class NetworkVisualization {
     setEdgeViewByType(type) {
         if (!this.edges || !this.nodes) return;
         
+        // Show loading indicator
+        this.showFilteringIndicator(true);
+        
         console.log(`Switching to view: ${type}`);
         this.currentEdgeType = type;
         
-        // Create new DataViews instead of updating existing ones
-        const edgeFilterFunction = type === 'all' ? 
-            () => true : 
-            (edge) => edge.type === type;
-            
-        const nodeFilterFunction = type === 'all' ? 
-            () => true : 
-            (node) => this.shouldNodeBeVisible(node.id, type);
-        
-        // Recreate the DataViews with new filters
-        this.edgesDataView = new vis.DataView(this.edges, {
-            filter: edgeFilterFunction
-        });
-        
-        this.nodesDataView = new vis.DataView(this.nodes, {
-            filter: nodeFilterFunction
-        });
-        
-        // Update the network with the new DataViews
-        this.network.setData({
-            nodes: this.nodesDataView,
-            edges: this.edgesDataView
-        });
-        
-        // Debug: Log what we're showing
-        const visibleEdges = this.edgesDataView.get();
-        const visibleNodes = this.nodesDataView.get();
-        console.log(`View "${type}": ${visibleNodes.length} nodes, ${visibleEdges.length} edges`);
-        console.log('Visible edges:', visibleEdges.map(e => `${e.from}->${e.to} (${e.type})`));
-        
-        // Fit the network to show the filtered content
+        // Use setTimeout to allow the loading indicator to appear before heavy processing
         setTimeout(() => {
-            this.network.fit({
-                animation: {
-                    duration: 500,
-                    easingFunction: 'easeInOutQuad'
-                }
-            });
-        }, 100);
+            try {
+                // Create new DataViews instead of updating existing ones
+                const edgeFilterFunction = type === 'all' ? 
+                    () => true : 
+                    (edge) => edge.type === type;
+                    
+                const nodeFilterFunction = type === 'all' ? 
+                    () => true : 
+                    (node) => this.shouldNodeBeVisible(node.id, type);
+                
+                // Recreate the DataViews with new filters
+                this.edgesDataView = new vis.DataView(this.edges, {
+                    filter: edgeFilterFunction
+                });
+                
+                this.nodesDataView = new vis.DataView(this.nodes, {
+                    filter: nodeFilterFunction
+                });
+                
+                // Update the network with the new DataViews
+                this.network.setData({
+                    nodes: this.nodesDataView,
+                    edges: this.edgesDataView
+                });
+                
+                // Debug: Log what we're showing
+                const visibleEdges = this.edgesDataView.get();
+                const visibleNodes = this.nodesDataView.get();
+                console.log(`View "${type}": ${visibleNodes.length} nodes, ${visibleEdges.length} edges`);
+                console.log('Visible edges:', visibleEdges.map(e => `${e.from}->${e.to} (${e.type})`));
+                
+                // Fit the network to show the filtered content
+                setTimeout(() => {
+                    this.network.fit({
+                        animation: {
+                            duration: 500,
+                            easingFunction: 'easeInOutQuad'
+                        }
+                    });
+                    
+                    // Hide loading indicator after fit animation
+                    setTimeout(() => {
+                        this.showFilteringIndicator(false);
+                    }, 600); // 500ms animation + 100ms buffer
+                }, 100);
+                
+            } catch (error) {
+                console.error('Error during view switching:', error);
+                this.showFilteringIndicator(false);
+            }
+        }, 50); // Small delay to ensure indicator appears
+    }
+
+    // Method to show/hide filtering indicator
+    showFilteringIndicator(show) {
+        let indicator = document.getElementById('filtering-indicator');
+        
+        if (!indicator) {
+            // Create the indicator if it doesn't exist
+            indicator = document.createElement('div');
+            indicator.id = 'filtering-indicator';
+            indicator.className = 'filtering-indicator';
+            indicator.innerHTML = `
+                <div class="spinner"></div>
+                <span>Switching view...</span>
+            `;
+            document.body.appendChild(indicator);
+        }
+        
+        if (show) {
+            indicator.style.display = 'flex';
+            indicator.style.opacity = '1';
+        } else {
+            indicator.style.opacity = '0';
+            setTimeout(() => {
+                indicator.style.display = 'none';
+            }, 300); // Fade out duration
+        }
     }
 
     // Method to get available edge types from data
