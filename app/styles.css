@@ -14,6 +14,14 @@
     font-style: bold;
 }
 
+:root{
+    --primary-ff: 'Beaufort for LOL', sans-serif;
+    --primary-ff-clr: #f0f0f0;
+    --gold-clr: #C79B3B;
+    --bg-clr: #16222c;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -21,16 +29,17 @@
 }
 
 body {
-    font-family: 'Beaufort for LOL', sans-serif;
+    font-family: var(--primary-ff);
     height: 100vh;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 #mynetwork {
     width: 100vw;
     height: 100vh;
-    background: #16222c;
-    font-family: 'Beaufort for LOL', sans-serif;
+    background: var(--bg-clr);
+    font-family: var(--primary-ff);
     border: none;
 }
 
@@ -51,11 +60,10 @@ body {
 /* Tooltip styling */
 .vis-tooltip {
     background: rgba(0, 0, 0, 0.9) !important;
-    color: #f0f0f0 !important;
+    color: var(--primary-ff-clr) !important;
     border-radius: 8px !important;
     padding: 12px !important;
-    font-family: 'Beaufort for LOL', sans-serif !important;
-    -webkit-font-smoothing: antialiased;
+    font-family: var(--primary-ff) !important;
     font-weight: 500 !important;
     font-size: 16px !important;
     line-height: 1.4 !important;
@@ -68,7 +76,7 @@ body {
 .vis-tooltip .description-text {
     margin: 6px 0;
     font-weight: normal;
-    color: #f0f0f0;
+    color: var(--primary-ff-clr);
 }
 
 #champion-tooltip-panel {
@@ -78,11 +86,11 @@ body {
     top: 20px;
     max-width: -webkit-fill-available;
     overflow: auto;
-    background: #1a1a1a;
-    font-family: 'Beaufort for LOL', sans-serif;
+    background: var(--bg-clr);
+    font-family: var(--primary-ff);
     -webkit-font-smoothing: antialiased;
     /* background: none;  */
-    border: 2px solid #C79B3B;
+    border: 2px solid var(--gold-clr);
     border-radius: 8px;
     padding: 8px;
     z-index: 9999;
@@ -99,9 +107,9 @@ body {
     margin-bottom: 10px;
     width: max-content;
     padding: 6px 8px;
-    background: #2a2a2a; 
-    color: #f0f0f0; 
-    border: 1px solid #C79B3B; 
+    background: var(--bg-clr); 
+    color: var(--primary-ff-clr); 
+    border: 1px solid var(--gold-clr); 
     border-radius: 4px; 
     font-size: 12px; 
     outline: none;
@@ -135,7 +143,7 @@ body {
     height: 100vh;
     text-align: center;
     padding: 20px;
-    background: #f5f5f5;
+    background: var(--primary-ff-clr);
     color: #333;
 }
 
@@ -157,17 +165,16 @@ body {
     outline: none !important;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .vis-tooltip {
         max-width: 250px !important;
-        font-size: 12px !important;
+        font-size: 16px !important;
     }
 }
 
 @media (max-width: 480px) {
     .vis-tooltip {
         max-width: 200px !important;
-        font-size: 11px !important;
+        font-size: 16px !important;
     }
 }

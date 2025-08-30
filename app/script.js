@@ -11,7 +11,7 @@ class NetworkVisualization {
             enableImages: true,
             maxImageSize: 64,
             zoomThreshold: 0.4,
-            hideLabelsThreshold: 0.6
+            hideLabelsThreshold: 0.7
         };
     }
 
@@ -53,7 +53,7 @@ class NetworkVisualization {
                 size: 14,
                 face: 'Beaufort for LOL, sans-serif',
                 weight: 'normal',
-                strokeWidth: 4,
+                strokeWidth: 10,
                 strokeColor: '#0c0c0c'
             }
         };
@@ -95,15 +95,25 @@ class NetworkVisualization {
         this.edges = new vis.DataSet(edgeData.map(edge => ({
             from: edge.from,
             to: edge.to,
-            width: edge.weight || 1,
-            label: edge.label || '',
+            width: edge.width || 1,
+            length: edge.length || 50,
+            label: edge.label,
+            title: edge.description,
             color: {
-                color: edge.color || '#848484',
-                highlight: '#2B7CE9',
-                hover: '#cccccc'
+                color: edge.color || '#555555',
+                highlight: edge.colorHg || '#313131',
+                hover: edge.colorHg || '#313131'
             },
             arrows: { from: edge.arrowToSource || false, to: edge.arrowToTarget || false },
-            smooth: { enabled: false }
+            smooth: { enabled: false },
+            font: {
+                color: '#d4c178',
+                size: 24,
+                face: 'Beaufort for LOL, sans-serif',
+                weight: 'normal',
+                strokeWidth: 8,
+                strokeColor: '#0c0c0c'
+            }
         })));
     }
 
@@ -132,6 +142,7 @@ class NetworkVisualization {
     }
 
     setupEventListeners() {
+        // listener for node selection
         this.network.on('selectNode', (params) => {
             if (params.nodes.length === 0) return;
             const nodeId = params.nodes[0];
@@ -145,6 +156,19 @@ class NetworkVisualization {
             if (tooltipPanel) tooltipPanel.style.display = 'none';
         });
 
+        // add cursor change on hover
+        const container = this.network.body.container; // or document.getElementById('your-network-div-id')
+        this.network.on('hoverNode', () => {
+            container.style.cursor = 'pointer';
+        });
+        this.network.on('blurNode', () => {
+            container.style.cursor = 'default';
+        });
+
+        // edges
+        // this.network.on('hoverEdge', () => container.style.cursor = 'pointer');
+        // this.network.on('blurEdge', () => container.style.cursor = 'default');
+
         const roleSelector = document.getElementById('role-selector');
         if (roleSelector) {
             roleSelector.onchange = (event) => {
@@ -155,6 +179,7 @@ class NetworkVisualization {
             };
         }
     }
+
 
     // ------------------ TOOLTIP ------------------
 
@@ -184,7 +209,7 @@ class NetworkVisualization {
     async onNodeSelected(node, pos) {
         const tooltipPanel = document.getElementById('champion-tooltip-panel');
         const roleSelector = document.getElementById('role-selector');
-        
+
         // Hide panel if it's not a champion node or panel elements are missing
         if (!tooltipPanel || !roleSelector || !node.slugWidget) {
             if (tooltipPanel) tooltipPanel.style.display = 'none';
@@ -196,7 +221,7 @@ class NetworkVisualization {
 
         // Define the available roles from the Mobalytics documentation
         const roles = ['TOP', 'JUNGLE', 'MID', 'ADC', 'SUPPORT'];
-        const defaultRole = 'JUNGLE';
+        const defaultRole = 'MID';
 
         // Clear and repopulate the dropdown with options
         roleSelector.innerHTML = roles.map(role => `<option value="${role}">${role}</option>`).join('');
