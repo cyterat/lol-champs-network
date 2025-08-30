@@ -2,17 +2,23 @@ class NetworkVisualization {
     constructor() {
         this.network = null;
         this.nodes = null;
-        this.edges = null; // This will hold the main DataSet
-        this.edgesDataView = null; // This will hold the DataView
+        this.edges = null;
+        this.edgesDataView = null;
         this.isStabilizing = false;
         this.lastScale = 1;
-        this.currentChampionSlug = null; // Store the current champion's slug
+        this.currentChampionSlug = null;
+        this.imageLoadQueue = []; // Queue for progressive image loading
+        this.loadedImages = new Set(); // Track loaded images
+        this.isProgressiveLoadingActive = false;
 
         this.performanceConfig = {
             enableImages: true,
             maxImageSize: 64,
             zoomThreshold: 0.4,
-            hideLabelsThreshold: 0.7
+            hideLabelsThreshold: 0.7,
+            progressiveLoading: true,
+            imageLoadBatchSize: 5, // Load 5 images at a time
+            imageLoadDelay: 100 // Delay between batches in ms
         };
     }
 
@@ -21,6 +27,11 @@ class NetworkVisualization {
             await this.loadNetworkData();
             this.createNetwork();
             this.setupEventListeners();
+            
+            // Start progressive image loading after network is created
+            if (this.performanceConfig.progressiveLoading && this.performanceConfig.enableImages) {
+                this.startProgressiveImageLoading();
+            }
         } catch (err) {
             console.error("Failed to initialize network:", err);
             this.showError("Failed to initialize network visualization");
@@ -35,10 +46,10 @@ class NetworkVisualization {
     }
 
     processNodes(nodeData) {
-        this.nodes = new vis.DataSet(nodeData.map(node => this.createNodeConfig(node)));
+        this.nodes = new vis.DataSet(nodeData.map(node => this.createNodeConfig(node, false))); // Start without images
     }
 
-    createNodeConfig(node) {
+    createNodeConfig(node, withImage = true) {
         const baseConfig = {
             id: node.id,
             label: node.label,
@@ -59,13 +70,23 @@ class NetworkVisualization {
             }
         };
 
+        // Store image info for progressive loading
         if (node.image && this.performanceConfig.enableImages) {
+            baseConfig.imageUrl = node.image;
+            baseConfig.brokenImage = node.brokenImage || 'img/default.png';
+            baseConfig.slugWidget = node.slugWidget;
+            baseConfig.brColor = node.brColor || '#C79B3B';
+            baseConfig.bgColor = node.bgColor || '#180d43';
+            baseConfig.brColorHg = node.brColorHg || '#d4c178';
+            baseConfig.bgColorHg = node.bgColorHg || '#180d43';
+        }
+
+        if (withImage && node.image && this.performanceConfig.enableImages) {
             return {
                 ...baseConfig,
                 shape: 'circularImage',
                 image: node.image,
                 brokenImage: node.brokenImage || 'img/default.png',
-                slugWidget: node.slugWidget,
                 color: {
                     border: node.brColor || '#C79B3B',
                     background: node.bgColor || '#180d43',
@@ -77,15 +98,17 @@ class NetworkVisualization {
                 }
             };
         } else {
+            // Use a styled dot shape initially, with colors that indicate it will have an image
+            const hasImage = node.image && this.performanceConfig.enableImages;
             return {
                 ...baseConfig,
                 shape: 'dot',
                 color: {
-                    border: '#C79B3B',
-                    background: node.bgColor || '#95A5A6',
+                    border: hasImage ? (node.brColor || '#C79B3B') : '#C79B3B',
+                    background: hasImage ? (node.bgColor || '#95A5A6') : '#95A5A6',
                     highlight: {
-                        border: '#d4c178',
-                        background: '#180d43'
+                        border: hasImage ? (node.brColorHg || '#d4c178') : '#d4c178',
+                        background: hasImage ? (node.bgColorHg || '#180d43') : '#180d43'
                     }
                 }
             };
@@ -93,12 +116,9 @@ class NetworkVisualization {
     }
 
     processEdges(edgeData) {
-        // This will now create the full, unfiltered DataSet
         this.edges = new vis.DataSet(edgeData.map(edge => ({
             from: edge.from,
             to: edge.to,
-            // Ensure every edge has a type.
-            // If the external data doesn't provide it, assign a default like 'main'.
             type: edge.type || 'main',
             width: edge.width || 1,
             length: edge.length || 60,
@@ -126,23 +146,137 @@ class NetworkVisualization {
         const container = document.getElementById('mynetwork');
         if (!container) throw new Error('Network container not found');
 
-        // Create the DataView from the relMain edge DataSet
         this.edgesDataView = new vis.DataView(this.edges, {
             filter: (edge) => edge.type === 'relMain'
         });
 
         this.network = new vis.Network(container, {
             nodes: this.nodes,
-            edges: this.edgesDataView // Use the DataView here
+            edges: this.edgesDataView
         }, this.getNetworkOptions());
 
-        console.log('Network visualization created successfully');
+        console.log('Network visualization created successfully (without images)');
     }
 
-    // Make this method publicly accessible to be called from the HTML page
+    // Progressive image loading methods
+    startProgressiveImageLoading() {
+        if (this.isProgressiveLoadingActive) return;
+        this.isProgressiveLoadingActive = true;
+
+        // Build queue of nodes that need images
+        this.buildImageLoadQueue();
+        
+        // Start loading images in batches
+        this.loadNextImageBatch();
+    }
+
+    buildImageLoadQueue() {
+        const allNodes = this.nodes.get();
+        this.imageLoadQueue = allNodes
+            .filter(node => node.imageUrl && !this.loadedImages.has(node.id))
+            .map(node => node.id);
+        
+        console.log(`Queued ${this.imageLoadQueue.length} images for progressive loading`);
+    }
+
+    async loadNextImageBatch() {
+        if (this.imageLoadQueue.length === 0) {
+            console.log('Progressive image loading completed');
+            this.isProgressiveLoadingActive = false;
+            return;
+        }
+
+        const batchSize = Math.min(this.performanceConfig.imageLoadBatchSize, this.imageLoadQueue.length);
+        const batch = this.imageLoadQueue.splice(0, batchSize);
+
+        // Load images for this batch
+        const loadPromises = batch.map(nodeId => this.loadImageForNode(nodeId));
+        
+        try {
+            await Promise.all(loadPromises);
+        } catch (error) {
+            console.warn('Some images failed to load in batch:', error);
+        }
+
+        // Schedule next batch
+        setTimeout(() => {
+            this.loadNextImageBatch();
+        }, this.performanceConfig.imageLoadDelay);
+    }
+
+    async loadImageForNode(nodeId) {
+        return new Promise((resolve) => {
+            const node = this.nodes.get(nodeId);
+            if (!node || !node.imageUrl || this.loadedImages.has(nodeId)) {
+                resolve();
+                return;
+            }
+
+            const img = new Image();
+            
+            img.onload = () => {
+                // Image loaded successfully, update the node
+                this.updateNodeWithImage(nodeId, node);
+                this.loadedImages.add(nodeId);
+                resolve();
+            };
+
+            img.onerror = () => {
+                // Image failed to load, try broken image or keep as dot
+                console.warn(`Failed to load image for node ${nodeId}: ${node.imageUrl}`);
+                if (node.brokenImage) {
+                    this.updateNodeWithImage(nodeId, node, node.brokenImage);
+                }
+                this.loadedImages.add(nodeId); // Mark as processed
+                resolve();
+            };
+
+            // Start loading the image
+            img.src = node.imageUrl;
+        });
+    }
+
+    updateNodeWithImage(nodeId, node, imageUrl = null) {
+        const updatedNode = {
+            id: nodeId,
+            shape: 'circularImage',
+            image: imageUrl || node.imageUrl,
+            brokenImage: node.brokenImage || 'img/default.png',
+            color: {
+                border: node.brColor || '#C79B3B',
+                background: node.bgColor || '#180d43',
+                hover: node.brColorHg || '#d4c178',
+                highlight: {
+                    border: node.brColorHg || '#d4c178',
+                    background: node.bgColorHg || '#180d43'
+                }
+            }
+        };
+
+        this.nodes.update(updatedNode);
+    }
+
+    // Method to toggle progressive loading on/off
+    toggleProgressiveLoading(enabled) {
+        this.performanceConfig.progressiveLoading = enabled;
+        
+        if (enabled && !this.isProgressiveLoadingActive) {
+            this.startProgressiveImageLoading();
+        } else if (!enabled) {
+            this.isProgressiveLoadingActive = false;
+            this.imageLoadQueue = [];
+        }
+    }
+
+    // Method to load all remaining images immediately
+    loadAllImagesNow() {
+        this.performanceConfig.imageLoadBatchSize = this.imageLoadQueue.length;
+        this.performanceConfig.imageLoadDelay = 0;
+        this.loadNextImageBatch();
+    }
+
     setEdgeViewByType(type) {
         if (this.edgesDataView) {
-            // Check for a special 'all' type to show all edges
             if (type === 'all') {
                 this.edgesDataView.setOptions({ filter: (edge) => true });
             } else {
@@ -150,7 +284,7 @@ class NetworkVisualization {
                     filter: (edge) => edge.type === type
                 });
             }
-            this.network.fit(); // Adjust view to fit new edges
+            this.network.fit();
         }
     }
 
@@ -158,10 +292,7 @@ class NetworkVisualization {
         return {
             physics: {
                 enabled: true,
-                solver: 'barnesHut',
-                // barnesHut: {
-                //     gravitationalConstant: -1500 
-                // }
+                solver: 'barnesHut'
             },
             interaction: {
                 hover: true,
@@ -173,7 +304,6 @@ class NetworkVisualization {
     }
 
     setupEventListeners() {
-        // listener for node selection
         this.network.on('selectNode', (params) => {
             if (params.nodes.length === 0) return;
             const nodeId = params.nodes[0];
@@ -187,18 +317,13 @@ class NetworkVisualization {
             if (tooltipPanel) tooltipPanel.style.display = 'none';
         });
 
-        // add cursor change on hover
-        const container = this.network.body.container; // or document.getElementById('your-network-div-id')
+        const container = this.network.body.container;
         this.network.on('hoverNode', () => {
             container.style.cursor = 'pointer';
         });
         this.network.on('blurNode', () => {
             container.style.cursor = 'default';
         });
-
-        // edges
-        // this.network.on('hoverEdge', () => container.style.cursor = 'pointer');
-        // this.network.on('blurEdge', () => container.style.cursor = 'default');
 
         const roleSelector = document.getElementById('role-selector');
         if (roleSelector) {
@@ -210,8 +335,6 @@ class NetworkVisualization {
             };
         }
     }
-
-    // ------------------ TOOLTIP ------------------
 
     async renderChampionWidget(championSlug, role) {
         const widgetContainer = document.getElementById('champion-widget-container');
@@ -240,7 +363,6 @@ class NetworkVisualization {
         const tooltipPanel = document.getElementById('champion-tooltip-panel');
         const roleSelector = document.getElementById('role-selector');
 
-        // Hide panel if it's not a champion node or panel elements are missing
         if (!tooltipPanel || !roleSelector || !node.slugWidget) {
             if (tooltipPanel) tooltipPanel.style.display = 'none';
             return;
@@ -249,21 +371,15 @@ class NetworkVisualization {
         tooltipPanel.style.display = "block";
         this.currentChampionSlug = node.slugWidget;
 
-        // Define the available roles from the Mobalytics documentation
         const roles = ['TOP', 'JUNGLE', 'MID', 'ADC', 'SUPPORT'];
         const defaultRole = 'MID';
 
-        // Clear and repopulate the dropdown with options
         roleSelector.innerHTML = roles.map(role => `<option value="${role}">${role}</option>`).join('');
-
-        // Set the default role selection
         roleSelector.value = defaultRole;
 
-        // Render the initial widget with the default role
         this.renderChampionWidget(this.currentChampionSlug, defaultRole);
     }
 
-    // Helper
     waitForMobalytics() {
         return new Promise(resolve => {
             if (window.mobalyticsWidgets?.init) return resolve();
@@ -292,6 +408,4 @@ document.addEventListener('DOMContentLoaded', () => {
     networkVisualizer.init();
 });
 
-// This is the key part: making the instance accessible
-// to your HTML through a global variable or a window property.
 window.networkVisualizer = networkVisualizer;
