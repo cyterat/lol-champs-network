@@ -1317,1069 +1317,1247 @@
     "edges": [
         {
             "from": 0,
-            "to": 1
+            "to": 1,
+            "type": "relMain"
         },
         {
             "from": 1,
             "to": 2,
             "label": "47",
-            "description": "champions within class"
+            "description": "champions within class",
+            "type": "relMain"
         },
         {
             "from": 1,
             "to": 3,
             "label": "37",
-            "description": "champions within class"
+            "description": "champions within class",
+            "type": "relMain"
         },
         {
             "from": 1,
             "to": 5,
             "label": "29",
-            "description": "champions within class"
+            "description": "champions within class",
+            "type": "relMain"
         },
         {
             "from": 1,
             "to": 6,
             "label": "24",
-            "description": "champions within class"
+            "description": "champions within class",
+            "type": "relMain"
         },
         {
             "from": 1,
             "to": 4,
             "label": "17",
-            "description": "champions within class"
+            "description": "champions within class",
+            "type": "relMain"
         },
         {
             "from": 1,
             "to": 7,
             "label": "17",
-            "description": "champions within class"
+            "description": "champions within class",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 12,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 13,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 14,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 15,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 16,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 17,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 18,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 19,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 20,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 21,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 22,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 23,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 24,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 25,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 26,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 27,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 28,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 29,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 30,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 31,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 32,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 33,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 34,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 35,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 36,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 37,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 38,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 39,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 40,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 41,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 42,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 43,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 44,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 45,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 46,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 47,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 48,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 49,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 50,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 51,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 52,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 53,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 54,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 55,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 56,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 57,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 58,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 59,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 60,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 61,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 62,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 63,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 64,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 65,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 66,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 67,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 68,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 69,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 70,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 71,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 72,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 73,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 74,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 75,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 76,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 77,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 78,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 79,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 80,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 81,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 82,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 83,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 84,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 85,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 86,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 87,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 88,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 89,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 90,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 91,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 92,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 93,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 94,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 95,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 96,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 97,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 98,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 99,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 100,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 101,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 102,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 103,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 104,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 105,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 106,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 107,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 108,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 109,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 110,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 111,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 112,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 113,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 114,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 115,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 116,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 117,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 118,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 119,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 120,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 121,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 122,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 123,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 124,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 125,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 126,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 127,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 128,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 129,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 130,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 131,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 132,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 133,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 134,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 135,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 136,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 137,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 138,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 139,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 140,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 141,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 142,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 143,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 144,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 145,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 146,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 147,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 148,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 149,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 150,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 151,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 152,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 153,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 154,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 155,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 156,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 157,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 158,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 159,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 160,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 161,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 162,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 163,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 164,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 165,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 166,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 167,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 168,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 169,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 170,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 171,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 172,
             "colorHg": "#fd7200",
-            "description": "Difficulty: Hard"
+            "description": "Difficulty: Hard",
+            "type": "relMain"
         },
         {
             "from": 2,
             "to": 173,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 174,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 175,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 6,
             "to": 176,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 4,
             "to": 177,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 5,
             "to": 178,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 179,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         },
         {
             "from": 7,
             "to": 180,
             "colorHg": "#169ed3",
-            "description": "Difficulty: Average"
+            "description": "Difficulty: Average",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 181,
             "colorHg": "#bf090d",
-            "description": "Difficulty: Severe"
+            "description": "Difficulty: Severe",
+            "type": "relMain"
         },
         {
             "from": 3,
             "to": 182,
             "colorHg": "#b2b2b0",
-            "description": "Difficulty: Easy"
+            "description": "Difficulty: Easy",
+            "type": "relMain"
         }
     ]
 }

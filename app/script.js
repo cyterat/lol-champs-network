@@ -2,7 +2,8 @@ class NetworkVisualization {
     constructor() {
         this.network = null;
         this.nodes = null;
-        this.edges = null;
+        this.edges = null; // This will hold the main DataSet
+        this.edgesDataView = null; // This will hold the DataView
         this.isStabilizing = false;
         this.lastScale = 1;
         this.currentChampionSlug = null; // Store the current champion's slug
@@ -92,11 +93,15 @@ class NetworkVisualization {
     }
 
     processEdges(edgeData) {
+        // This will now create the full, unfiltered DataSet
         this.edges = new vis.DataSet(edgeData.map(edge => ({
             from: edge.from,
             to: edge.to,
+            // Ensure every edge has a type.
+            // If the external data doesn't provide it, assign a default like 'main'.
+            type: edge.type || 'main',
             width: edge.width || 1,
-            length: edge.length || 50,
+            length: edge.length || 60,
             label: edge.label,
             title: edge.description,
             color: {
@@ -121,17 +126,43 @@ class NetworkVisualization {
         const container = document.getElementById('mynetwork');
         if (!container) throw new Error('Network container not found');
 
+        // Create the DataView from the relMain edge DataSet
+        this.edgesDataView = new vis.DataView(this.edges, {
+            filter: (edge) => edge.type === 'relMain'
+        });
+
         this.network = new vis.Network(container, {
             nodes: this.nodes,
-            edges: this.edges
+            edges: this.edgesDataView // Use the DataView here
         }, this.getNetworkOptions());
 
         console.log('Network visualization created successfully');
     }
 
+    // Make this method publicly accessible to be called from the HTML page
+    setEdgeViewByType(type) {
+        if (this.edgesDataView) {
+            // Check for a special 'all' type to show all edges
+            if (type === 'all') {
+                this.edgesDataView.setOptions({ filter: (edge) => true });
+            } else {
+                this.edgesDataView.setOptions({
+                    filter: (edge) => edge.type === type
+                });
+            }
+            this.network.fit(); // Adjust view to fit new edges
+        }
+    }
+
     getNetworkOptions() {
         return {
-            physics: { enabled: true, solver: 'barnesHut' },
+            physics: {
+                enabled: true,
+                solver: 'barnesHut',
+                // barnesHut: {
+                //     gravitationalConstant: -1500 
+                // }
+            },
             interaction: {
                 hover: true,
                 dragNodes: false,
@@ -179,7 +210,6 @@ class NetworkVisualization {
             };
         }
     }
-
 
     // ------------------ TOOLTIP ------------------
 
@@ -256,9 +286,12 @@ class NetworkVisualization {
     }
 }
 
-// Initialize
-document.addEventListener('DOMContentLoaded', async () => {
-    const networkViz = new NetworkVisualization();
-    await networkViz.init();
-    window.NetworkViz = networkViz;
+// Instantiate the class and make it globally accessible
+const networkVisualizer = new NetworkVisualization();
+document.addEventListener('DOMContentLoaded', () => {
+    networkVisualizer.init();
 });
+
+// This is the key part: making the instance accessible
+// to your HTML through a global variable or a window property.
+window.networkVisualizer = networkVisualizer;

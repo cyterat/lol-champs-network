@@ -9,6 +9,13 @@
     <title>LoL Network Visualization</title>
 </head>
 <body>
+    <div id="controls" class="hidden">
+        <label for="edge-filter">Filter Edges:</label>
+        <select id="edge-filter" onchange="networkVisualizer.setEdgeViewByType(this.value)">
+            <option value="relMain">Main View</option>
+            <!-- Add more options new edge types are introduced -->
+        </select>
+    </div>
     <div id="mynetwork"></div>
     <div id="champion-tooltip-panel">
         <select id="role-selector"></select>
