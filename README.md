@@ -6,21 +6,21 @@ This project visualizes the relationships between League of Legends champions an
 
 The implementation focuses on smooth user experience with behind-the-scenes optimizations to handle large amounts of champion data and images efficiently.
 
+<img src="./readme/lol-champs-network.png">
+
 ## User Features
 
 ### Visual Interactions:
 
-- Node Selection: Click on any node to view detailed information and champion builds
-- Hover Effects: Nodes highlight with different colors when you hover over them
--Zoom & Pan: Smooth zooming and panning to explore different areas of the network
--Champion Widget: Interactive build recommendations for different roles (TOP, JUNGLE, MID, ADC, SUPPORT)
+- Zoom & Pan: Smooth zooming and panning to explore different areas of the network
 
-### Visual Design:
+- Click/Hover Effects: Edges highlight with different colors when you click/hover over them providing additional information.
 
-- Node Images: Each champion displays with their official portrait image
-- Color-Coded Borders: Different border colors indicate champion types or categories
-- Dynamic Highlighting: Selected and hovered nodes change colors for better visibility
-- Relationship Lines: Connections between champions show their relationships
+    <table><tr><td><img src="./readme/lol-champs-network-s3.png"></td><td><img src="./readme/lol-champs-network-s1.png"></td></tr></table>
+
+- Champion Widget __(CURRENTLY DOES NOT WORK PROPERLY, trying to reslove issue #2)__: Click on any node to view interactive build recommendations for different roles (TOP, JUNGLE, MID, ADC, SUPPORT)
+
+    <img src="./readme/lol-champs-network-s2.png">
 
 ## Technical Implementation
 
@@ -37,22 +37,6 @@ The implementation focuses on smooth user experience with behind-the-scenes opti
 - Auto-Fitting: Network automatically adjusts view to show filtered content
 - Loading Indicators: Visual feedback during view transitions
 - Error Handling: Graceful handling of missing data or failed image loads
-
-## Integration:
-
-- External Widget Support: Integrates with Mobalytics widgets for champion builds
-- Responsive Layout: Tooltip panels position dynamically based on screen space
-- Event-Driven Architecture: Modular event handling for user interactions
-
-## Example
-
-Here are some screenshots of the network graph:
-
-### ~~Examples~~
-
-![Screenshot 1](/readme/lol-champs-network-0.png)
-
-![Screenshot 2](/readme/lol-champs-network-1.png)
 
 ## Hosting
 
@@ -73,6 +57,12 @@ This project was created for fun to visualize the distributions and relationship
 - **Page background image:** [Muzli Search](https://search.muz.li/OGExNmFiZWVj)
 
 - **Data, icons:** [League of Legends Wiki](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki)
+
+## Previous implementation
+
+Not class based.
+
+<table><tr><td><img src="./readme/lol-champs-network-old-0.png"></td><td><img src="./readme/lol-champs-network-old-1.png"></td></tr></table>
 
 
 ## Important Notice - 2025 Rework
