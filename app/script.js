@@ -17,7 +17,7 @@ class NetworkVisualization {
             enableImages: true,
             maxImageSize: 64,
             zoomThreshold: 0.4,
-            hideLabelsThreshold: 0.7,
+            hideLabelsThreshold: 0,
             progressiveLoading: true,
             imageLoadBatchSize: 5, // Load 5 images at a time
             imageLoadDelay: 100 // Delay between batches in ms
@@ -58,7 +58,7 @@ class NetworkVisualization {
             title: node.description || node.label,
             size: node.size || 20,
             originalSize: node.size || 20,
-            mass: node.mass || 3,
+            mass: node.mass || 4,
             borderWidth: node.BrWidth || 2,
             borderWidthSelected: node.BrWidthSel || 3,
             shadow: false,
@@ -482,7 +482,11 @@ class NetworkVisualization {
         return {
             physics: {
                 enabled: true,
-                solver: 'barnesHut'
+                solver: 'barnesHut',
+                barnesHut: {
+                    gravitationalConstant: -1000,
+                    centralGravity: 1
+                }
             },
             interaction: {
                 hover: true,

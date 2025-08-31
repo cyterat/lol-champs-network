@@ -20,7 +20,7 @@
             "type": "brand",
             "image": "./assets/other/lol.png",
             "size": 150,
-            "mass": 50,
+            "mass": 100,
             "brColor": "rgba(0, 0, 0, 0)",
             "bgColor": "rgba(0, 0, 0, 0)",
             "brColorHg": "rgba(0, 0, 0, 0)",
