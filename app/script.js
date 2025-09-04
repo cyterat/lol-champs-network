@@ -7,7 +7,6 @@ class NetworkVisualization {
         this.nodesDataView = null; // Add DataView for nodes too
         this.isStabilizing = false;
         this.lastScale = 1;
-        this.currentChampionSlug = null;
         this.imageLoadQueue = []; // Queue for progressive image loading
         this.loadedImages = new Set(); // Track loaded images
         this.isProgressiveLoadingActive = false;
@@ -17,7 +16,7 @@ class NetworkVisualization {
             enableImages: true,
             maxImageSize: 64,
             zoomThreshold: 0.4,
-            hideLabelsThreshold: 0,
+            hideLabelsThreshold: 0.7,
             progressiveLoading: true,
             imageLoadBatchSize: 5, // Load 5 images at a time
             imageLoadDelay: 100 // Delay between batches in ms
@@ -58,7 +57,7 @@ class NetworkVisualization {
             title: node.description || node.label,
             size: node.size || 20,
             originalSize: node.size || 20,
-            mass: node.mass || 4,
+            mass: node.mass || 3,
             borderWidth: node.BrWidth || 2,
             borderWidthSelected: node.BrWidthSel || 3,
             shadow: false,
@@ -76,7 +75,6 @@ class NetworkVisualization {
         if (node.image && this.performanceConfig.enableImages) {
             baseConfig.imageUrl = node.image;
             baseConfig.brokenImage = node.brokenImage || './assets/other/lol.png';
-            baseConfig.slugWidget = node.slugWidget;
             baseConfig.brColor = node.brColor || '#C79B3B';
             baseConfig.bgColor = node.bgColor || '#180d43';
             baseConfig.brColorHg = node.brColorHg || '#d4c178';
@@ -482,11 +480,7 @@ class NetworkVisualization {
         return {
             physics: {
                 enabled: true,
-                solver: 'barnesHut',
-                barnesHut: {
-                    gravitationalConstant: -1000,
-                    centralGravity: 1
-                }
+                solver: 'barnesHut'
             },
             interaction: {
                 hover: true,
@@ -507,8 +501,8 @@ class NetworkVisualization {
         });
 
         this.network.on('deselectNode', () => {
-            const tooltipPanel = document.getElementById('champion-tooltip-panel');
-            if (tooltipPanel) tooltipPanel.style.display = 'none';
+            // Node deselected - you can add any cleanup logic here if needed
+            console.log('Node deselected');
         });
 
         const container = this.network.body.container;
@@ -518,76 +512,18 @@ class NetworkVisualization {
         this.network.on('blurNode', () => {
             container.style.cursor = 'default';
         });
-
-        const roleSelector = document.getElementById('role-selector');
-        if (roleSelector) {
-            roleSelector.onchange = (event) => {
-                const selectedRole = event.target.value;
-                if (this.currentChampionSlug) {
-                    this.renderChampionWidget(this.currentChampionSlug, selectedRole);
-                }
-            };
-        }
-    }
-
-    async renderChampionWidget(championSlug, role) {
-        const widgetContainer = document.getElementById('champion-widget-container');
-        if (!widgetContainer) return;
-
-        widgetContainer.innerHTML = `
-            <div data-moba-widget="lol-champion-build-compact"
-                 data-moba-champion="${championSlug}"
-                 data-moba-champion-role="${role}"></div>
-        `;
-
-        await this.waitForMobalytics();
-
-        const tryInitWidget = (attempt = 0) => {
-            if (window.mobalyticsWidgets?.init) {
-                window.mobalyticsWidgets.init();
-                console.log("Mobalytics widget initialized, attempt", attempt + 1);
-            } else if (attempt < 3) {
-                setTimeout(() => tryInitWidget(attempt + 1), 100);
-            }
-        };
-        tryInitWidget();
     }
 
     async onNodeSelected(node, pos) {
-        const tooltipPanel = document.getElementById('champion-tooltip-panel');
-        const roleSelector = document.getElementById('role-selector');
-
-        if (!tooltipPanel || !roleSelector || !node.slugWidget) {
-            if (tooltipPanel) tooltipPanel.style.display = 'none';
-            return;
-        }
-
-        tooltipPanel.style.display = "block";
-        this.currentChampionSlug = node.slugWidget;
-
-        const roles = ['TOP', 'JUNGLE', 'MID', 'ADC', 'SUPPORT'];
-        const defaultRole = 'MID';
-
-        roleSelector.innerHTML = roles.map(role => `<option value="${role}">${role}</option>`).join('');
-        roleSelector.value = defaultRole;
-
-        this.renderChampionWidget(this.currentChampionSlug, defaultRole);
-    }
-
-    waitForMobalytics() {
-        return new Promise(resolve => {
-            if (window.mobalyticsWidgets?.init) return resolve();
-            const script = document.createElement('script');
-            script.src = "https://cdn.jsdelivr.net/gh/mobalyticshq/mobalytics-widgets/build/mobalytics-widgets.js";
-            document.body.appendChild(script);
-
-            const interval = setInterval(() => {
-                if (window.mobalyticsWidgets?.init) {
-                    clearInterval(interval);
-                    resolve();
-                }
-            }, 50);
+        // Simple node selection handler - just log the selected node
+        console.log('Node selected:', {
+            id: node.id,
+            label: node.label,
+            description: node.title
         });
+        
+        // You can add custom logic here for what happens when a node is clicked
+        // For example, showing node details in a sidebar, highlighting connected nodes, etc.
     }
 
     showError(msg) {

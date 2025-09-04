@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <meta name="robots" content="noindex,nofollow">
     
     <link rel="stylesheet" href="styles.css" id="theme-link" />
@@ -10,24 +11,19 @@
 </head>
 <body>
     <div id="controls" class="hidden">
-        <label for="edge-filter">Filter Edges:</label>
+        <label for="edge-filter">Current View:</label>
         <select id="edge-filter" onchange="networkVisualizer.setEdgeViewByType(this.value)">
-            <option value="relMain">Main View</option>
-            <!-- <option value="relA">Relationship A</option> -->
-            <!-- <option value="relB">Relationship B</option> -->
+            <option value="relMain">Main</option>
+            <!-- Additional options will be populated automatically -->
         </select>
     </div>
     <div id="mynetwork"></div>
-    <div id="champion-tooltip-panel">
-        <select id="role-selector"></select>
-        <div id="champion-widget-container"></div>
-    </div>
+    
     <a href="https://github.com/cyterat" target="_blank" class="watermark">
         <img src="assets/other/favicon.ico" alt="Watermark" />
     </a>
 
     <script src="https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mobalyticshq/mobalytics-widgets/build/mobalytics-widgets.js" defer></script>
     <script src="script.js"></script>
 </body>
 </html>
