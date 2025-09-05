@@ -4,13 +4,77 @@ class NetworkVisualization {
         this.nodes = null;
         this.edges = null;
         this.edgesDataView = null;
-        this.nodesDataView = null; // Add DataView for nodes too
+        this.nodesDataView = null;
         this.isStabilizing = false;
         this.lastScale = 1;
-        this.imageLoadQueue = []; // Queue for progressive image loading
-        this.loadedImages = new Set(); // Track loaded images
+        this.imageLoadQueue = [];
+        this.loadedImages = new Set();
         this.isProgressiveLoadingActive = false;
-        this.currentEdgeType = 'relMain'; // Track current edge filter
+        this.currentEdgeType = 'relMain';
+
+        // Manual physics configurations for each view
+        this.viewPhysicsConfig = {
+            'relMain': {
+                solver: 'barnesHut',
+                barnesHut: {
+                    gravitationalConstant: -1600,
+                    centralGravity: 0.9,
+                },
+                stabilization: {
+                    enabled: true,
+                    iterations: 2000,
+                    updateInterval: 25,
+                    onlyDynamicEdges: false,
+                    fit: true
+                },
+                adaptiveTimestep: true
+            },
+            'relItems': {
+                solver: 'forceAtlas2Based',
+                forceAtlas2Based: {
+                    gravitationalConstant: -200,
+                    centralGravity: 0.05, 
+                    springLength: 150,
+                    springConstant: 0.05,
+                    damping: 1.0,  
+                    avoidOverlap: 0.4 
+                },
+                maxVelocity: 15,
+                minVelocity: 0.01,
+                stabilization: {
+                    enabled: true,
+                    iterations: 4000,
+                    updateInterval: 100,
+                    onlyDynamicEdges: false,
+                    fit: true
+                },
+                adaptiveTimestep: true,
+                timestep: 0.25   
+            },
+            // Default config (ForceAtlas2 as you requested)
+            'default': {
+                solver: 'forceAtlas2Based',
+                forceAtlas2Based: {
+                    gravitationalConstant: -200,
+                    centralGravity: 0.005,
+                    springLength: 150,
+                    springConstant: 0.05,
+                    damping: 0.95,
+                    avoidOverlap: 0.4
+                },
+                // maxVelocity: 1500,
+                minVelocity: 0.01,
+                stabilization: {
+                    enabled: true,
+                    iterations: 4000,
+                    updateInterval: 100,
+                    onlyDynamicEdges: false,
+                    fit: true
+                },
+                adaptiveTimestep: true,
+                timestep: 0.25   
+            }
+        };
 
         this.performanceConfig = {
             enableImages: true,
@@ -18,8 +82,8 @@ class NetworkVisualization {
             zoomThreshold: 0.4,
             hideLabelsThreshold: 0.7,
             progressiveLoading: true,
-            imageLoadBatchSize: 5, // Load 5 images at a time
-            imageLoadDelay: 100 // Delay between batches in ms
+            imageLoadBatchSize: 5,
+            imageLoadDelay: 5
         };
     }
 
@@ -29,7 +93,6 @@ class NetworkVisualization {
             this.createNetwork();
             this.setupEventListeners();
             
-            // Start progressive image loading after network is created
             if (this.performanceConfig.progressiveLoading && this.performanceConfig.enableImages) {
                 this.startProgressiveImageLoading();
             }
@@ -47,7 +110,7 @@ class NetworkVisualization {
     }
 
     processNodes(nodeData) {
-        this.nodes = new vis.DataSet(nodeData.map(node => this.createNodeConfig(node, false))); // Start without images
+        this.nodes = new vis.DataSet(nodeData.map(node => this.createNodeConfig(node, false)));
     }
 
     createNodeConfig(node, withImage = true) {
@@ -71,7 +134,6 @@ class NetworkVisualization {
             }
         };
 
-        // Store image info for progressive loading
         if (node.image && this.performanceConfig.enableImages) {
             baseConfig.imageUrl = node.image;
             baseConfig.brokenImage = node.brokenImage || './assets/other/lol.png';
@@ -98,7 +160,6 @@ class NetworkVisualization {
                 }
             };
         } else {
-            // Use a styled dot shape initially, with colors that indicate it will have an image
             const hasImage = node.image && this.performanceConfig.enableImages;
             return {
                 ...baseConfig,
@@ -119,9 +180,9 @@ class NetworkVisualization {
         this.edges = new vis.DataSet(edgeData.map(edge => ({
             from: edge.from,
             to: edge.to,
-            type: edge.type || 'main',
+            type: edge.type || 'relMain',
             width: edge.width || 1,
-            length: edge.length || 60,
+            length: edge.length || 50,
             label: edge.label,
             title: edge.description,
             color: {
@@ -146,7 +207,6 @@ class NetworkVisualization {
         const container = document.getElementById('mynetwork');
         if (!container) throw new Error('Network container not found');
 
-        // Create DataViews for both nodes and edges
         this.edgesDataView = new vis.DataView(this.edges, {
             filter: (edge) => edge.type === this.currentEdgeType
         });
@@ -163,32 +223,94 @@ class NetworkVisualization {
         console.log('Network visualization created successfully (without images)');
     }
 
-    // Helper method to determine if a node should be visible for a given edge type
     shouldNodeBeVisible(nodeId, edgeType) {
         if (edgeType === 'all') return true;
         
-        // Get all edges of the specified type from the full dataset
         const allEdges = this.edges.get();
         const relevantEdges = allEdges.filter(edge => edge.type === edgeType);
         
-        // Check if this node is connected to any edge of this type
         return relevantEdges.some(edge => edge.from === nodeId || edge.to === nodeId);
     }
 
-    // Enhanced method to switch between different edge/node views
+    // Get physics configuration for specific view
+    getPhysicsConfigForView(viewType) {
+        const config = this.viewPhysicsConfig[viewType] || this.viewPhysicsConfig.default;
+        console.log(`Using physics config for view "${viewType}":`, config.solver);
+        return config;
+    }
+
+    // Method to manually set physics for a specific view
+    setPhysicsForView(viewType, physicsConfig) {
+        this.viewPhysicsConfig[viewType] = physicsConfig;
+        console.log(`Custom physics configuration set for view: ${viewType}`);
+        
+        // If this is the current view, apply immediately
+        if (this.currentEdgeType === viewType) {
+            const newOptions = this.getNetworkOptions();
+            this.network.setOptions(newOptions);
+        }
+    }
+
+    // Set mass based on node connectivity for better stability
+    setMassBasedOnConnectivity(edgeType) {
+        const visibleEdges = this.edges.get().filter(edge => 
+            edgeType === 'all' || edge.type === edgeType
+        );
+        
+        // Calculate degree for each node in the current view
+        const nodeDegrees = {};
+        const allNodes = this.nodes.get();
+        allNodes.forEach(node => nodeDegrees[node.id] = 0);
+        
+        visibleEdges.forEach(edge => {
+            if (nodeDegrees[edge.from] !== undefined) nodeDegrees[edge.from]++;
+            if (nodeDegrees[edge.to] !== undefined) nodeDegrees[edge.to]++;
+        });
+        
+        // Update nodes with mass based on their connectivity in this view
+        const updates = allNodes.map(node => {
+            const degree = nodeDegrees[node.id] || 0;
+            let mass;
+            
+            if (degree > 15) {
+                mass = 24; // Super hubs - heavy anchors
+            } else if (degree > 8) {
+                mass = 18;  // Major hubs
+            } else if (degree > 4) {
+                mass = 12;  // Medium connectivity
+            } else if (degree > 1) {
+                mass = 6;  // Normal nodes
+            } else {
+                mass = 1;  // Leaf nodes or isolated
+            }
+            
+            return { 
+                id: node.id, 
+                mass: mass,
+                // Preserve other properties
+                originalMass: node.mass || 3 // Store original mass
+            };
+        });
+        
+        this.nodes.update(updates);
+        
+        // Log connectivity stats
+        const maxDegree = Math.max(...Object.values(nodeDegrees));
+        const avgDegree = Object.values(nodeDegrees).reduce((a, b) => a + b, 0) / Object.values(nodeDegrees).length;
+        console.log(`Updated node masses for "${edgeType}": max degree ${maxDegree}, avg degree ${avgDegree.toFixed(1)}`);
+    }
+
+    // Enhanced method to switch between different edge/node views with manual physics
     setEdgeViewByType(type) {
         if (!this.edges || !this.nodes) return;
         
-        // Show loading indicator
         this.showFilteringIndicator(true);
         
         console.log(`Switching to view: ${type}`);
         this.currentEdgeType = type;
         
-        // Use setTimeout to allow the loading indicator to appear before heavy processing
         setTimeout(() => {
             try {
-                // Create new DataViews instead of updating existing ones
                 const edgeFilterFunction = type === 'all' ? 
                     () => true : 
                     (edge) => edge.type === type;
@@ -197,7 +319,6 @@ class NetworkVisualization {
                     () => true : 
                     (node) => this.shouldNodeBeVisible(node.id, type);
                 
-                // Recreate the DataViews with new filters
                 this.edgesDataView = new vis.DataView(this.edges, {
                     filter: edgeFilterFunction
                 });
@@ -206,19 +327,24 @@ class NetworkVisualization {
                     filter: nodeFilterFunction
                 });
                 
-                // Update the network with the new DataViews
+                // Set mass based on connectivity for this specific view
+                this.setMassBasedOnConnectivity(type);
+                
+                // Get the specific physics configuration for this view
+                const newOptions = this.getNetworkOptions();
+                
+                // Update the network with the new DataViews AND new physics options
                 this.network.setData({
                     nodes: this.nodesDataView,
                     edges: this.edgesDataView
                 });
                 
-                // Debug: Log what we're showing
+                this.network.setOptions(newOptions);
+                
                 const visibleEdges = this.edgesDataView.get();
                 const visibleNodes = this.nodesDataView.get();
                 console.log(`View "${type}": ${visibleNodes.length} nodes, ${visibleEdges.length} edges`);
-                console.log('Visible edges:', visibleEdges.map(e => `${e.from}->${e.to} (${e.type})`));
                 
-                // Fit the network to show the filtered content
                 setTimeout(() => {
                     this.network.fit({
                         animation: {
@@ -227,25 +353,22 @@ class NetworkVisualization {
                         }
                     });
                     
-                    // Hide loading indicator after fit animation
                     setTimeout(() => {
                         this.showFilteringIndicator(false);
-                    }, 600); // 500ms animation + 100ms buffer
+                    }, 600);
                 }, 100);
                 
             } catch (error) {
                 console.error('Error during view switching:', error);
                 this.showFilteringIndicator(false);
             }
-        }, 50); // Small delay to ensure indicator appears
+        }, 50);
     }
 
-    // Method to show/hide filtering indicator
     showFilteringIndicator(show) {
         let indicator = document.getElementById('filtering-indicator');
         
         if (!indicator) {
-            // Create the indicator if it doesn't exist
             indicator = document.createElement('div');
             indicator.id = 'filtering-indicator';
             indicator.className = 'filtering-indicator';
@@ -263,34 +386,29 @@ class NetworkVisualization {
             indicator.style.opacity = '0';
             setTimeout(() => {
                 indicator.style.display = 'none';
-            }, 300); // Fade out duration
+            }, 300);
         }
     }
 
-    // Method to get available edge types from data
     getAvailableEdgeTypes() {
         const allEdges = this.edges.get();
         const types = [...new Set(allEdges.map(edge => edge.type))];
         return types.sort();
     }
 
-    // Method to populate the dropdown with available edge types
     populateEdgeFilterDropdown() {
         const dropdown = document.getElementById('edge-filter');
         if (!dropdown) return;
 
         const types = this.getAvailableEdgeTypes();
         
-        // Clear existing options except the first one
         dropdown.innerHTML = '';
         
-        // Add 'all' option
         const allOption = document.createElement('option');
         allOption.value = 'all';
         allOption.textContent = 'All Connections';
         dropdown.appendChild(allOption);
         
-        // Add options for each edge type
         types.forEach(type => {
             const option = document.createElement('option');
             option.value = type;
@@ -304,9 +422,7 @@ class NetworkVisualization {
         console.log(`Populated dropdown with ${types.length} edge types:`, types);
     }
 
-    // Helper to format edge type names for display
     formatEdgeTypeName(type) {
-        // Convert camelCase or snake_case to readable format
         return type
             .replace(/([A-Z])/g, ' $1')
             .replace(/_/g, ' ')
@@ -314,15 +430,11 @@ class NetworkVisualization {
             .trim();
     }
 
-    // Progressive image loading methods
+    // Progressive image loading methods (unchanged)
     startProgressiveImageLoading() {
         if (this.isProgressiveLoadingActive) return;
         this.isProgressiveLoadingActive = true;
-
-        // Build queue of nodes that need images
         this.buildImageLoadQueue();
-        
-        // Start loading images in batches
         this.loadNextImageBatch();
     }
 
@@ -345,7 +457,6 @@ class NetworkVisualization {
         const batchSize = Math.min(this.performanceConfig.imageLoadBatchSize, this.imageLoadQueue.length);
         const batch = this.imageLoadQueue.splice(0, batchSize);
 
-        // Load images for this batch
         const loadPromises = batch.map(nodeId => this.loadImageForNode(nodeId));
         
         try {
@@ -354,7 +465,6 @@ class NetworkVisualization {
             console.warn('Some images failed to load in batch:', error);
         }
 
-        // Schedule next batch
         setTimeout(() => {
             this.loadNextImageBatch();
         }, this.performanceConfig.imageLoadDelay);
@@ -371,23 +481,20 @@ class NetworkVisualization {
             const img = new Image();
             
             img.onload = () => {
-                // Image loaded successfully, update the node
                 this.updateNodeWithImage(nodeId, node);
                 this.loadedImages.add(nodeId);
                 resolve();
             };
 
             img.onerror = () => {
-                // Image failed to load, try broken image or keep as dot
                 console.warn(`Failed to load image for node ${nodeId}: ${node.imageUrl}`);
                 if (node.brokenImage) {
                     this.updateNodeWithImage(nodeId, node, node.brokenImage);
                 }
-                this.loadedImages.add(nodeId); // Mark as processed
+                this.loadedImages.add(nodeId);
                 resolve();
             };
 
-            // Start loading the image
             img.src = node.imageUrl;
         });
     }
@@ -412,7 +519,6 @@ class NetworkVisualization {
         this.nodes.update(updatedNode);
     }
 
-    // Method to toggle progressive loading on/off
     toggleProgressiveLoading(enabled) {
         this.performanceConfig.progressiveLoading = enabled;
         
@@ -424,19 +530,16 @@ class NetworkVisualization {
         }
     }
 
-    // Method to load all remaining images immediately
     loadAllImagesNow() {
         this.performanceConfig.imageLoadBatchSize = this.imageLoadQueue.length;
         this.performanceConfig.imageLoadDelay = 0;
         this.loadNextImageBatch();
     }
 
-    // Method to refresh the current view (useful after data changes)
     refreshCurrentView() {
         this.setEdgeViewByType(this.currentEdgeType);
     }
 
-    // Debug method to check available edge types
     debugAvailableTypes() {
         if (!this.edges) {
             console.log('No edges data available');
@@ -453,12 +556,10 @@ class NetworkVisualization {
         return types;
     }
 
-    // Safety method to reset to default view if something goes wrong
     resetToDefaultView() {
         console.log('Resetting to default view...');
         this.currentEdgeType = 'relMain';
         
-        // Recreate DataViews with default filters
         this.edgesDataView = new vis.DataView(this.edges, {
             filter: (edge) => edge.type === 'relMain'
         });
@@ -467,26 +568,34 @@ class NetworkVisualization {
             filter: (node) => this.shouldNodeBeVisible(node.id, 'relMain')
         });
         
-        // Update network
+        const newOptions = this.getNetworkOptions();
         this.network.setData({
             nodes: this.nodesDataView,
             edges: this.edgesDataView
         });
+        this.network.setOptions(newOptions);
         
         this.network.fit();
     }
 
     getNetworkOptions() {
+        const physicsConfig = this.getPhysicsConfigForView(this.currentEdgeType);
+        
         return {
             physics: {
                 enabled: true,
-                solver: 'barnesHut'
+                ...physicsConfig
+            },
+            layout: {
+                improvedLayout: true,
+                clusterThreshold: 150
             },
             interaction: {
                 hover: true,
+                tooltipDelay: 200,
                 dragNodes: false,
-                zoomView: true,
-                dragView: true
+                dragView: true,
+                zoomView: true
             }
         };
     }
@@ -501,7 +610,6 @@ class NetworkVisualization {
         });
 
         this.network.on('deselectNode', () => {
-            // Node deselected - you can add any cleanup logic here if needed
             console.log('Node deselected');
         });
 
@@ -515,15 +623,11 @@ class NetworkVisualization {
     }
 
     async onNodeSelected(node, pos) {
-        // Simple node selection handler - just log the selected node
         console.log('Node selected:', {
             id: node.id,
             label: node.label,
             description: node.title
         });
-        
-        // You can add custom logic here for what happens when a node is clicked
-        // For example, showing node details in a sidebar, highlighting connected nodes, etc.
     }
 
     showError(msg) {
