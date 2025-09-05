@@ -201,6 +201,7 @@ class NetworkVisualization {
                 color: {
                     border: hasImage ? (node.brColor || '#C79B3B') : '#C79B3B',
                     background: hasImage ? (node.bgColor || '#95A5A6') : '#95A5A6',
+                    hover: node.brColorHg || '#d4c178',
                     highlight: {
                         border: hasImage ? (node.brColorHg || '#d4c178') : '#d4c178',
                         background: hasImage ? (node.bgColorHg || '#180d43') : '#180d43'
@@ -396,11 +397,22 @@ class NetworkVisualization {
     }
 
     updateNodeWithImage(nodeId, node, imageUrl = null) {
-        this.nodes.update({
+        const updatedNode = {
             id: nodeId,
             shape: 'circularImage',
-            image: imageUrl || node.imageUrl
-        });
+            image: imageUrl || node.imageUrl,
+            brokenImage: node.brokenImage || './assets/other/lol.png',
+            color: {
+                border: node.brColor || '#C79B3B',
+                background: node.bgColor || '#180d43',
+                hover: node.brColorHg || '#d4c178',  // <-- This line is present
+                highlight: {
+                    border: node.brColorHg || '#d4c178',
+                    background: node.bgColorHg || '#180d43'
+                }
+            }
+        };
+        this.nodes.update(updatedNode);
     }
     
     getNetworkOptions() {
