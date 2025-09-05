@@ -3,11 +3,12 @@
         {
             "id": 0,
             "label": "cyterat",
-            "description": "\u0d26\u0d4d\u0d26\u0d3f \u02c9\ua4b3\u02c9 )\u2727\n\n- Class:\u2002[Creator]\n- Collaboration Level:\u2002[Bard Main]\n- Highest Rank:\u2002[Wood]\n- Difficulty:\u2002[Ukraine]\n- JS experience:\u2002[Gemini, Claude, ChatGPT]",
+            "description": "\u0d26\u0d4d\u0d26\u0d3f \u02c9\ua4b3\u02c9 )\u2727\n\n- Class:\u2002[Creator]\n- Collaboration Level:\u2002[Bard Main]\n- Highest Rank:\u2002[Wood]\n- Difficulty:\u2002[Ukraine]\n- JS experience:\u2002[Gemini, Claude, ChatGPT]\n\nThis project is still a total mess, but one day I'll finish it...",
             "type": "dev",
             "image": "https://avatars.githubusercontent.com/u/29544625?v=4",
             "brokenImage": "assets/other/favicon.ico",
             "size": 15,
+            "mass":5,
             "brColor": "rgba(0, 0, 0, 0)",
             "bgColor": "rgba(0, 0, 0, 0)",
             "brColorHg": "rgba(0, 0, 0, 0)",
