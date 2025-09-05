@@ -17,7 +17,7 @@ class NetworkVisualization {
             'relMain': {
                 solver: 'barnesHut',
                 barnesHut: {
-                    gravitationalConstant: -1600,
+                    gravitationalConstant: -1800,
                     centralGravity: 0.9,
                 },
                 stabilization: {
