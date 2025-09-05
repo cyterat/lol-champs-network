@@ -2,27 +2,20 @@
 
 [League of Legends Champions Network](https://lol-champions-network-2baea.ondigitalocean.app/)
 
+<img src="./readme/lol-champs-network.png">
+
 This project visualizes the relationships between League of Legends champions and their respective classes. The visualization is created using __vis.js__, with nodes representing various League of Legends entities, currenlty champions and classes, and edges representing the relationships between them.
 
 The implementation focuses on smooth user experience with behind-the-scenes optimizations to handle large amounts of champion data and images efficiently.
 
-<img src="./readme/lol-champs-network.png">
 
-## User Features
+## 💎 User Features
 
-### Visual Interactions:
+<table><tr><td><b>Champion Builds</b><br>Click on any node to open a pop-up panel with dynamically generated links to popular build sites, providing builds for the selected champion.</td><td><img width='700' src="./readme/lol-champs-network-s2.png"></td></tr></table>
 
-- Zoom & Pan: Smooth zooming and panning to explore different areas of the network
+<table><tr><td><b>Click/Hover Effects</b><br>Edges highlight with different colors when you click/hover over them providing additional information.</td><td><img src="./readme/lol-champs-network-s3.png"></td><td><img src="./readme/lol-champs-network-s1.png"></td></tr></table>
 
-- Click/Hover Effects: Edges highlight with different colors when you click/hover over them providing additional information.
-
-    <table><tr><td><img src="./readme/lol-champs-network-s3.png"></td><td><img src="./readme/lol-champs-network-s1.png"></td></tr></table>
-
-- Champion Widget __(CURRENTLY DOES NOT WORK, trying to reslove [issue #2](https://github.com/cyterat/lol-champs-network/issues/2))__: Click on any node to view interactive build recommendations for different roles (TOP, JUNGLE, MID, ADC, SUPPORT)
-
-    <img src="./readme/lol-champs-network-s2.png">
-
-## Technical Implementation
+## 🔨 Technical Implementation
 
 ### Performance Optimizations:
 
@@ -30,13 +23,6 @@ The implementation focuses on smooth user experience with behind-the-scenes opti
 - Memory-Safe DataViews: Uses vis.js DataViews to efficiently filter large datasets without duplicating data
 - Fallback Images: Automatic fallback to default images when champion portraits fail to load
 - Batch Processing: Loads images in groups of 5 with small delays between batches
-
-### Network Features:
-
-- Dynamic Filtering: Switch between different relationship types (implemented with DataView filtering)
-- Auto-Fitting: Network automatically adjusts view to show filtered content
-- Loading Indicators: Visual feedback during view transitions
-- Error Handling: Graceful handling of missing data or failed image loads
 
 ## Hosting
 
@@ -46,26 +32,24 @@ The graph visualization is hosted on Digital Ocean.
 
 This project was created for fun to visualize the distributions and relationships between different entities in League of Legends.
 
-## Sources
+## 🧲 Sources
 
 - **Colors, logo, font:** [Riot Games](https://brand.riotgames.com/en-us/league-of-legends/fundamentals)
 
-- **Data, champion icons, colors:** [Mobalytics](https://mobalytics.gg/lol)
+- **Champion data:** [Riot's Data Dragon](https://developer.riotgames.com/docs/lol) 
 
-- **Champion builds widget:** [Mobalytics](https://github.com/mobalyticshq/mobalytics-widgets)
+- **Champion difficulty levels:** [Mobalytics](https://mobalytics.gg/lol)
 
 - **Page background image:** [Muzli Search](https://search.muz.li/OGExNmFiZWVj)
 
-- **Data, icons:** [League of Legends Wiki](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki)
+- **Other data, icons:** [League of Legends Wiki](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki)
 
-## Previous implementation
-
-Not class based.
+## 🚧 Previous implementation
 
 <table><tr><td><img src="./readme/lol-champs-network-old-0.png"></td><td><img src="./readme/lol-champs-network-old-1.png"></td></tr></table>
 
 
-## Important Notice - 2025 Rework
+## 💡 Important Notice - 2025 Rework
 
 - The first version of the project was built using python NetworkX and PyVis libraries. It had extremely poor performance and messed up html and javascript, as it was 'generated' through python libraries. That's why I decided to completely rework it, using cleaner approach and app structure, i.e. HTML/CSS/Javascript only.
 
@@ -73,9 +57,10 @@ Not class based.
 
 - 99% of the JavasScript code has been generated through prompts by Gemini > Claude > Chat GPT (in that order), with 1% of minor tweaks from my side. 
 
+- I had been trying to set up Mobalytics widget with champion builds, on node select, for a long time. However due to unresolved CORS errors related to dynamically generated elements, I decided to abandon the idea and instead switched to a source agnostic solution. This is currenlty a dynamically generated (tied to a specific champion) list of various build sites, allowing users to choose the source they prefer.
+
 ## To Do
 
-- ~~Python generated visualization will be replaced with html/js/css trio.~~
-- Several views (network combinations) will be implemented.
-- Additional League of Legends entities will be added.
+- ✅ ~~Python generated visualization will be replaced with html/js/css trio.~~ 
+- ✅ ~~Champion builds widget/tooltip added/~~
 - Scheduled script written in Python, for data manipulations, will be implemented. 
