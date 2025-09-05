@@ -18,7 +18,7 @@ The implementation focuses on smooth user experience with behind-the-scenes opti
 
     <table><tr><td><img src="./readme/lol-champs-network-s3.png"></td><td><img src="./readme/lol-champs-network-s1.png"></td></tr></table>
 
-- Champion Widget __(CURRENTLY DOES NOT WORK PROPERLY, trying to reslove [issue #2](https://github.com/cyterat/lol-champs-network/issues/2))__: Click on any node to view interactive build recommendations for different roles (TOP, JUNGLE, MID, ADC, SUPPORT)
+- Champion Widget __(CURRENTLY DOES NOT WORK, trying to reslove [issue #2](https://github.com/cyterat/lol-champs-network/issues/2))__: Click on any node to view interactive build recommendations for different roles (TOP, JUNGLE, MID, ADC, SUPPORT)
 
     <img src="./readme/lol-champs-network-s2.png">
 
