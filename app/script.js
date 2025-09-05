@@ -161,10 +161,10 @@ class NetworkVisualization {
             font: {
                 color: '#f0f0f0',
                 size: 14,
-                face: 'Beaufort for LOL, sans-serif',
+                face: 'Spiegel TT, sans-serif',
                 weight: 'normal',
-                strokeWidth: 10,
-                strokeColor: '#0c0c0c'
+                strokeWidth: 6,
+                strokeColor: '#000e22'
             }
         };
 
@@ -229,7 +229,7 @@ class NetworkVisualization {
             smooth: { enabled: false },
             font: {
                 color: '#d4c178',
-                size: 24,
+                size: 40,
                 face: 'Beaufort for LOL, sans-serif',
                 weight: 'normal',
                 strokeWidth: 8,
