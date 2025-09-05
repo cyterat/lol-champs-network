@@ -20,7 +20,6 @@ The implementation focuses on smooth user experience with behind-the-scenes opti
 ### Performance Optimizations:
 
 - Progressive Image Loading: Images load in small batches to prevent freezing during startup
-- Memory-Safe DataViews: Uses vis.js DataViews to efficiently filter large datasets without duplicating data
 - Fallback Images: Automatic fallback to default images when champion portraits fail to load
 - Batch Processing: Loads images in groups of 5 with small delays between batches
 
