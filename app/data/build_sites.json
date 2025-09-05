@@ -10,17 +10,12 @@
         "icon": "https://static.bigbrain.gg/assets/ugg/logo/ugg-logo.svg"
     },
     { 
-        "name": "Mobalytics", 
-        "url": "https://mobalytics.gg/lol/champions/{champion}/build", 
-        "icon": "https://cdn.mobalytics.gg/assets/common/icons/mobalytics-logo/logo-mobalytics-collapsed-fixed.svg"
-    },
-    { 
         "name": "LoLalytics", 
         "url": "https://lolalytics.com/lol/{champion}/build/", 
         "icon": "https://lolalytics.com/favicon.ico"
     },
     { 
-        "name": "Blitz.gg",
+        "name": "Blitz",
         "url": "https://blitz.gg/lol/champions/{champion}/build", 
         "icon": "https://blitz.gg/favicon.svg"
     },
@@ -28,5 +23,25 @@
         "name": "Mobafire", 
         "url": "https://www.mobafire.com/league-of-legends/champion/{champion}", 
         "icon": "https://www.mobafire.com/favicon.ico"
+    },
+    { 
+        "name": "Mobalytics", 
+        "url": "https://mobalytics.gg/lol/champions/{champion}/build", 
+        "icon": "https://cdn.mobalytics.gg/assets/common/icons/mobalytics-logo/logo-mobalytics-collapsed-fixed.svg"
+    },
+    { 
+        "name": "League of Graphs", 
+        "url": "https://www.leagueofgraphs.com/champions/tier-list/{champion}", 
+        "icon": "https://lolg-cdn.porofessor.gg/img/s/favicon_v2.png"
+    },
+    { 
+        "name": "METAsrc", 
+        "url": "https://www.metasrc.com/lol/build/{champion}", 
+        "icon": "https://www.metasrc.com/legacy/v/6.11.5/images/favicon.png"
+    },
+    { 
+        "name": "OneTricks.GG", 
+        "url": "https://www.onetricks.gg/champions/builds/{champion}", 
+        "icon": "https://www.onetricks.gg/favicon.ico"
     }
 ]
