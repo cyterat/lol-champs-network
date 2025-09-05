@@ -1,0 +1,32 @@
+[
+    { 
+        "name": "OP.GG", 
+        "url": "https://www.op.gg/champions/{champion}/build", 
+        "icon": "https://s-opgg-kit.op.gg/gnb/config/images/icon/1ebd6ea46835d73a9caf3461b5e3ac91.svg"
+    },
+    { 
+        "name": "U.GG", 
+        "url": "https://u.gg/lol/champions/{champion}/build", 
+        "icon": "https://static.bigbrain.gg/assets/ugg/logo/ugg-logo.svg"
+    },
+    { 
+        "name": "Mobalytics", 
+        "url": "https://mobalytics.gg/lol/champions/{champion}/build", 
+        "icon": "https://cdn.mobalytics.gg/assets/common/icons/mobalytics-logo/logo-mobalytics-collapsed-fixed.svg"
+    },
+    { 
+        "name": "LoLalytics", 
+        "url": "https://lolalytics.com/lol/{champion}/build/", 
+        "icon": "https://lolalytics.com/favicon.ico"
+    },
+    { 
+        "name": "Blitz.gg",
+        "url": "https://blitz.gg/lol/champions/{champion}/build", 
+        "icon": "https://blitz.gg/favicon.svg"
+    },
+    { 
+        "name": "Mobafire", 
+        "url": "https://www.mobafire.com/league-of-legends/champion/{champion}", 
+        "icon": "https://www.mobafire.com/favicon.ico"
+    }
+]
