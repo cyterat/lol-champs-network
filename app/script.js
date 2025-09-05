@@ -2,6 +2,7 @@ class NetworkVisualization {
     constructor() {
         this.network = null;
         this.nodes = null;
+        this.currentChampionSlug = null;
         this.edges = null;
         this.edgesDataView = null;
         this.nodesDataView = null;
@@ -137,6 +138,7 @@ class NetworkVisualization {
         if (node.image && this.performanceConfig.enableImages) {
             baseConfig.imageUrl = node.image;
             baseConfig.brokenImage = node.brokenImage || './assets/other/lol.png';
+            baseConfig.slugWidget = node.slugWidget; 
             baseConfig.brColor = node.brColor || '#C79B3B';
             baseConfig.bgColor = node.bgColor || '#180d43';
             baseConfig.brColorHg = node.brColorHg || '#d4c178';
@@ -611,8 +613,10 @@ class NetworkVisualization {
 
         this.network.on('deselectNode', () => {
             console.log('Node deselected');
+            const tooltipPanel = document.getElementById('champion-tooltip-panel');
+            if (tooltipPanel) tooltipPanel.style.display = 'none';
         });
-
+        
         const container = this.network.body.container;
         this.network.on('hoverNode', () => {
             container.style.cursor = 'pointer';
@@ -620,6 +624,16 @@ class NetworkVisualization {
         this.network.on('blurNode', () => {
             container.style.cursor = 'default';
         });
+
+        const roleSelector = document.getElementById('role-selector');
+        if (roleSelector) {
+            roleSelector.onchange = (event) => {
+                const selectedRole = event.target.value;
+                if (this.currentChampionSlug) {
+                    this.renderChampionWidget(this.currentChampionSlug, selectedRole);
+                }
+            };
+        }
     }
 
     async onNodeSelected(node, pos) {
@@ -627,6 +641,69 @@ class NetworkVisualization {
             id: node.id,
             label: node.label,
             description: node.title
+        });
+
+        const tooltipPanel = document.getElementById('champion-tooltip-panel');
+        const roleSelector = document.getElementById('role-selector');
+
+        if (!tooltipPanel || !roleSelector || !node.slugWidget) {
+            if (tooltipPanel) tooltipPanel.style.display = 'none';
+            console.log('Node selected:', {
+                id: node.id,
+                label: node.label,
+                description: node.title
+            });
+            return;
+        }
+
+        tooltipPanel.style.display = "block";
+        this.currentChampionSlug = node.slugWidget;
+
+        const roles = ['TOP', 'JUNGLE', 'MID', 'ADC', 'SUPPORT'];
+        const defaultRole = 'MID';
+
+        roleSelector.innerHTML = roles.map(role => `<option value="${role}">${role}</option>`).join('');
+        roleSelector.value = defaultRole;
+
+        this.renderChampionWidget(this.currentChampionSlug, defaultRole);
+    }
+
+    async renderChampionWidget(championSlug, role) {
+        const widgetContainer = document.getElementById('champion-widget-container');
+        if (!widgetContainer) return;
+
+        widgetContainer.innerHTML = `
+            <div data-moba-widget="lol-champion-build-compact"
+                data-moba-champion="${championSlug}"
+                data-moba-champion-role="${role}"></div>
+        `;
+
+        await this.waitForMobalytics();
+
+        const tryInitWidget = (attempt = 0) => {
+            if (window.mobalyticsWidgets?.init) {
+                window.mobalyticsWidgets.init();
+                console.log("Mobalytics widget initialized, attempt", attempt + 1);
+            } else if (attempt < 3) {
+                setTimeout(() => tryInitWidget(attempt + 1), 100);
+            }
+        };
+        tryInitWidget();
+    }
+
+    waitForMobalytics() {
+        return new Promise(resolve => {
+            if (window.mobalyticsWidgets?.init) return resolve();
+            const script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/gh/mobalyticshq/mobalytics-widgets/build/mobalytics-widgets.js";
+            document.body.appendChild(script);
+
+            const interval = setInterval(() => {
+                if (window.mobalyticsWidgets?.init) {
+                    clearInterval(interval);
+                    resolve();
+                }
+            }, 50);
         });
     }
 

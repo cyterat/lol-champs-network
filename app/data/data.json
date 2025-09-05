@@ -3,12 +3,12 @@
         {
             "id": 0,
             "label": "cyterat",
-            "description": "\u0d26\u0d4d\u0d26\u0d3f \u02c9\ua4b3\u02c9 )\u2727\n\n- Class:\u2002[Creator]\n- Collaboration Level:\u2002[Bard Main]\n- Highest Rank:\u2002[Wood]\n- Difficulty:\u2002[Ukraine]\n- JS experience:\u2002[Gemini, Claude, ChatGPT]\n\nThis project is still a total mess, but one day I'll finish it...",
+            "description": "\u0d26\u0d4d\u0d26\u0d3f \u02c9\ua4b3\u02c9 )\u2727\n\n- Class:\u2002[Creator]\n- Collaboration Level:\u2002[Bard Main]\n- Highest Rank:\u2002[Wood]\n- Difficulty:\u2002[Ukraine]\n- JS experience:\u2002[Gemini, Claude, ChatGPT]\n\nP.S. The images within widget, which appears when you click\non any champion node, are broken due to CORS errors.\n\nMe, myself, and AI, will try to solve the issue someday...",
             "type": "dev",
             "image": "https://avatars.githubusercontent.com/u/29544625?v=4",
             "brokenImage": "assets/other/favicon.ico",
             "size": 15,
-            "mass":5,
+            "mass": 5,
             "brColor": "rgba(0, 0, 0, 0)",
             "bgColor": "rgba(0, 0, 0, 0)",
             "brColorHg": "rgba(0, 0, 0, 0)",
@@ -121,6 +121,7 @@
             "label": "Aatrox",
             "type": "champion",
             "image": "./assets/champions/aatrox.webp",
+            "slugWidget": "aatrox",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Aatrox.png",
             "size": 20
         },
@@ -129,6 +130,7 @@
             "label": "Ahri",
             "type": "champion",
             "image": "./assets/champions/ahri.webp",
+            "slugWidget": "ahri",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Ahri.png",
             "size": 20
         },
@@ -137,6 +139,7 @@
             "label": "Akali",
             "type": "champion",
             "image": "./assets/champions/akali.webp",
+            "slugWidget": "akali",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Akali.png",
             "size": 20
         },
@@ -145,6 +148,7 @@
             "label": "Akshan",
             "type": "champion",
             "image": "./assets/champions/akshan.webp",
+            "slugWidget": "akshan",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Akshan.png",
             "size": 20
         },
@@ -153,6 +157,7 @@
             "label": "Alistar",
             "type": "champion",
             "image": "./assets/champions/alistar.webp",
+            "slugWidget": "alistar",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Alistar.png",
             "size": 20
         },
@@ -161,6 +166,7 @@
             "label": "Ambessa",
             "type": "champion",
             "image": "./assets/champions/ambessa.webp",
+            "slugWidget": "ambessa",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Ambessa.png",
             "size": 20
         },
@@ -169,6 +175,7 @@
             "label": "Amumu",
             "type": "champion",
             "image": "./assets/champions/amumu.webp",
+            "slugWidget": "amumu",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Amumu.png",
             "size": 20
         },
@@ -177,6 +184,7 @@
             "label": "Anivia",
             "type": "champion",
             "image": "./assets/champions/anivia.webp",
+            "slugWidget": "anivia",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Anivia.png",
             "size": 20
         },
@@ -185,6 +193,7 @@
             "label": "Annie",
             "type": "champion",
             "image": "./assets/champions/annie.webp",
+            "slugWidget": "annie",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Annie.png",
             "size": 20
         },
@@ -193,6 +202,7 @@
             "label": "Aphelios",
             "type": "champion",
             "image": "./assets/champions/aphelios.webp",
+            "slugWidget": "aphelios",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Aphelios.png",
             "size": 20
         },
@@ -201,6 +211,7 @@
             "label": "Ashe",
             "type": "champion",
             "image": "./assets/champions/ashe.webp",
+            "slugWidget": "ashe",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Ashe.png",
             "size": 20
         },
@@ -209,6 +220,7 @@
             "label": "Aurelion Sol",
             "type": "champion",
             "image": "./assets/champions/aurelionsol.webp",
+            "slugWidget": "aurelionsol",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/AurelionSol.png",
             "size": 20
         },
@@ -217,6 +229,7 @@
             "label": "Aurora",
             "type": "champion",
             "image": "./assets/champions/aurora.webp",
+            "slugWidget": "aurora",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Aurora.png",
             "size": 20
         },
@@ -225,6 +238,7 @@
             "label": "Azir",
             "type": "champion",
             "image": "./assets/champions/azir.webp",
+            "slugWidget": "azir",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Azir.png",
             "size": 20
         },
@@ -233,6 +247,7 @@
             "label": "Bard",
             "type": "champion",
             "image": "./assets/champions/bard.webp",
+            "slugWidget": "bard",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Bard.png",
             "size": 20
         },
@@ -241,6 +256,7 @@
             "label": "Bel'Veth",
             "type": "champion",
             "image": "./assets/champions/belveth.webp",
+            "slugWidget": "belveth",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Belveth.png",
             "size": 20
         },
@@ -249,6 +265,7 @@
             "label": "Blitzcrank",
             "type": "champion",
             "image": "./assets/champions/blitzcrank.webp",
+            "slugWidget": "blitzcrank",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Blitzcrank.png",
             "size": 20
         },
@@ -257,6 +274,7 @@
             "label": "Brand",
             "type": "champion",
             "image": "./assets/champions/brand.webp",
+            "slugWidget": "brand",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Brand.png",
             "size": 20
         },
@@ -265,6 +283,7 @@
             "label": "Braum",
             "type": "champion",
             "image": "./assets/champions/braum.webp",
+            "slugWidget": "braum",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Braum.png",
             "size": 20
         },
@@ -273,6 +292,7 @@
             "label": "Briar",
             "type": "champion",
             "image": "./assets/champions/briar.webp",
+            "slugWidget": "briar",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Briar.png",
             "size": 20
         },
@@ -281,6 +301,7 @@
             "label": "Caitlyn",
             "type": "champion",
             "image": "./assets/champions/caitlyn.webp",
+            "slugWidget": "caitlyn",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Caitlyn.png",
             "size": 20
         },
@@ -289,6 +310,7 @@
             "label": "Camille",
             "type": "champion",
             "image": "./assets/champions/camille.webp",
+            "slugWidget": "camille",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Camille.png",
             "size": 20
         },
@@ -297,6 +319,7 @@
             "label": "Cassiopeia",
             "type": "champion",
             "image": "./assets/champions/cassiopeia.webp",
+            "slugWidget": "cassiopeia",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Cassiopeia.png",
             "size": 20
         },
@@ -305,6 +328,7 @@
             "label": "Cho'Gath",
             "type": "champion",
             "image": "./assets/champions/chogath.webp",
+            "slugWidget": "chogath",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Chogath.png",
             "size": 20
         },
@@ -313,6 +337,7 @@
             "label": "Corki",
             "type": "champion",
             "image": "./assets/champions/corki.webp",
+            "slugWidget": "corki",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Corki.png",
             "size": 20
         },
@@ -321,6 +346,7 @@
             "label": "Darius",
             "type": "champion",
             "image": "./assets/champions/darius.webp",
+            "slugWidget": "darius",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Darius.png",
             "size": 20
         },
@@ -329,6 +355,7 @@
             "label": "Diana",
             "type": "champion",
             "image": "./assets/champions/diana.webp",
+            "slugWidget": "diana",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Diana.png",
             "size": 20
         },
@@ -337,6 +364,7 @@
             "label": "Draven",
             "type": "champion",
             "image": "./assets/champions/draven.webp",
+            "slugWidget": "draven",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Draven.png",
             "size": 20
         },
@@ -345,6 +373,7 @@
             "label": "Dr. Mundo",
             "type": "champion",
             "image": "./assets/champions/drmundo.webp",
+            "slugWidget": "drmundo",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/DrMundo.png",
             "size": 20
         },
@@ -353,6 +382,7 @@
             "label": "Ekko",
             "type": "champion",
             "image": "./assets/champions/ekko.webp",
+            "slugWidget": "ekko",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Ekko.png",
             "size": 20
         },
@@ -361,6 +391,7 @@
             "label": "Elise",
             "type": "champion",
             "image": "./assets/champions/elise.webp",
+            "slugWidget": "elise",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Elise.png",
             "size": 20
         },
@@ -369,6 +400,7 @@
             "label": "Evelynn",
             "type": "champion",
             "image": "./assets/champions/evelynn.webp",
+            "slugWidget": "evelynn",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Evelynn.png",
             "size": 20
         },
@@ -377,6 +409,7 @@
             "label": "Ezreal",
             "type": "champion",
             "image": "./assets/champions/ezreal.webp",
+            "slugWidget": "ezreal",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Ezreal.png",
             "size": 20
         },
@@ -385,6 +418,7 @@
             "label": "Fiddlesticks",
             "type": "champion",
             "image": "./assets/champions/fiddlesticks.webp",
+            "slugWidget": "fiddlesticks",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Fiddlesticks.png",
             "size": 20
         },
@@ -393,6 +427,7 @@
             "label": "Fiora",
             "type": "champion",
             "image": "./assets/champions/fiora.webp",
+            "slugWidget": "fiora",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Fiora.png",
             "size": 20
         },
@@ -401,6 +436,7 @@
             "label": "Fizz",
             "type": "champion",
             "image": "./assets/champions/fizz.webp",
+            "slugWidget": "fizz",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Fizz.png",
             "size": 20
         },
@@ -409,6 +445,7 @@
             "label": "Galio",
             "type": "champion",
             "image": "./assets/champions/galio.webp",
+            "slugWidget": "galio",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Galio.png",
             "size": 20
         },
@@ -417,6 +454,7 @@
             "label": "Gangplank",
             "type": "champion",
             "image": "./assets/champions/gangplank.webp",
+            "slugWidget": "gangplank",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Gangplank.png",
             "size": 20
         },
@@ -425,6 +463,7 @@
             "label": "Garen",
             "type": "champion",
             "image": "./assets/champions/garen.webp",
+            "slugWidget": "garen",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Garen.png",
             "size": 20
         },
@@ -433,6 +472,7 @@
             "label": "Gnar",
             "type": "champion",
             "image": "./assets/champions/gnar.webp",
+            "slugWidget": "gnar",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Gnar.png",
             "size": 20
         },
@@ -441,6 +481,7 @@
             "label": "Gragas",
             "type": "champion",
             "image": "./assets/champions/gragas.webp",
+            "slugWidget": "gragas",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Gragas.png",
             "size": 20
         },
@@ -449,6 +490,7 @@
             "label": "Graves",
             "type": "champion",
             "image": "./assets/champions/graves.webp",
+            "slugWidget": "graves",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Graves.png",
             "size": 20
         },
@@ -457,6 +499,7 @@
             "label": "Gwen",
             "type": "champion",
             "image": "./assets/champions/gwen.webp",
+            "slugWidget": "gwen",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Gwen.png",
             "size": 20
         },
@@ -465,6 +508,7 @@
             "label": "Hecarim",
             "type": "champion",
             "image": "./assets/champions/hecarim.webp",
+            "slugWidget": "hecarim",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Hecarim.png",
             "size": 20
         },
@@ -473,6 +517,7 @@
             "label": "Heimerdinger",
             "type": "champion",
             "image": "./assets/champions/heimerdinger.webp",
+            "slugWidget": "heimerdinger",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Heimerdinger.png",
             "size": 20
         },
@@ -481,6 +526,7 @@
             "label": "Hwei",
             "type": "champion",
             "image": "./assets/champions/hwei.webp",
+            "slugWidget": "hwei",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Hwei.png",
             "size": 20
         },
@@ -489,6 +535,7 @@
             "label": "Illaoi",
             "type": "champion",
             "image": "./assets/champions/illaoi.webp",
+            "slugWidget": "illaoi",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Illaoi.png",
             "size": 20
         },
@@ -497,6 +544,7 @@
             "label": "Irelia",
             "type": "champion",
             "image": "./assets/champions/irelia.webp",
+            "slugWidget": "irelia",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Irelia.png",
             "size": 20
         },
@@ -505,6 +553,7 @@
             "label": "Ivern",
             "type": "champion",
             "image": "./assets/champions/ivern.webp",
+            "slugWidget": "ivern",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Ivern.png",
             "size": 20
         },
@@ -513,6 +562,7 @@
             "label": "Janna",
             "type": "champion",
             "image": "./assets/champions/janna.webp",
+            "slugWidget": "janna",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Janna.png",
             "size": 20
         },
@@ -521,6 +571,7 @@
             "label": "Jarvan IV",
             "type": "champion",
             "image": "./assets/champions/jarvaniv.webp",
+            "slugWidget": "jarvaniv",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/JarvanIV.png",
             "size": 20
         },
@@ -529,6 +580,7 @@
             "label": "Jax",
             "type": "champion",
             "image": "./assets/champions/jax.webp",
+            "slugWidget": "jax",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Jax.png",
             "size": 20
         },
@@ -537,6 +589,7 @@
             "label": "Jayce",
             "type": "champion",
             "image": "./assets/champions/jayce.webp",
+            "slugWidget": "jayce",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Jayce.png",
             "size": 20
         },
@@ -545,6 +598,7 @@
             "label": "Jhin",
             "type": "champion",
             "image": "./assets/champions/jhin.webp",
+            "slugWidget": "jhin",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Jhin.png",
             "size": 20
         },
@@ -553,6 +607,7 @@
             "label": "Jinx",
             "type": "champion",
             "image": "./assets/champions/jinx.webp",
+            "slugWidget": "jinx",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Jinx.png",
             "size": 20
         },
@@ -561,6 +616,7 @@
             "label": "Kai'Sa",
             "type": "champion",
             "image": "./assets/champions/kaisa.webp",
+            "slugWidget": "kaisa",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Kaisa.png",
             "size": 20
         },
@@ -569,6 +625,7 @@
             "label": "Kalista",
             "type": "champion",
             "image": "./assets/champions/kalista.webp",
+            "slugWidget": "kalista",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Kalista.png",
             "size": 20
         },
@@ -577,6 +634,7 @@
             "label": "Karma",
             "type": "champion",
             "image": "./assets/champions/karma.webp",
+            "slugWidget": "karma",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Karma.png",
             "size": 20
         },
@@ -585,6 +643,7 @@
             "label": "Karthus",
             "type": "champion",
             "image": "./assets/champions/karthus.webp",
+            "slugWidget": "karthus",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Karthus.png",
             "size": 20
         },
@@ -593,6 +652,7 @@
             "label": "Kassadin",
             "type": "champion",
             "image": "./assets/champions/kassadin.webp",
+            "slugWidget": "kassadin",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Kassadin.png",
             "size": 20
         },
@@ -601,6 +661,7 @@
             "label": "Katarina",
             "type": "champion",
             "image": "./assets/champions/katarina.webp",
+            "slugWidget": "katarina",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Katarina.png",
             "size": 20
         },
@@ -609,6 +670,7 @@
             "label": "Kayle",
             "type": "champion",
             "image": "./assets/champions/kayle.webp",
+            "slugWidget": "kayle",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Kayle.png",
             "size": 20
         },
@@ -617,6 +679,7 @@
             "label": "Kayn",
             "type": "champion",
             "image": "./assets/champions/kayn.webp",
+            "slugWidget": "kayn",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Kayn.png",
             "size": 20
         },
@@ -625,6 +688,7 @@
             "label": "Kennen",
             "type": "champion",
             "image": "./assets/champions/kennen.webp",
+            "slugWidget": "kennen",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Kennen.png",
             "size": 20
         },
@@ -633,6 +697,7 @@
             "label": "Kha'Zix",
             "type": "champion",
             "image": "./assets/champions/khazix.webp",
+            "slugWidget": "khazix",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Khazix.png",
             "size": 20
         },
@@ -641,6 +706,7 @@
             "label": "Kindred",
             "type": "champion",
             "image": "./assets/champions/kindred.webp",
+            "slugWidget": "kindred",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Kindred.png",
             "size": 20
         },
@@ -649,6 +715,7 @@
             "label": "Kled",
             "type": "champion",
             "image": "./assets/champions/kled.webp",
+            "slugWidget": "kled",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Kled.png",
             "size": 20
         },
@@ -657,6 +724,7 @@
             "label": "Kog'Maw",
             "type": "champion",
             "image": "./assets/champions/kogmaw.webp",
+            "slugWidget": "kogmaw",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/KogMaw.png",
             "size": 20
         },
@@ -665,6 +733,7 @@
             "label": "K'Sante",
             "type": "champion",
             "image": "./assets/champions/ksante.webp",
+            "slugWidget": "ksante",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/KSante.png",
             "size": 20
         },
@@ -673,6 +742,7 @@
             "label": "LeBlanc",
             "type": "champion",
             "image": "./assets/champions/leblanc.webp",
+            "slugWidget": "leblanc",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Leblanc.png",
             "size": 20
         },
@@ -681,6 +751,7 @@
             "label": "Lee Sin",
             "type": "champion",
             "image": "./assets/champions/leesin.webp",
+            "slugWidget": "leesin",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/LeeSin.png",
             "size": 20
         },
@@ -689,6 +760,7 @@
             "label": "Leona",
             "type": "champion",
             "image": "./assets/champions/leona.webp",
+            "slugWidget": "leona",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Leona.png",
             "size": 20
         },
@@ -697,6 +769,7 @@
             "label": "Lillia",
             "type": "champion",
             "image": "./assets/champions/lillia.webp",
+            "slugWidget": "lillia",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Lillia.png",
             "size": 20
         },
@@ -705,6 +778,7 @@
             "label": "Lissandra",
             "type": "champion",
             "image": "./assets/champions/lissandra.webp",
+            "slugWidget": "lissandra",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Lissandra.png",
             "size": 20
         },
@@ -713,6 +787,7 @@
             "label": "Lucian",
             "type": "champion",
             "image": "./assets/champions/lucian.webp",
+            "slugWidget": "lucian",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Lucian.png",
             "size": 20
         },
@@ -721,6 +796,7 @@
             "label": "Lulu",
             "type": "champion",
             "image": "./assets/champions/lulu.webp",
+            "slugWidget": "lulu",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Lulu.png",
             "size": 20
         },
@@ -729,6 +805,7 @@
             "label": "Lux",
             "type": "champion",
             "image": "./assets/champions/lux.webp",
+            "slugWidget": "lux",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Lux.png",
             "size": 20
         },
@@ -737,6 +814,7 @@
             "label": "Malphite",
             "type": "champion",
             "image": "./assets/champions/malphite.webp",
+            "slugWidget": "malphite",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Malphite.png",
             "size": 20
         },
@@ -745,6 +823,7 @@
             "label": "Malzahar",
             "type": "champion",
             "image": "./assets/champions/malzahar.webp",
+            "slugWidget": "malzahar",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Malzahar.png",
             "size": 20
         },
@@ -753,6 +832,7 @@
             "label": "Maokai",
             "type": "champion",
             "image": "./assets/champions/maokai.webp",
+            "slugWidget": "maokai",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Maokai.png",
             "size": 20
         },
@@ -761,6 +841,7 @@
             "label": "Master Yi",
             "type": "champion",
             "image": "./assets/champions/masteryi.webp",
+            "slugWidget": "masteryi",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/MasterYi.png",
             "size": 20
         },
@@ -769,6 +850,7 @@
             "label": "Mel",
             "type": "champion",
             "image": "./assets/champions/mel.webp",
+            "slugWidget": "mel",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Mel.png",
             "size": 20
         },
@@ -777,6 +859,7 @@
             "label": "Milio",
             "type": "champion",
             "image": "./assets/champions/milio.webp",
+            "slugWidget": "milio",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Milio.png",
             "size": 20
         },
@@ -785,6 +868,7 @@
             "label": "Miss Fortune",
             "type": "champion",
             "image": "./assets/champions/missfortune.webp",
+            "slugWidget": "missfortune",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/MissFortune.png",
             "size": 20
         },
@@ -793,6 +877,7 @@
             "label": "Wukong",
             "type": "champion",
             "image": "./assets/champions/monkeyking.webp",
+            "slugWidget": "monkeyking",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/MonkeyKing.png",
             "size": 20
         },
@@ -801,6 +886,7 @@
             "label": "Mordekaiser",
             "type": "champion",
             "image": "./assets/champions/mordekaiser.webp",
+            "slugWidget": "mordekaiser",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Mordekaiser.png",
             "size": 20
         },
@@ -809,6 +895,7 @@
             "label": "Morgana",
             "type": "champion",
             "image": "./assets/champions/morgana.webp",
+            "slugWidget": "morgana",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Morgana.png",
             "size": 20
         },
@@ -817,6 +904,7 @@
             "label": "Naafiri",
             "type": "champion",
             "image": "./assets/champions/naafiri.webp",
+            "slugWidget": "naafiri",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Naafiri.png",
             "size": 20
         },
@@ -825,6 +913,7 @@
             "label": "Nami",
             "type": "champion",
             "image": "./assets/champions/nami.webp",
+            "slugWidget": "nami",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Nami.png",
             "size": 20
         },
@@ -833,6 +922,7 @@
             "label": "Nasus",
             "type": "champion",
             "image": "./assets/champions/nasus.webp",
+            "slugWidget": "nasus",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Nasus.png",
             "size": 20
         },
@@ -841,6 +931,7 @@
             "label": "Nautilus",
             "type": "champion",
             "image": "./assets/champions/nautilus.webp",
+            "slugWidget": "nautilus",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Nautilus.png",
             "size": 20
         },
@@ -849,6 +940,7 @@
             "label": "Neeko",
             "type": "champion",
             "image": "./assets/champions/neeko.webp",
+            "slugWidget": "neeko",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Neeko.png",
             "size": 20
         },
@@ -857,6 +949,7 @@
             "label": "Nidalee",
             "type": "champion",
             "image": "./assets/champions/nidalee.webp",
+            "slugWidget": "nidalee",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Nidalee.png",
             "size": 20
         },
@@ -865,6 +958,7 @@
             "label": "Nilah",
             "type": "champion",
             "image": "./assets/champions/nilah.webp",
+            "slugWidget": "nilah",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Nilah.png",
             "size": 20
         },
@@ -873,6 +967,7 @@
             "label": "Nocturne",
             "type": "champion",
             "image": "./assets/champions/nocturne.webp",
+            "slugWidget": "nocturne",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Nocturne.png",
             "size": 20
         },
@@ -881,6 +976,7 @@
             "label": "Nunu & Willump",
             "type": "champion",
             "image": "./assets/champions/nunu.webp",
+            "slugWidget": "nunu",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Nunu.png",
             "size": 20
         },
@@ -889,6 +985,7 @@
             "label": "Olaf",
             "type": "champion",
             "image": "./assets/champions/olaf.webp",
+            "slugWidget": "olaf",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Olaf.png",
             "size": 20
         },
@@ -897,6 +994,7 @@
             "label": "Orianna",
             "type": "champion",
             "image": "./assets/champions/orianna.webp",
+            "slugWidget": "orianna",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Orianna.png",
             "size": 20
         },
@@ -905,6 +1003,7 @@
             "label": "Ornn",
             "type": "champion",
             "image": "./assets/champions/ornn.webp",
+            "slugWidget": "ornn",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Ornn.png",
             "size": 20
         },
@@ -913,6 +1012,7 @@
             "label": "Pantheon",
             "type": "champion",
             "image": "./assets/champions/pantheon.webp",
+            "slugWidget": "pantheon",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Pantheon.png",
             "size": 20
         },
@@ -921,6 +1021,7 @@
             "label": "Poppy",
             "type": "champion",
             "image": "./assets/champions/poppy.webp",
+            "slugWidget": "poppy",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Poppy.png",
             "size": 20
         },
@@ -929,6 +1030,7 @@
             "label": "Pyke",
             "type": "champion",
             "image": "./assets/champions/pyke.webp",
+            "slugWidget": "pyke",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Pyke.png",
             "size": 20
         },
@@ -937,6 +1039,7 @@
             "label": "Qiyana",
             "type": "champion",
             "image": "./assets/champions/qiyana.webp",
+            "slugWidget": "qiyana",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Qiyana.png",
             "size": 20
         },
@@ -945,6 +1048,7 @@
             "label": "Quinn",
             "type": "champion",
             "image": "./assets/champions/quinn.webp",
+            "slugWidget": "quinn",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Quinn.png",
             "size": 20
         },
@@ -953,6 +1057,7 @@
             "label": "Rakan",
             "type": "champion",
             "image": "./assets/champions/rakan.webp",
+            "slugWidget": "rakan",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Rakan.png",
             "size": 20
         },
@@ -961,6 +1066,7 @@
             "label": "Rammus",
             "type": "champion",
             "image": "./assets/champions/rammus.webp",
+            "slugWidget": "rammus",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Rammus.png",
             "size": 20
         },
@@ -969,6 +1075,7 @@
             "label": "Rek'Sai",
             "type": "champion",
             "image": "./assets/champions/reksai.webp",
+            "slugWidget": "reksai",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/RekSai.png",
             "size": 20
         },
@@ -977,6 +1084,7 @@
             "label": "Rell",
             "type": "champion",
             "image": "./assets/champions/rell.webp",
+            "slugWidget": "rell",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Rell.png",
             "size": 20
         },
@@ -985,6 +1093,7 @@
             "label": "Renata Glasc",
             "type": "champion",
             "image": "./assets/champions/renata.webp",
+            "slugWidget": "renata",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Renata.png",
             "size": 20
         },
@@ -993,6 +1102,7 @@
             "label": "Renekton",
             "type": "champion",
             "image": "./assets/champions/renekton.webp",
+            "slugWidget": "renekton",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Renekton.png",
             "size": 20
         },
@@ -1001,6 +1111,7 @@
             "label": "Rengar",
             "type": "champion",
             "image": "./assets/champions/rengar.webp",
+            "slugWidget": "rengar",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Rengar.png",
             "size": 20
         },
@@ -1009,6 +1120,7 @@
             "label": "Riven",
             "type": "champion",
             "image": "./assets/champions/riven.webp",
+            "slugWidget": "riven",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Riven.png",
             "size": 20
         },
@@ -1017,6 +1129,7 @@
             "label": "Rumble",
             "type": "champion",
             "image": "./assets/champions/rumble.webp",
+            "slugWidget": "rumble",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Rumble.png",
             "size": 20
         },
@@ -1025,6 +1138,7 @@
             "label": "Ryze",
             "type": "champion",
             "image": "./assets/champions/ryze.webp",
+            "slugWidget": "ryze",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Ryze.png",
             "size": 20
         },
@@ -1033,6 +1147,7 @@
             "label": "Samira",
             "type": "champion",
             "image": "./assets/champions/samira.webp",
+            "slugWidget": "samira",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Samira.png",
             "size": 20
         },
@@ -1041,6 +1156,7 @@
             "label": "Sejuani",
             "type": "champion",
             "image": "./assets/champions/sejuani.webp",
+            "slugWidget": "sejuani",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Sejuani.png",
             "size": 20
         },
@@ -1049,6 +1165,7 @@
             "label": "Senna",
             "type": "champion",
             "image": "./assets/champions/senna.webp",
+            "slugWidget": "senna",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Senna.png",
             "size": 20
         },
@@ -1057,6 +1174,7 @@
             "label": "Seraphine",
             "type": "champion",
             "image": "./assets/champions/seraphine.webp",
+            "slugWidget": "seraphine",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Seraphine.png",
             "size": 20
         },
@@ -1065,6 +1183,7 @@
             "label": "Sett",
             "type": "champion",
             "image": "./assets/champions/sett.webp",
+            "slugWidget": "sett",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Sett.png",
             "size": 20
         },
@@ -1073,6 +1192,7 @@
             "label": "Shaco",
             "type": "champion",
             "image": "./assets/champions/shaco.webp",
+            "slugWidget": "shaco",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Shaco.png",
             "size": 20
         },
@@ -1081,6 +1201,7 @@
             "label": "Shen",
             "type": "champion",
             "image": "./assets/champions/shen.webp",
+            "slugWidget": "shen",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Shen.png",
             "size": 20
         },
@@ -1089,6 +1210,7 @@
             "label": "Shyvana",
             "type": "champion",
             "image": "./assets/champions/shyvana.webp",
+            "slugWidget": "shyvana",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Shyvana.png",
             "size": 20
         },
@@ -1097,6 +1219,7 @@
             "label": "Singed",
             "type": "champion",
             "image": "./assets/champions/singed.webp",
+            "slugWidget": "singed",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Singed.png",
             "size": 20
         },
@@ -1105,6 +1228,7 @@
             "label": "Sion",
             "type": "champion",
             "image": "./assets/champions/sion.webp",
+            "slugWidget": "sion",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Sion.png",
             "size": 20
         },
@@ -1113,6 +1237,7 @@
             "label": "Sivir",
             "type": "champion",
             "image": "./assets/champions/sivir.webp",
+            "slugWidget": "sivir",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Sivir.png",
             "size": 20
         },
@@ -1121,6 +1246,7 @@
             "label": "Skarner",
             "type": "champion",
             "image": "./assets/champions/skarner.webp",
+            "slugWidget": "skarner",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Skarner.png",
             "size": 20
         },
@@ -1129,6 +1255,7 @@
             "label": "Smolder",
             "type": "champion",
             "image": "./assets/champions/smolder.webp",
+            "slugWidget": "smolder",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Smolder.png",
             "size": 20
         },
@@ -1137,6 +1264,7 @@
             "label": "Sona",
             "type": "champion",
             "image": "./assets/champions/sona.webp",
+            "slugWidget": "sona",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Sona.png",
             "size": 20
         },
@@ -1145,6 +1273,7 @@
             "label": "Soraka",
             "type": "champion",
             "image": "./assets/champions/soraka.webp",
+            "slugWidget": "soraka",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Soraka.png",
             "size": 20
         },
@@ -1153,6 +1282,7 @@
             "label": "Swain",
             "type": "champion",
             "image": "./assets/champions/swain.webp",
+            "slugWidget": "swain",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Swain.png",
             "size": 20
         },
@@ -1161,6 +1291,7 @@
             "label": "Sylas",
             "type": "champion",
             "image": "./assets/champions/sylas.webp",
+            "slugWidget": "sylas",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Sylas.png",
             "size": 20
         },
@@ -1169,6 +1300,7 @@
             "label": "Syndra",
             "type": "champion",
             "image": "./assets/champions/syndra.webp",
+            "slugWidget": "syndra",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Syndra.png",
             "size": 20
         },
@@ -1177,6 +1309,7 @@
             "label": "Tahm Kench",
             "type": "champion",
             "image": "./assets/champions/tahmkench.webp",
+            "slugWidget": "tahmkench",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/TahmKench.png",
             "size": 20
         },
@@ -1185,6 +1318,7 @@
             "label": "Taliyah",
             "type": "champion",
             "image": "./assets/champions/taliyah.webp",
+            "slugWidget": "taliyah",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Taliyah.png",
             "size": 20
         },
@@ -1193,6 +1327,7 @@
             "label": "Talon",
             "type": "champion",
             "image": "./assets/champions/talon.webp",
+            "slugWidget": "talon",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Talon.png",
             "size": 20
         },
@@ -1201,6 +1336,7 @@
             "label": "Taric",
             "type": "champion",
             "image": "./assets/champions/taric.webp",
+            "slugWidget": "taric",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Taric.png",
             "size": 20
         },
@@ -1209,6 +1345,7 @@
             "label": "Teemo",
             "type": "champion",
             "image": "./assets/champions/teemo.webp",
+            "slugWidget": "teemo",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Teemo.png",
             "size": 20
         },
@@ -1217,6 +1354,7 @@
             "label": "Thresh",
             "type": "champion",
             "image": "./assets/champions/thresh.webp",
+            "slugWidget": "thresh",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Thresh.png",
             "size": 20
         },
@@ -1225,6 +1363,7 @@
             "label": "Tristana",
             "type": "champion",
             "image": "./assets/champions/tristana.webp",
+            "slugWidget": "tristana",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Tristana.png",
             "size": 20
         },
@@ -1233,6 +1372,7 @@
             "label": "Trundle",
             "type": "champion",
             "image": "./assets/champions/trundle.webp",
+            "slugWidget": "trundle",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Trundle.png",
             "size": 20
         },
@@ -1241,6 +1381,7 @@
             "label": "Tryndamere",
             "type": "champion",
             "image": "./assets/champions/tryndamere.webp",
+            "slugWidget": "tryndamere",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Tryndamere.png",
             "size": 20
         },
@@ -1249,6 +1390,7 @@
             "label": "Twisted Fate",
             "type": "champion",
             "image": "./assets/champions/twistedfate.webp",
+            "slugWidget": "twistedfate",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/TwistedFate.png",
             "size": 20
         },
@@ -1257,6 +1399,7 @@
             "label": "Twitch",
             "type": "champion",
             "image": "./assets/champions/twitch.webp",
+            "slugWidget": "twitch",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Twitch.png",
             "size": 20
         },
@@ -1265,6 +1408,7 @@
             "label": "Udyr",
             "type": "champion",
             "image": "./assets/champions/udyr.webp",
+            "slugWidget": "udyr",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Udyr.png",
             "size": 20
         },
@@ -1273,6 +1417,7 @@
             "label": "Urgot",
             "type": "champion",
             "image": "./assets/champions/urgot.webp",
+            "slugWidget": "urgot",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Urgot.png",
             "size": 20
         },
@@ -1281,6 +1426,7 @@
             "label": "Varus",
             "type": "champion",
             "image": "./assets/champions/varus.webp",
+            "slugWidget": "varus",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Varus.png",
             "size": 20
         },
@@ -1289,6 +1435,7 @@
             "label": "Vayne",
             "type": "champion",
             "image": "./assets/champions/vayne.webp",
+            "slugWidget": "vayne",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Vayne.png",
             "size": 20
         },
@@ -1297,6 +1444,7 @@
             "label": "Veigar",
             "type": "champion",
             "image": "./assets/champions/veigar.webp",
+            "slugWidget": "veigar",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Veigar.png",
             "size": 20
         },
@@ -1305,6 +1453,7 @@
             "label": "Vel'Koz",
             "type": "champion",
             "image": "./assets/champions/velkoz.webp",
+            "slugWidget": "velkoz",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Velkoz.png",
             "size": 20
         },
@@ -1313,6 +1462,7 @@
             "label": "Vex",
             "type": "champion",
             "image": "./assets/champions/vex.webp",
+            "slugWidget": "vex",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Vex.png",
             "size": 20
         },
@@ -1321,6 +1471,7 @@
             "label": "Vi",
             "type": "champion",
             "image": "./assets/champions/vi.webp",
+            "slugWidget": "vi",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Vi.png",
             "size": 20
         },
@@ -1329,6 +1480,7 @@
             "label": "Viego",
             "type": "champion",
             "image": "./assets/champions/viego.webp",
+            "slugWidget": "viego",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Viego.png",
             "size": 20
         },
@@ -1337,6 +1489,7 @@
             "label": "Viktor",
             "type": "champion",
             "image": "./assets/champions/viktor.webp",
+            "slugWidget": "viktor",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Viktor.png",
             "size": 20
         },
@@ -1345,6 +1498,7 @@
             "label": "Vladimir",
             "type": "champion",
             "image": "./assets/champions/vladimir.webp",
+            "slugWidget": "vladimir",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Vladimir.png",
             "size": 20
         },
@@ -1353,6 +1507,7 @@
             "label": "Volibear",
             "type": "champion",
             "image": "./assets/champions/volibear.webp",
+            "slugWidget": "volibear",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Volibear.png",
             "size": 20
         },
@@ -1361,6 +1516,7 @@
             "label": "Warwick",
             "type": "champion",
             "image": "./assets/champions/warwick.webp",
+            "slugWidget": "warwick",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Warwick.png",
             "size": 20
         },
@@ -1369,6 +1525,7 @@
             "label": "Xayah",
             "type": "champion",
             "image": "./assets/champions/xayah.webp",
+            "slugWidget": "xayah",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Xayah.png",
             "size": 20
         },
@@ -1377,6 +1534,7 @@
             "label": "Xerath",
             "type": "champion",
             "image": "./assets/champions/xerath.webp",
+            "slugWidget": "xerath",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Xerath.png",
             "size": 20
         },
@@ -1385,6 +1543,7 @@
             "label": "Xin Zhao",
             "type": "champion",
             "image": "./assets/champions/xinzhao.webp",
+            "slugWidget": "xinzhao",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/XinZhao.png",
             "size": 20
         },
@@ -1393,6 +1552,7 @@
             "label": "Yasuo",
             "type": "champion",
             "image": "./assets/champions/yasuo.webp",
+            "slugWidget": "yasuo",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Yasuo.png",
             "size": 20
         },
@@ -1401,6 +1561,7 @@
             "label": "Yone",
             "type": "champion",
             "image": "./assets/champions/yone.webp",
+            "slugWidget": "yone",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Yone.png",
             "size": 20
         },
@@ -1409,6 +1570,7 @@
             "label": "Yorick",
             "type": "champion",
             "image": "./assets/champions/yorick.webp",
+            "slugWidget": "yorick",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Yorick.png",
             "size": 20
         },
@@ -1417,6 +1579,7 @@
             "label": "Yunara",
             "type": "champion",
             "image": "./assets/champions/yunara.webp",
+            "slugWidget": "yunara",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Yunara.png",
             "size": 20
         },
@@ -1425,6 +1588,7 @@
             "label": "Yuumi",
             "type": "champion",
             "image": "./assets/champions/yuumi.webp",
+            "slugWidget": "yuumi",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Yuumi.png",
             "size": 20
         },
@@ -1433,6 +1597,7 @@
             "label": "Zac",
             "type": "champion",
             "image": "./assets/champions/zac.webp",
+            "slugWidget": "zac",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Zac.png",
             "size": 20
         },
@@ -1441,6 +1606,7 @@
             "label": "Zed",
             "type": "champion",
             "image": "./assets/champions/zed.webp",
+            "slugWidget": "zed",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Zed.png",
             "size": 20
         },
@@ -1449,6 +1615,7 @@
             "label": "Zeri",
             "type": "champion",
             "image": "./assets/champions/zeri.webp",
+            "slugWidget": "zeri",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Zeri.png",
             "size": 20
         },
@@ -1457,6 +1624,7 @@
             "label": "Ziggs",
             "type": "champion",
             "image": "./assets/champions/ziggs.webp",
+            "slugWidget": "ziggs",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Ziggs.png",
             "size": 20
         },
@@ -1465,6 +1633,7 @@
             "label": "Zilean",
             "type": "champion",
             "image": "./assets/champions/zilean.webp",
+            "slugWidget": "zilean",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Zilean.png",
             "size": 20
         },
@@ -1473,6 +1642,7 @@
             "label": "Zoe",
             "type": "champion",
             "image": "./assets/champions/zoe.webp",
+            "slugWidget": "zoe",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Zoe.png",
             "size": 20
         },
@@ -1481,6 +1651,7 @@
             "label": "Zyra",
             "type": "champion",
             "image": "./assets/champions/zyra.webp",
+            "slugWidget": "zyra",
             "brokenImage": "https://ddragon.leagueoflegends.com/cdn/15.17.1/img/champion/Zyra.png",
             "size": 20
         }
