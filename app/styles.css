@@ -10,7 +10,7 @@
     font-family: 'Beaufort for LOL';
     src: url('assets/fonts/BeaufortforLOL-Medium.woff2') format('woff2'),
          url('assets/fonts/BeaufortforLOL-Medium.ttf') format('truetype');
-    font-weight: 500; /* Use a numeric value for medium weight */
+    font-weight: 500;
     font-style: bold;
 }
 
@@ -42,7 +42,6 @@ body {
     border: none;
 }
 
-/* Create the watermark using a pseudo-element */
 #mynetwork::before {
     content: "";
     position: absolute;
@@ -56,7 +55,6 @@ body {
     opacity: 0.4;
 }
 
-/* Controls styling */
 #controls {
     position: fixed;
     top: 20px;
@@ -164,7 +162,7 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* Tooltip styling */
+
 .vis-tooltip {
     background: rgba(0, 0, 0, 0.9) !important;
     color: var(--primary-ff-clr) !important;
@@ -186,15 +184,10 @@ body {
     color: var(--primary-ff-clr);
 }
 
-
-/*
-* Builds Popup Styles
-* Add this to your styles.css file
-*/
-
 #builds-popup {
     position: absolute;
-    display: none; /* Initially hidden */
+    display: none;
+    min-width: min-content !important;
     min-width: 260px;
     background-color: #0c1c29;
     border: 1px solid #c89b3c;
@@ -203,8 +196,7 @@ body {
     z-index: 1000;
     font-family: 'Beaufort for LOL', sans-serif;
     color: #f0f0f0;
-    
-    /* Animation for appearing */
+    max-width: 310px;
     transform: scale(0.95);
     opacity: 0;
     transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -212,10 +204,10 @@ body {
 }
 
 #builds-popup.show {
-    display: block; /* Make it visible */
+    display: block;
     transform: scale(1);
     opacity: 1;
-    pointer-events: auto; /* Make it interactive */
+    pointer-events: auto;
 }
 
 .popup-header {
@@ -254,8 +246,25 @@ body {
 #popup-links-container {
     padding: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.build-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #1e2833;
+    transition: background-color 0.2s, transform 0.1s;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 5px;
 }
 
 #popup-close-btn {
@@ -273,44 +282,39 @@ body {
 }
 
 #popup-close-btn:hover {
-    background-color: #ffffff1a; /* Subtle highlight on hover */
+    background-color: #ffffff1a;
 }
 
 #popup-close-btn svg {
     width: 20px;
     height: 20px;
-    fill: #a09b8c; /* Softer, muted color */
+    fill: #a09b8c;
     transition: fill 0.2s;
 }
 
 #popup-close-btn:hover svg {
-    fill: #f0e6d2; /* Brighter color on hover */
-}
-
-.build-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    background-color: #1e2833;
-    transition: background-color 0.2s, transform 0.1s;
+    fill: #f0e6d2;
 }
 
 .build-link:hover {
     background-color: #313d49;
-    transform: translateX(4px);
+    transform: translateY(2px);
+}
+
+.popup-header h3 {
+    font-size: 20px;
 }
 
 .build-link img {
-    width: 24px;
-    height: 24px;
-    margin-right: 12px;
+    width: 28px;
+    height: auto;
+    margin-right: 0px;
     border-radius: 4px;
 }
 
 .build-link span {
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 500;
     color: #cdd0d1;
 }
 
@@ -333,7 +337,6 @@ body {
   cursor: pointer;
 }
 
-/* Error message styling */
 .error-message {
     display: flex;
     flex-direction: column;
@@ -359,13 +362,48 @@ body {
     opacity: 0.8;
 }
 
-/* Remove focus outline from canvas */
+
 .vis-network canvas {
     outline: none !important;
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .vis-tooltip {
+        font-size: 24px !important;
+    }
+    #builds-popup {
+        max-width: fit-content;
+        margin: 1rem;
+        align-self: center;
+    }
+    #popup-champion-name {
+        font-size: 28px !important;
+    }
+    #popup-links-container {
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .build-link {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+        row-gap: inherit;
+    }
+    .build-link span {
+        font-size: 16px;
+    }
+    .build-link img {
+        width: 40px !important;
+        height: fit-content !important;
+    }
     .vis-tooltip {
         max-width: 250px !important;
         font-size: 16px !important;
@@ -394,12 +432,65 @@ body {
         font-size: 11px;
         padding: 6px 10px;
     }
+
 }
 
-@media (max-width: 480px) {
+
+@media (orientation: portrait) and (max-width: 600px), (max-height: 700px){
+    #builds-popup {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px), (max-height: 700px){
+    #champion-tooltip-panel {
+        top: 80px;
+        left: 10px;
+        right: 10px;
+        max-width: none;
+    }
+
+    #popup-links-container {
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #builds-popup {
+        top: 0px !important;
+        left: 0px !important;
+        place-self: anchor-center;
+        margin: 2rem !important;
+        height: 94%;
+        height: min-content;
+    }
+
+    .build-link span {
+        font-size: 18px !important;
+    }
+
+    .build-link img {
+        margin-right: 0px;
+    }
+
+    .build-link {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+        row-gap: inherit;
+    }
+
     .vis-tooltip {
         max-width: 200px !important;
-        font-size: 16px !important;
+        font-size: 14px !important;
+        justify-self: anchor-center;
+        left: 0px !important;
     }
     
     #controls {
@@ -412,15 +503,5 @@ body {
     #controls select {
         width: 100%;
         min-width: auto;
-    }
-}
-
-/* Small screen adjustments to prevent overlap */
-@media (max-width: 480px) {
-    #champion-tooltip-panel {
-        top: 80px; /* Move below controls on small screens */
-        left: 10px;
-        right: 10px;
-        max-width: none;
     }
 }
