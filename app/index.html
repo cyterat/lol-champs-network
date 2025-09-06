@@ -42,6 +42,23 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <div id="greeting-backdrop"></div>
+    <div id="greeting-popup">
+        <div class="greeting-content">
+            <h2>Welcome to the LoL Champion Builds</h2>
+            <p>
+                This is an interactive visualization of characters from the League of Legends game.
+            </p>
+            <ul>
+                <li>Click a champion for links to build guides from popular sites.</li>
+                <li>Hover and click on nodes and connections for additional information.
+                <!-- <li>Use the dropdown menu to switch between different views.</li> -->
+                <li>Pan and zoom to explore the network.</li>
+            </ul>
+            <button id="close-greeting-btn">Explore the Network</button>
+        </div>
+    </div>
+
     <div id="controls" class="hidden">
         <label for="edge-filter">Current View:</label>
         <select id="edge-filter" onchange="networkVisualizer.setEdgeViewByType(this.value)">

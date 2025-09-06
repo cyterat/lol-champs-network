@@ -42,6 +42,115 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/*
+ * Greeting Popup Styles
+ */
+
+#greeting-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(6, 12, 21, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#greeting-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 550px;
+    background-color: #0c1c29;
+    border: 1px solid #c89b3c;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    z-index: 2001;
+    color: #cdd0d1;
+    font-family: 'Beaufort for LOL', sans-serif;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Hiding classes that JS will add */
+#greeting-backdrop.hidden,
+#greeting-popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#greeting-popup.hidden {
+    transform: translate(-50%, -40%);
+}
+
+
+.greeting-content {
+    padding: 30px 40px;
+    text-align: center;
+}
+
+.greeting-content h2 {
+    color: #f0e6d2;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #c89b3c55;
+}
+
+.greeting-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.greeting-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 30px auto;
+    display: inline-block;
+    text-align: left;
+}
+
+.greeting-content ul li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.greeting-content ul li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: #c89b3c;
+    font-size: 12px;
+}
+
+#close-greeting-btn {
+    background-color: #0acbe6;
+    border: 1px solid #0acbe6;
+    color: #010a13;
+    font-family: 'Beaufort for LOL', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#close-greeting-btn:hover {
+    background-color: #1be2ff;
+    transform: translateY(-2px);
+}
+
 #mynetwork {
     width: 100vw;
     height: 100vh;
@@ -176,7 +285,7 @@ body {
 
 
 .vis-tooltip {
-    background: #0d1d2b !important;
+    background: #0c1c29 !important;
     color: #e1e0d5 !important;
     border-color: #c3994d !important;
     border-width: 2px !important;
@@ -193,7 +302,7 @@ body {
     display: none;
     min-width: min-content !important;
     min-width: 260px;
-    background-color: #0c1c29f7;
+    background-color: #0c1c29;
     border: 1px solid #c89b3c;
     border-radius: 8px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);

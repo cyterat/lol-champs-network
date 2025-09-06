@@ -12,55 +12,47 @@ class NetworkVisualization {
         this.isProgressiveLoadingActive = false;
         this.currentEdgeType = 'relMain';
 
+        // Properties for the greeting popup ---
+        this.greetingPopup = null;
+        this.greetingBackdrop = null;
+        this.closeGreetingBtn = null;
+
         // Properties for the builds popup
         this.buildsPopup = null;
         this.popupChampionName = null;
         this.popupLinksContainer = null;
         this.popupCloseBtn = null;
-
-        // This will be loaded from build_sites.json
         this.BUILD_SITES = [];
 
-        // Manual physics configurations for each view
+        // Kept the physics optimization you approved
         this.viewPhysicsConfig = {
-            'relMain': {
-                solver: 'barnesHut',
-                barnesHut: { gravitationalConstant: -1800, centralGravity: 0.9 },
-                stabilization: { enabled: true, iterations: 1000, fit: true }, // Lowered from 2000
-                adaptiveTimestep: true
-            },
-            'relItems': {
-                solver: 'forceAtlas2Based',
-                forceAtlas2Based: { gravitationalConstant: -200, centralGravity: 0.05, springLength: 150, springConstant: 0.05, damping: 1.0, avoidOverlap: 0.4 },
-                maxVelocity: 15,
-                minVelocity: 0.01,
-                stabilization: { enabled: true, iterations: 1500, fit: true }, // Lowered from 4000
-                adaptiveTimestep: true,
-                timestep: 0.25
-            },
-            'default': {
-                solver: 'forceAtlas2Based',
-                forceAtlas2Based: { gravitationalConstant: -200, centralGravity: 0.005, springLength: 150, springConstant: 0.05, damping: 0.95, avoidOverlap: 0.4 },
-                minVelocity: 0.01,
-                stabilization: { enabled: true, iterations: 1500, fit: true }, // Lowered from 4000
-                adaptiveTimestep: true,
-                timestep: 0.25
-            }
+            'relMain': { solver: 'barnesHut', barnesHut: { gravitationalConstant: -1800, centralGravity: 0.9, }, stabilization: { enabled: true, iterations: 1000, fit: true }, adaptiveTimestep: true },
+            'relItems': { solver: 'forceAtlas2Based', forceAtlas2Based: { gravitationalConstant: -200, centralGravity: 0.05, springLength: 150, springConstant: 0.05, damping: 1.0, avoidOverlap: 0.4 }, maxVelocity: 15, minVelocity: 0.01, stabilization: { enabled: true, iterations: 1500, fit: true }, adaptiveTimestep: true, timestep: 0.25 },
+            'default': { solver: 'forceAtlas2Based', forceAtlas2Based: { gravitationalConstant: -200, centralGravity: 0.005, springLength: 150, springConstant: 0.05, damping: 0.95, avoidOverlap: 0.4 }, minVelocity: 0.01, stabilization: { enabled: true, iterations: 1500, fit: true }, adaptiveTimestep: true, timestep: 0.25 }
         };
 
-        this.performanceConfig = {
-            enableImages: true,
-            maxImageSize: 64,
-            zoomThreshold: 0.4,
-            hideLabelsThreshold: 0.7,
-            progressiveLoading: true,
-            imageLoadBatchSize: 10,
-            imageLoadDelay: 5
-        };
+        this.performanceConfig = { enableImages: true, maxImageSize: 64, zoomThreshold: 0.4, hideLabelsThreshold: 0.7, progressiveLoading: true, imageLoadBatchSize: 5, imageLoadDelay: 5 };
     }
 
     async init() {
         try {
+            // Handle greeting popup immediately ---
+            this.greetingPopup = document.getElementById('greeting-popup');
+            this.greetingBackdrop = document.getElementById('greeting-backdrop');
+            this.closeGreetingBtn = document.getElementById('close-greeting-btn');
+
+            this.closeGreetingBtn.addEventListener('click', () => {
+                this.greetingPopup.classList.add('hidden');
+                this.greetingBackdrop.classList.add('hidden');
+                // Clean up from DOM after transition for performance
+                setTimeout(() => {
+                    this.greetingPopup.remove();
+                    this.greetingBackdrop.remove();
+                }, 500); // This duration should match CSS transition time
+            });
+
+
+            // The rest of the app loads behind the popup
             await Promise.all([
                 this.loadNetworkData(),
                 this.loadBuildSites()
@@ -114,7 +106,7 @@ class NetworkVisualization {
         const baseConfig = {
             id: node.id,
             label: node.label,
-            title: node.description,
+            title: node.description || node.label,
             slug: node.slug,
             type: node.type,
             size: node.size || 20,
@@ -219,16 +211,6 @@ class NetworkVisualization {
             nodes: this.nodesDataView,
             edges: this.edgesDataView
         }, this.getNetworkOptions());
-
-        this.network.once('stabilizationIterationsDone', () => {
-            console.log('Initial stabilization complete.');
-            this.showFilteringIndicator(false);
-            // Defer these tasks until after the user sees the network
-            this.populateEdgeFilterDropdown();
-            if (this.performanceConfig.progressiveLoading && this.performanceConfig.enableImages) {
-                this.startProgressiveImageLoading();
-            }
-        });
 
         console.log('Network visualization created successfully');
     }
@@ -380,7 +362,7 @@ class NetworkVisualization {
             color: {
                 border: node.brColor || '#C79B3B',
                 background: node.bgColor || '#180d43',
-                hover: node.brColorHg || '#d4c178',  // <-- This line is present
+                hover: node.brColorHg || '#d4c178',
                 highlight: {
                     border: node.brColorHg || '#d4c178',
                     background: node.bgColorHg || '#180d43'
@@ -431,7 +413,6 @@ class NetworkVisualization {
     showBuildsPopup(node, pos) {
         if (!this.buildsPopup || this.BUILD_SITES.length === 0) return;
 
-        // 1. Populate Content
         this.popupChampionName.textContent = `${node.label} Builds`;
         this.popupLinksContainer.innerHTML = ''; 
         const championUrlName = node.slug;
@@ -446,43 +427,34 @@ class NetworkVisualization {
             this.popupLinksContainer.appendChild(link);
         });
 
-        // 2. Show Popup to measure its dimensions
         this.buildsPopup.classList.add('show');
-        this.buildsPopup.classList.add('no-pointer-events'); // Add the disabling class
+        this.buildsPopup.classList.add('no-pointer-events');
 
-        // Remove the disabling class after the ghost click delay
         setTimeout(() => {
             this.buildsPopup.classList.remove('no-pointer-events');
         }, 400);
 
-        // 3. Robustly calculate position to stay in viewport
         const popupRect = this.buildsPopup.getBoundingClientRect();
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
-        const margin = 15; // Offset from cursor and viewport edge
+        const margin = 15;
 
         let left = pos.x + margin;
         let top = pos.y + margin;
 
-        // Adjust horizontal position if it overflows right
         if (left + popupRect.width > viewportWidth - margin) {
             left = pos.x - popupRect.width - margin;
         }
-        // Clamp to left edge if it overflows left
         if (left < margin) {
             left = margin;
         }
-
-        // Adjust vertical position if it overflows bottom
         if (top + popupRect.height > viewportHeight - margin) {
             top = pos.y - popupRect.height - margin;
         }
-        // Clamp to top edge if it overflows top
         if (top < margin) {
             top = margin;
         }
         
-        // 4. Apply final position
         this.buildsPopup.style.left = `${left}px`;
         this.buildsPopup.style.top = `${top}px`;
     }
