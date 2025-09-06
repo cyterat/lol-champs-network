@@ -61,12 +61,6 @@ class NetworkVisualization {
 
     async init() {
         try {
-            this.buildsPopup = document.getElementById('builds-popup');
-            this.popupHeader = document.getElementById('popup-header');
-            this.popupChampionName = document.getElementById('popup-champion-name');
-            this.popupLinksContainer = document.getElementById('popup-links-container');
-            this.popupCloseBtn = document.getElementById('popup-close-btn');
-
             await Promise.all([
                 this.loadNetworkData(),
                 this.loadBuildSites()
@@ -120,7 +114,7 @@ class NetworkVisualization {
         const baseConfig = {
             id: node.id,
             label: node.label,
-            title: node.description || node.label,
+            title: node.description,
             slug: node.slug,
             type: node.type,
             size: node.size || 20,
