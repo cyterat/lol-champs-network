@@ -25,59 +25,24 @@ class NetworkVisualization {
         this.viewPhysicsConfig = {
             'relMain': {
                 solver: 'barnesHut',
-                barnesHut: {
-                    gravitationalConstant: -1800,
-                    centralGravity: 0.9,
-                },
-                stabilization: {
-                    enabled: true,
-                    iterations: 2000,
-                    updateInterval: 25,
-                    onlyDynamicEdges: false,
-                    fit: true
-                },
+                barnesHut: { gravitationalConstant: -1800, centralGravity: 0.9 },
+                stabilization: { enabled: true, iterations: 1000, fit: true }, // Lowered from 2000
                 adaptiveTimestep: true
             },
             'relItems': {
                 solver: 'forceAtlas2Based',
-                forceAtlas2Based: {
-                    gravitationalConstant: -200,
-                    centralGravity: 0.05,
-                    springLength: 150,
-                    springConstant: 0.05,
-                    damping: 1.0,
-                    avoidOverlap: 0.4
-                },
+                forceAtlas2Based: { gravitationalConstant: -200, centralGravity: 0.05, springLength: 150, springConstant: 0.05, damping: 1.0, avoidOverlap: 0.4 },
                 maxVelocity: 15,
                 minVelocity: 0.01,
-                stabilization: {
-                    enabled: true,
-                    iterations: 4000,
-                    updateInterval: 100,
-                    onlyDynamicEdges: false,
-                    fit: true
-                },
+                stabilization: { enabled: true, iterations: 1500, fit: true }, // Lowered from 4000
                 adaptiveTimestep: true,
                 timestep: 0.25
             },
             'default': {
                 solver: 'forceAtlas2Based',
-                forceAtlas2Based: {
-                    gravitationalConstant: -200,
-                    centralGravity: 0.005,
-                    springLength: 150,
-                    springConstant: 0.05,
-                    damping: 0.95,
-                    avoidOverlap: 0.4
-                },
+                forceAtlas2Based: { gravitationalConstant: -200, centralGravity: 0.005, springLength: 150, springConstant: 0.05, damping: 0.95, avoidOverlap: 0.4 },
                 minVelocity: 0.01,
-                stabilization: {
-                    enabled: true,
-                    iterations: 4000,
-                    updateInterval: 100,
-                    onlyDynamicEdges: false,
-                    fit: true
-                },
+                stabilization: { enabled: true, iterations: 1500, fit: true }, // Lowered from 4000
                 adaptiveTimestep: true,
                 timestep: 0.25
             }
@@ -89,13 +54,19 @@ class NetworkVisualization {
             zoomThreshold: 0.4,
             hideLabelsThreshold: 0.7,
             progressiveLoading: true,
-            imageLoadBatchSize: 5,
+            imageLoadBatchSize: 10,
             imageLoadDelay: 5
         };
     }
 
     async init() {
         try {
+            this.buildsPopup = document.getElementById('builds-popup');
+            this.popupHeader = document.getElementById('popup-header');
+            this.popupChampionName = document.getElementById('popup-champion-name');
+            this.popupLinksContainer = document.getElementById('popup-links-container');
+            this.popupCloseBtn = document.getElementById('popup-close-btn');
+
             await Promise.all([
                 this.loadNetworkData(),
                 this.loadBuildSites()
@@ -254,6 +225,16 @@ class NetworkVisualization {
             nodes: this.nodesDataView,
             edges: this.edgesDataView
         }, this.getNetworkOptions());
+
+        this.network.once('stabilizationIterationsDone', () => {
+            console.log('Initial stabilization complete.');
+            this.showFilteringIndicator(false);
+            // Defer these tasks until after the user sees the network
+            this.populateEdgeFilterDropdown();
+            if (this.performanceConfig.progressiveLoading && this.performanceConfig.enableImages) {
+                this.startProgressiveImageLoading();
+            }
+        });
 
         console.log('Network visualization created successfully');
     }
