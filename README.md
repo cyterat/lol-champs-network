@@ -1,19 +1,28 @@
-# 🎮 League of Legends Champions and Classes Network Visualization
+# League of Legends Champions and Classes Network Visualization
+![Project Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat-square)
+![vis.js](https://img.shields.io/badge/vis.js-5282a5?style=flat-square&logo=vis-dot-js&logoColor=white) 
+![Repo Size](https://img.shields.io/github/repo-size/cyterat/lol-champs-network?style=flat-square)
+![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg?style=flat-square)
 
-[League of Legends Champions Network](https://lol-champion-builds-d6r5z.ondigitalocean.app/)
+🔥 [League of Legends Champions Network](https://lol-champion-builds-d6r5z.ondigitalocean.app/) 🔥
 
 A web-based tool for exploring current League of Legends champions and their builds, powered by vis.js
 
 Clicking on a champion node reveals a dynamic popup with links to various external build guides.
 
-<img src="./readme/lol-champs-network.png">
+<img width='600' src="./readme/lol-champs-network.png">
+
+## 🌟Motivation
+
+As a passion project, I wanted to combine my interest in network/graph data visualization with some experience in playing League of Legends. The primary motivation was to explore how different champions connect and to build an interactive experience from the ground up. The added functionality of providing a central place for popular builds was a natural extension of that goal, making the project a useful single-source hub for finding popular champion builds.
 
 
 ## 💎 User Features
 
-<table><tr><td><b>Champion Builds</b><br>Click on any node to open a pop-up panel with dynamically generated links to popular build sites, providing builds for the selected champion.</td><td><img width='700' src="./readme/lol-champs-network-s2.png"></td></tr></table>
+<table><tr><td><b>Champion Builds</b><br>Clicking on any champion node opens a pop-up panel with dynamically generated links to popular build sites, providing builds for the selected champion.</td><td><img width='400' src="./readme/lol-champs-network-s2.png"></td></tr></table>
 
-<table><tr><td><b>Click/Hover Effects</b><br>Edges highlight with different colors when you click/hover over them providing additional information.</td><td><img src="./readme/lol-champs-network-s3.png"></td><td><img src="./readme/lol-champs-network-s1.png"></td></tr></table>
+<table><tr><td><b>Click/Hover Effects</b><br>Nodes and Connections react visually when clicked or hovered over, providing additional information.</td><td><img width='400' src="./readme/lol-champs-network-s3.png"></td><td><img width='600' src="./readme/lol-champs-network-s1.png"></td></tr></table>
 
 ## 🔨 Technical Implementation
 
@@ -23,13 +32,9 @@ Clicking on a champion node reveals a dynamic popup with links to various extern
 - Fallback Images: Automatic fallback to default images when champion portraits fail to load
 - Batch Processing: Loads images in groups of 5 with small delays between batches
 
-## Hosting
+## 📦 Hosting
 
 The graph visualization is hosted on Digital Ocean.
-
-## Motivation
-
-This project was created for fun to visualize the distributions and relationships between different entities in League of Legends.
 
 ## 🧲 Sources
 
@@ -58,8 +63,8 @@ This project was created for fun to visualize the distributions and relationship
 
 - I had been trying to set up Mobalytics widget with champion builds, on node select, for a long time. However due to unresolved CORS errors related to dynamically generated elements, I decided to abandon the idea and instead switched to a source agnostic solution. This is currenlty a dynamically generated (tied to a specific champion) list of various build sites, allowing users to choose the source they prefer.
 
-## To Do
+## 📝 To Do
 
 - ✅ ~~Python generated visualization will be replaced with html/js/css trio.~~ 
-- ✅ ~~Champion builds widget/tooltip added/~~
+- ✅ ~~Champion builds widget/tooltip added.~~
 - Scheduled script written in Python, for data manipulations, will be implemented. 
