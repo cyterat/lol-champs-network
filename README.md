@@ -2,11 +2,11 @@
 
 [League of Legends Champions Network](https://lol-champion-builds-d6r5z.ondigitalocean.app/)
 
+An interactive web-based tool for visualizing relationships between League of Legends champions. This visualization, powered by vis.js, represents champions as nodes. 
+
+Clicking on a champion node reveals a dynamic popup with links to various external build guides.
+
 <img src="./readme/lol-champs-network.png">
-
-This project visualizes the relationships between League of Legends champions and their respective classes. The visualization is created using __vis.js__, with nodes representing various League of Legends entities, currenlty champions and classes, and edges representing the relationships between them.
-
-The implementation focuses on smooth user experience with behind-the-scenes optimizations to handle large amounts of champion data and images efficiently.
 
 
 ## 💎 User Features
