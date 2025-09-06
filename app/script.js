@@ -419,7 +419,7 @@ class NetworkVisualization {
         const physicsConfig = this.getPhysicsConfigForView(this.currentEdgeType);
         return {
             physics: { enabled: true, ...physicsConfig },
-            layout: { improvedLayout: true, clusterThreshold: 150 },
+            layout: { improvedLayout: false, clusterThreshold: 150 },
             interaction: { hover: true, tooltipDelay: 200, dragNodes: false, dragView: true, zoomView: true }
         };
     }
