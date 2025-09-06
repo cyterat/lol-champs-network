@@ -552,7 +552,7 @@ body {
 
 @media (orientation: portrait) and (max-width: 600px), (max-height: 700px){
     #builds-popup {
-        width: 80%;
+        margin: 1rem !important;
     }
 }
 
