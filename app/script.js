@@ -473,6 +473,12 @@ class NetworkVisualization {
 
         // 2. Show Popup to measure its dimensions
         this.buildsPopup.classList.add('show');
+        this.buildsPopup.classList.add('no-pointer-events'); // Add the disabling class
+
+        // Remove the disabling class after the ghost click delay
+        setTimeout(() => {
+            this.buildsPopup.classList.remove('no-pointer-events');
+        }, 400);
 
         // 3. Robustly calculate position to stay in viewport
         const popupRect = this.buildsPopup.getBoundingClientRect();
