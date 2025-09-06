@@ -1,6 +1,6 @@
 # 🎮 League of Legends Champions and Classes Network Visualization
 
-[League of Legends Champions Network](https://lol-champions-network-2baea.ondigitalocean.app/)
+[League of Legends Champions Network](https://lol-champion-builds-d6r5z.ondigitalocean.app/)
 
 <img src="./readme/lol-champs-network.png">
 
