@@ -2,7 +2,7 @@
 
 [League of Legends Champions Network](https://lol-champion-builds-d6r5z.ondigitalocean.app/)
 
-An interactive web-based tool for visualizing relationships between League of Legends champions. This visualization, powered by vis.js, represents champions as nodes. 
+A web-based tool for exploring current League of Legends champions and their builds, powered by vis.js
 
 Clicking on a champion node reveals a dynamic popup with links to various external build guides.
 
